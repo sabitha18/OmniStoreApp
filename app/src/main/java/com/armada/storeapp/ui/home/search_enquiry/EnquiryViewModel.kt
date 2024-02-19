@@ -40,6 +40,11 @@ class EnquiryViewModel @Inject constructor
     val responseScanItemOmni: MutableLiveData<Resource<ScannedItemDetailsResponse>> =
         omniScanItemResponse
 
+    private val skuItemResponse: MutableLiveData<Resource<ScannedItemDetailsResponse>> =
+        MutableLiveData()
+    val responseSkuItemOmni: MutableLiveData<Resource<ScannedItemDetailsResponse>> =
+        skuItemResponse
+
     private val searchModelResponse: MutableLiveData<Resource<SearchModelResponse>> =
         MutableLiveData()
     val responseSearchModel: LiveData<Resource<SearchModelResponse>> =
@@ -110,11 +115,11 @@ class EnquiryViewModel @Inject constructor
     fun searchModelStyle(
         model: String
     ){
-        omniScanItemResponse.postValue(Resource.Loading())
+        skuItemResponse.postValue(Resource.Loading())
         viewModelScope.launch(Dispatchers.IO) {
             omniRepository.searchModelStyle(model)
                 .collect { values ->
-                    omniScanItemResponse.postValue(values)
+                    skuItemResponse.postValue(values)
                 }
         }
     }

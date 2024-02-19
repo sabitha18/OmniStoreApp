@@ -222,34 +222,33 @@ class OmniChannelBagFragment : Fragment() {
                     isUsingScanningDevice = false
                 else if (length == 0)
                     isUsingScanningDevice = true
-                if (isUsingScanningDevice)
-                {
+                if (isUsingScanningDevice) {
                     //searchModelStyle(text.toString())
                     println(" working 1---------")
-                    if(text.toString() != "") {
-                        if (text.toString().length == 12){
+                    if (text.toString() != "") {
+                        if (text.toString().length == 12) {
                             //call api style code
                             mainActivity?.showProgressBar(true)
                             searchModelStyle(text.toString())
                             println("call api ---------------------  ")
-                        }else{
+                        } else {
                             omniScanItem(text.toString())
                         }
 
                     }
                 } else
 
-                    // new code
-                    if (text.toString().length == 12){
+                // new code
+                    if (text.toString().length == 12) {
                         //call api style code
                         mainActivity?.showProgressBar(true)
                         searchModelStyle(text.toString())
                         println("call api ---------------------  ")
-                    }else{
+                    } else {
                         if (text.toString().length == 20) {
                             omniScanItem(text.toString())
                         }
-                      // searchModelStyle(text.toString())
+                        // searchModelStyle(text.toString())
 //351101-18039
                     }
 
@@ -359,7 +358,7 @@ class OmniChannelBagFragment : Fragment() {
 
             localItemList?.forEach {
                 currentCheckingSkuCode = it.skuCode!!
-                checkOmniStock()
+                  checkOmniStock()
             }
 
         } else {
@@ -426,6 +425,7 @@ class OmniChannelBagFragment : Fragment() {
                         Utils.showSnackbar(binding.root, it.message.toString())
                     }
                 }
+
                 is Resource.Loading -> {
                     mainActivity?.showProgressBar(false)
                 }
@@ -452,7 +452,7 @@ class OmniChannelBagFragment : Fragment() {
         }
         setAdapter()
         setTotalAmt(localItemList)
-        omniInvoice("","")
+        omniInvoice("", "")
     }
 
 
@@ -460,7 +460,7 @@ class OmniChannelBagFragment : Fragment() {
 
         val orderItemList = getInvoiceItemList()
         var deliveryType = selectedDeliveryMethod
-            deliveryType = "E-Commerce"
+        deliveryType = "E-Commerce"
         storeCode = sharedpreferenceHandler.getData(SharedpreferenceHandler.STORE_CODE, "")!!
         storeId = sharedpreferenceHandler.getData(SharedpreferenceHandler.STORE_ID, 0)!!
         val omniInvoiceRequest = OrderInvoiceRequest(
@@ -479,12 +479,13 @@ class OmniChannelBagFragment : Fragment() {
 
                         omniOrderInvoice = it.data
 
-                        val ordertemp = it.data.omnI_OrderHeaderData.omni_InvoiceHeader.invoiceDetailList
-                        Log.d("itemlist : " , localItemList.toString())
+                        val ordertemp =
+                            it.data.omnI_OrderHeaderData.omni_InvoiceHeader.invoiceDetailList
+                        Log.d("itemlist : ", localItemList.toString())
                         var tprice = 0.00
                         for (i in 0 until localItemList.size) {
-                            for (j in 0 until ordertemp.size){
-                                if(localItemList.get(i).skuCode.equals(ordertemp.get(j).skuCode)){
+                            for (j in 0 until ordertemp.size) {
+                                if (localItemList.get(i).skuCode.equals(ordertemp.get(j).skuCode)) {
                                     localItemList.get(i).stylePrice = ordertemp.get(j).lineTotal
                                     tprice += ordertemp.get(j).lineTotal
                                 }
@@ -513,7 +514,7 @@ class OmniChannelBagFragment : Fragment() {
 //                        binding.tvTotalPrice.text =
 //                            (Utils.getPriceFormatted(totalPrice.toString(), selectedCurrency))
 
-                       Log.d("omniinvorespo", omniOrderInvoice.toString())
+                        Log.d("omniinvorespo", omniOrderInvoice.toString())
                     }
                 }
 
@@ -528,6 +529,7 @@ class OmniChannelBagFragment : Fragment() {
                         Utils.showSnackbar(binding.root, it.message.toString())
                     }
                 }
+
                 is Resource.Loading -> {
                     mainActivity?.showProgressBar(true)
                 }
@@ -544,7 +546,7 @@ class OmniChannelBagFragment : Fragment() {
     ): ArrayList<OMNIOrderDetailX> {
         val orderItemList = ArrayList<OMNIOrderDetailX>()
         var deliveryType = selectedDeliveryMethod
-            deliveryType = "E-Commerce"
+        deliveryType = "E-Commerce"
 
         orderItemList.clear()
         try {
@@ -578,11 +580,12 @@ class OmniChannelBagFragment : Fragment() {
 
 
             }
-        }catch (e: NullPointerException){
+        } catch (e: NullPointerException) {
             e.printStackTrace()
         }
         return orderItemList
     }
+
     fun omniScanItem(skuCode: String) {
         mainActivity?.hideSoftKeyboard()
         val priceListId = sharedpreferenceHandler.getData(SharedpreferenceHandler.PRICE_LIST_ID, 0)
@@ -597,7 +600,7 @@ class OmniChannelBagFragment : Fragment() {
             when (it) {
                 is Resource.Success -> {
                     mainActivity?.showProgressBar(false)
-binding.recyclerSku.visibility = View.GONE
+                    binding.recyclerSku.visibility = View.GONE
                     binding.recyclerViewModel.visibility = View.VISIBLE
                     binding.rcyCartList.visibility = View.VISIBLE
                     mainActivity?.showProgressBar(false)
@@ -606,7 +609,7 @@ binding.recyclerSku.visibility = View.GONE
                         binding.editText.clearFocus()
                         omniScannedItem = it.data
                         omniScannedItem?.skuMasterTypesList?.get(0)?.fromRiva = false
-                        omniScannedItem?.skuMasterTypesList?.get(0)?.productId =  ""
+                        omniScannedItem?.skuMasterTypesList?.get(0)?.productId = ""
                         origmon = omniScannedItem?.skuMasterTypesList?.get(0)!!.stylePrice!!
                         addProductsToLocal(omniScannedItem?.skuMasterTypesList?.get(0)!!, origmon)
 //                        enquiryViewModel.addOmniProductToPrefs(
@@ -635,6 +638,7 @@ binding.recyclerSku.visibility = View.GONE
                         Utils.showSnackbar(binding.root, it.message.toString())
                     }
                 }
+
                 is Resource.Loading -> {
                     mainActivity?.showProgressBar(false)
                 }
@@ -648,7 +652,6 @@ binding.recyclerSku.visibility = View.GONE
         product.orig_price = double
         if (localItemList.size == 0)
             localItemList.add(product)
-
         else {
             var foundItem = 0
             localItemList.forEach {
@@ -666,10 +669,11 @@ binding.recyclerSku.visibility = View.GONE
         setTotalAmt(localItemList)
         localItemList?.forEach {
             currentCheckingSkuCode = it.skuCode!!
-            checkOmniStock()
+             checkOmniStock()
         }
 
     }
+
     fun searchModel(model: String) {
         enquiryViewModel.searchModel(model)
         enquiryViewModel.responseSearchModel.observe(this) {
@@ -703,6 +707,7 @@ binding.recyclerSku.visibility = View.GONE
                         exception.printStackTrace()
                     }
                 }
+
                 is Resource.Loading -> {
                 }
             }
@@ -712,19 +717,21 @@ binding.recyclerSku.visibility = View.GONE
     fun searchModelStyle(model: String) {
         mainActivity?.showProgressBar(false)
         enquiryViewModel.searchModelStyle(model)
-        enquiryViewModel.responseScanItemOmni.observe(this) {
+        enquiryViewModel.responseSkuItemOmni.observe(this) {
             when (it) {
                 is Resource.Success -> {
-                    println(" success ---------  "+it.data?.skuMasterTypesList)
+                    println(" success ---------  " + it.data?.skuMasterTypesList)
 
                     layoutManager = NpaGridLayoutManager(
                         activity,
                         1
                     )
+                   // enquiryViewModel.responseScanItemOmni.value = null
                     binding.recyclerViewModel.visibility = View.GONE
                     binding.rcyCartList.visibility = View.GONE
                     binding.recyclerSku.visibility = View.VISIBLE
-                    binding.recyclerSku?.itemAnimator = androidx.recyclerview.widget.DefaultItemAnimator()
+                    binding.recyclerSku?.itemAnimator =
+                        androidx.recyclerview.widget.DefaultItemAnimator()
                     binding.recyclerSku?.layoutManager = layoutManager
 
                     adapterSku = SkuItemAdapter(
@@ -749,6 +756,7 @@ binding.recyclerSku.visibility = View.GONE
                         exception.printStackTrace()
                     }
                 }
+
                 is Resource.Loading -> {
                 }
             }
