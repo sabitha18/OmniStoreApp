@@ -260,6 +260,8 @@ interface ApiService {
     suspend fun searchModelStyle(
         @Query("searchString") model: String,
         @Query("limit") limit: String,
+        @Query("isActive") isActive: String,
+        @Query("offset") offset: String,
     ): Response<ScannedItemDetailsResponse>
 
 

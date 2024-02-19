@@ -227,7 +227,15 @@ class OmniChannelBagFragment : Fragment() {
                     //searchModelStyle(text.toString())
                     println(" working 1---------")
                     if(text.toString() != "") {
-                        omniScanItem(text.toString())
+                        if (text.toString().length == 12){
+                            //call api style code
+                            mainActivity?.showProgressBar(true)
+                            searchModelStyle(text.toString())
+                            println("call api ---------------------  ")
+                        }else{
+                            omniScanItem(text.toString())
+                        }
+
                     }
                 } else
 
@@ -539,37 +547,40 @@ class OmniChannelBagFragment : Fragment() {
             deliveryType = "E-Commerce"
 
         orderItemList.clear()
-        for (i in 0 until localItemList.size) {
-            orderItemList.add(
-                OMNIOrderDetailX(
-                    selectedCurrency,
-                    localItemList.get(i).stylePrice!!,
-                    localItemList.get(i).brandCode!!,
-                    localItemList.get(i).brandID!!,
-                    deliveryType,
-                    localItemList.get(i).stylePrice!!,
-                    selectedCurrency,
-                    localItemList.get(i).quantity!!,
-                    "",
-                    "",
-                    localItemList.get(i).productGroupID!!,
-                    localItemList.get(i).productGroupName!!,
-                    localItemList.get(i).seasonID!!,
-                    localItemList.get(i).seasonName!!,
-                    localItemList.get(i).segamentationID!!,
-                    localItemList.get(i).skuCode!!,
-                    localItemList.get(i).styleCode!!,
-                    localItemList.get(i).subBrandCode!!,
-                    localItemList.get(i).subBrandID!!,
-                    "0.5",
-                    "KG",
-                    localItemList.get(i).yearID!!
+        try {
+            for (i in 0 until localItemList.size) {
+                orderItemList.add(
+                    OMNIOrderDetailX(
+                        selectedCurrency,
+                        localItemList.get(i).stylePrice!!,
+                        localItemList.get(i).brandCode!!,
+                        localItemList.get(i).brandID!!,
+                        deliveryType,
+                        localItemList.get(i).stylePrice!!,
+                        selectedCurrency,
+                        localItemList.get(i).quantity!!,
+                        "",
+                        "",
+                        localItemList.get(i).productGroupID!!,
+                        localItemList.get(i).productGroupName!!,
+                        localItemList.get(i).seasonID!!,
+                        localItemList.get(i).seasonName!!,
+                        localItemList.get(i).segamentationID!!,
+                        localItemList.get(i).skuCode!!,
+                        localItemList.get(i).styleCode!!,
+                        localItemList.get(i).subBrandCode!!,
+                        localItemList.get(i).subBrandID!!,
+                        "0.5",
+                        "KG",
+                        localItemList.get(i).yearID!!
+                    )
                 )
-            )
 
 
+            }
+        }catch (e: NullPointerException){
+            e.printStackTrace()
         }
-
         return orderItemList
     }
     fun omniScanItem(skuCode: String) {

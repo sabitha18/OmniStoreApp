@@ -24,7 +24,7 @@ class OmniDataSource @Inject constructor(
         skuCode: String,
         storeId: String,
         priceListId: String
-    ) = apiService.searchModelStyle(skuCode, "500")
+    ) = apiService.searchModelStyle(skuCode, "500","1","0")
 
     suspend fun getAllStockDetails(
         skuCode: String,
@@ -50,7 +50,7 @@ class OmniDataSource @Inject constructor(
 
     suspend fun searchModelStyle(
         model: String
-    )=apiService.searchModelStyle(model,"500")
+    )=apiService.searchModelStyle(model,"500","1","0")
 
     suspend fun getStoreEmployees(
         storeId: String
