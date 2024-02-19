@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:background="@color/white"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/five_dp"
+    android:paddingEnd="@dimen/five_dp"
+    android:paddingBottom="@dimen/five_dp">
+
+    <RelativeLayout
+        android:id="@+id/relProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/corner_radius"
+        android:paddingTop="@dimen/corner_radius"
+        android:paddingEnd="@dimen/corner_radius"
+        android:visibility="invisible">
+
+
+        <RelativeLayout
+            android:id="@+id/relImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/imgProduct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY" />
+
+            <com.github.demono.AutoScrollViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:visibility="visible" />
+
+            <com.armada.storeapp.ui.utils.ViewPagerIndicator.InstaDotView
+                android:id="@+id/viewPagerIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imgProduct"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/fifteen_dp"
+                android:visibility="gone"
+                app:dot_activeColor="@color/white"
+                app:dot_activeSize="@dimen/eight_dp"
+                app:dot_inactiveColor="@color/text_grey"
+                app:dot_inactiveSize="@dimen/seven_dp"
+                app:dot_margin="@dimen/seven_dp"
+                app:dot_mediumSize="@dimen/five_dp"
+                app:dot_smallSize="@dimen/five_dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/relImage"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/eight_dp"
+            android:layout_marginTop="@dimen/five_dp">
+
+            <TextView
+                android:id="@+id/txtCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/brown_text_color"
+                android:padding="@dimen/eight_dp"
+                android:text="@string/move_to_bag"
+                android:textAllCaps="true"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                style="@style/BlackText.Regular"/>
+
+            <TextView
+                android:id="@+id/txtSoldOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                android:padding="@dimen/eight_dp"
+                android:text="@string/sold_out"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                style="@style/BlackText.Regular"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/relPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relImage"
+            android:padding="@dimen/eight_dp">
+
+            <RelativeLayout
+                android:id="@+id/lnrPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/eight_dp"
+                android:paddingBottom="@dimen/eight_dp">
+
+                <TextView
+                    android:id="@+id/txtProductName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/eight_dp"
+                    android:layout_toStartOf="@+id/txtFinalPrice"
+                    android:ellipsize="end"
+                    android:gravity="start|center_vertical"
+                    android:maxLines="2"
+                    android:text=""
+                    style="@style/BlackText.Regular"/>
+
+                <TextView
+                    android:id="@+id/txtFinalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/eight_dp"
+                    android:gravity="end"
+                    android:text=""
+                    android:textColor="@color/brown_text_color"
+                    style="@style/BlackText.Regular" />
+
+                <TextView
+                    android:id="@+id/txtRegularPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtFinalPrice"
+                    android:layout_marginStart="@dimen/eight_dp"
+                    android:layout_toStartOf="@+id/txtDiscountPrice"
+                    android:text=""
+                    android:textColor="@color/regular_price"
+                    style="@style/BlackText.Regular"/>
+
+                <TextView
+                    android:id="@+id/txtDiscountPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtFinalPrice"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/five_dp"
+                    android:text=""
+                   style="@style/BlackText.Regular" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <ToggleButton
+            android:id="@+id/togWishlist"
+            android:layout_width="@dimen/twenty_five_dp"
+            android:layout_height="@dimen/twenty_five_dp"
+            android:layout_alignBottom="@+id/relImage"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/twenty_dp"
+            android:layout_marginBottom="@dimen/eight_dp"
+            android:background="@drawable/favourite_toggle_black"
+            android:checked="false"
+            android:textOff=""
+            android:textOn=""
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/thirty_dp"
+            android:layout_height="@dimen/thirty_dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="@dimen/fifteen_dp"
+            android:src="@drawable/ic_baseline_arrow_back_24" />
+
+        <ImageView
+            android:id="@+id/imgClose"
+            android:layout_width="@dimen/thirty_dp"
+            android:layout_height="@dimen/thirty_dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/fifteen_dp"
+            android:src="@drawable/ic_close" />
+
+        <RelativeLayout
+            android:id="@+id/relLoading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <ProgressBar
+                android:visibility="gone"
+                android:layout_width="@dimen/thirty_dp"
+                android:layout_height="@dimen/thirty_dp"
+                android:layout_centerInParent="true">
+
+
+            </ProgressBar>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/txtDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/eight_dp"
+        android:background="@drawable/rectangle_black"
+        android:gravity="center"
+        android:padding="@dimen/fifteen_dp"
+        android:text="@string/go_to_product"
+        style="@style/BlackText.Regular" />
+</LinearLayout>

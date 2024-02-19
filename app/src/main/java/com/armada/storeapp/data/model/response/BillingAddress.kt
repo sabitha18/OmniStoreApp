@@ -1,0 +1,32 @@
+package com.armada.storeapp.data.model.response
+
+data class BillingAddress(
+    val address_id: String,
+    val address_line_1: String,
+    val address_line_2: String,
+    val apartment_number: String,
+    val area: String,
+    val block: String,
+    val building_number: String,
+    val city: String,
+    val city_id: String,
+    val country: String,
+    val country_id: String,
+    val firstname: String,
+    val floor_number: String,
+    val house: String,
+    val house_name_number: String,
+    val is_default_billing: Int,
+    val is_default_shipping: Int,
+    val lastname: String,
+    val latitude: String,
+    val longitude: String,
+    val mobile_number: String,
+    val phone_code: String,
+    val postcode: String,
+    val region: String,
+    val region_id: Any,
+    val short_address: String,
+    val street: String,
+    val telephone: String
+)

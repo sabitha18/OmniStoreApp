@@ -1,0 +1,33 @@
+package com.armada.storeapp.data.model.response
+
+data class Data(
+    val app_device_model: String,
+    val app_device_token: String,
+    val app_device_type: String,
+    val app_os_version: String,
+    val app_user_country: String,
+    val app_user_lang: String,
+    val app_version: String,
+    val country: String,
+    val created_at: String,
+    val device_model: String,
+    val device_token: String,
+    val device_type: String,
+    val dob: String,
+    val email: String,
+    val firstname: String,
+    val gender: String,
+    val id: String,
+    val is_guest: Int,
+    val lastname: String,
+    val mobile_number: String,
+    val newsletter_subscription: Int,
+    val os_version: String,
+    val phone_code: String,
+    val prefix: String,
+    val profile_image: String,
+    val store_id: String,
+    val token: String,
+    val updated_at: String,
+    val website_id: String
+)

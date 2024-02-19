@@ -1,0 +1,135 @@
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbarDetailsPage"
+    style="@style/ToolBarStyle"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/abc_action_bar_default_height_material"
+    android:background="@null"
+    app:contentInsetLeft="0dp"
+    app:contentInsetStart="0dp"
+    app:contentInsetStartWithNavigation="0dp"
+    app:layout_collapseMode="pin"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    app:titleTextColor="@color/black">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       >
+
+        <RelativeLayout
+            android:id="@+id/relDetailToolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/relCheckoutBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imgToolbarImage"
+                android:layout_width="@dimen/forty_dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start|center_horizontal|center_vertical"
+                android:layout_marginStart="@dimen/five_dp"
+                android:layout_marginTop="@dimen/five_dp"
+                android:layout_marginEnd="@dimen/five_dp"
+                android:layout_marginBottom="@dimen/five_dp"
+                android:adjustViewBounds="true" />
+
+            <TextView
+                android:id="@+id/txtHead"
+                style="@style/BlackText.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/five_dp"
+                android:layout_marginEnd="8dp"
+                android:layout_toEndOf="@id/imgToolbarImage"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="2"
+                />
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/relCartImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginEnd="16dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imgCart"
+                android:layout_width="@dimen/twenty_five_dp"
+                android:layout_height="@dimen/twenty_five_dp"
+                android:src="@drawable/ic_cart_details"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtCartCount"
+                style="@style/White.Medium"
+                android:layout_width="@dimen/fifteen_dp"
+                android:layout_height="@dimen/fifteen_dp"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/count_badge"
+                android:gravity="center"
+                android:textSize="11sp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@+id/imgCart"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:id="@+id/relCheckoutBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginEnd="16dp"
+            android:background="@color/brown_text_color"
+            android:paddingStart="@dimen/seven_dp"
+            android:paddingEnd="@dimen/seven_dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/txtCheckoutBtn"
+                style="@style/White.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/thirty_dp"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="@string/checkout_text"
+                android:textAllCaps="true"
+                android:visibility="visible" />
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageViewShare"-->
+<!--        android:layout_width="25dp"-->
+<!--        android:layout_height="25dp"-->
+<!--        android:layout_gravity="right"-->
+<!--        android:layout_marginRight="24dp"-->
+<!--        android:src="@drawable/ic_share" />-->
+
+
+</androidx.appcompat.widget.Toolbar>

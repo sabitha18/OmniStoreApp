@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_grey" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_source_bin"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                style="@style/BlackText.Medium" />
+
+            <TextView
+                android:id="@+id/tv_item_code"
+                style="@style/BlackText.Medium"
+                android:layout_height="wrap_content"
+                android:layout_width="175dp" />
+
+            <Spinner
+                android:id="@+id/spinner_destination_bin"
+                style="@style/BlackText.Medium"
+                android:layout_height="wrap_content"
+                android:layout_width="240dp" />
+
+            <TextView
+                android:id="@+id/tv_total_qty"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                style="@style/BlackText.Medium" />
+
+            <EditText
+                android:id="@+id/edt_move_qty"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle_black"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:maxLength="4"
+                android:inputType="numberDecimal"
+                android:paddingBottom="8dp"
+                style="@style/BlackText.Medium" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

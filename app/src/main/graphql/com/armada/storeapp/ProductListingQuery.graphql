@@ -1,0 +1,204 @@
+query category(
+    $pageSize: Int!
+    $currentPage: Int!
+    $filter: ProductAttributeFilterInput!
+    $sort: ProductAttributeSortInput
+    $search:String!
+) {
+    products(
+        pageSize: $pageSize
+        currentPage: $currentPage
+        filter: $filter
+        sort: $sort
+        search:$search
+
+    ) {
+        aggregations {
+            __typename
+            attribute_code
+            count
+            label
+            options {
+                __typename
+                label
+                value
+                count
+                swatch_data
+                {
+                    value
+                    type
+                }
+            }
+        }
+        __typename
+        sort_fields {
+            __typename
+            default
+            options {
+                __typename
+                label
+                value
+            }
+        }
+        items {
+            __typename
+            id
+            name
+            stock_status
+            brand
+            price_range {
+                __typename
+                minimum_price {
+                    __typename
+                    regular_price {
+                        __typename
+                        value
+                        currency
+                    }
+                    final_price {
+                        __typename
+                        value
+                    }
+                    discount {
+                        __typename
+                        amount_off
+                    }
+                }
+            }
+            sku
+            small_image {
+                __typename
+                url
+            }
+            url_key
+            ... on ConfigurableProduct {
+                configurable_options {
+                    __typename
+                    attribute_code
+                    attribute_id
+                    id
+                    label
+                    values {
+                        __typename
+                        value_index
+                        label
+                        swatch_data {
+                            __typename
+                            value
+                            ... on ImageSwatchData {
+                                thumbnail
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        page_info {
+            __typename
+            total_pages
+        }
+        total_count
+    }
+}
+
+query category_list($id: String!) {
+    categoryList(filters: { ids: { in: [$id] } }) {
+        children_count
+        url_key
+        description
+        children {
+            id
+            level
+            name
+            path
+            url_path
+            url_key
+            product_count
+            image
+            children {
+                id
+                level
+                name
+                path
+                url_path
+                url_key
+                children {
+                    id
+                    level
+                    name
+                    path
+                    url_path
+                    url_key
+                }
+            }
+        }
+    }
+}
+
+query SearchQuery(
+    $search:String!
+) {
+    categories(
+        filters: {
+            name:{match:$search}
+        }
+    ) {
+        total_count
+        items {
+            id
+            level
+            name
+            path
+            product_count
+            url_path
+        }
+    }
+    products(
+        search:$search
+    ) {
+        items {
+            price_range {
+                minimum_price {
+                    regular_price {
+                        value
+                    }
+                    final_price {
+                        value
+                    }
+                }
+            }
+            name
+            sku
+            id
+            small_image {
+                url
+            }
+        }
+    }
+}
+
+query barcodeSearch(
+    $search: String!
+) {
+    products(search: $search) {
+        total_count
+        items {
+            price_range {
+                minimum_price {
+                    regular_price {
+                        value
+                    }
+                    final_price {
+                        value
+                    }
+                }
+            }
+            name
+            sku
+            id
+            small_image {
+                url
+            }
+        }
+    }
+}

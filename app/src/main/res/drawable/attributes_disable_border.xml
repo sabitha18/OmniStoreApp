@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+	>
+	<shape android:shape="rectangle">
+	<solid android:color="@color/transparent"/>
+		<stroke android:color="@color/white" android:width="@dimen/divider_line_height" />
+
+		&lt;!&ndash;<padding
+			android:bottom="@dimen/ten_dp"
+			android:left="@dimen/five_dp"
+			android:right="@dimen/five_dp"
+			android:top="@dimen/ten_dp" />&ndash;&gt;
+
+		<size
+			android:width="@dimen/forty_dp"
+			android:height="@dimen/forty_dp"/>
+	</shape>
+</inset>
+-->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <stroke
+        android:width="@dimen/one_dp"
+        android:color="@color/disabled_attribute_border_color" />
+
+    <size
+        android:width="@dimen/forty_dp"
+        android:height="@dimen/forty_dp" />
+
+    <padding
+        android:bottom="@dimen/ten_dp"
+        android:left="@dimen/five_dp"
+        android:right="@dimen/five_dp"
+        android:top="@dimen/ten_dp" />
+</shape>
+
+    <!--
+    <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+        <solid android:angle="270"
+            android:color="@color/stroke_color" />
+
+        &lt;!&ndash;<padding
+            android:bottom="@dimen/five_dp"
+            android:left="@dimen/five_dp"
+            android:right="@dimen/five_dp"
+            android:top="@dimen/five_dp" />&ndash;&gt;
+
+
+
+    </shape>-->

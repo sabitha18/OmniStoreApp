@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?><!--<inset xmlns:android="http://schemas.android.com/apk/res/android"
+	>
+	<shape android:shape="rectangle">
+	<solid android:color="@color/transparent"/>
+		<stroke android:color="@color/stroke_color" android:width="@dimen/divider_line_height" />
+
+		<padding
+			android:bottom="@dimen/ten_dp"
+			android:left="@dimen/seven_dp"
+			android:right="@dimen/seven_dp"
+			android:top="@dimen/ten_dp" />
+
+	</shape>
+</inset>-->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <stroke
+        android:width="@dimen/zero_point_five_dp"
+        android:color="@color/attribute_unsel_color" />
+
+
+    <size
+        android:width="@dimen/thirty_six_dp"
+        android:height="@dimen/thirty_six_dp" />
+
+
+    <!--<padding
+    android:bottom="@dimen/ten_dp"
+    android:left="@dimen/five_dp"
+    android:right="@dimen/five_dp"
+    android:top="@dimen/ten_dp" />-->
+</shape>
+

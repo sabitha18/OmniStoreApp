@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+          >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include
+                    android:id="@+id/toolbar1"
+                    layout="@layout/detail_toobar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageProduct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:scaleType="centerCrop"
+                    android:transitionName="imageproduct"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar1"
+                    tools:ignore="ContentDescription,UnusedAttribute" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMatchItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageProduct" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cvNoResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:background="@color/dim_off_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imageProduct">
+
+                    <TextView
+                        style="@style/BlackText.Regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="24dp"
+                        android:text="@string/no_products_to_show"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/bottomSheet"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:background="@color/trans_black"-->
+<!--        android:clickable="true"-->
+<!--        android:focusable="true"-->
+<!--        app:behavior_hideable="true"-->
+<!--        app:behavior_peekHeight="0dp"-->
+<!--        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@color/white"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtSelect"-->
+<!--                style="@style/BlackText.Regular"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="@dimen/twenty_dp"-->
+<!--                android:layout_marginTop="@dimen/fifteen_dp"-->
+<!--                android:gravity="start"-->
+<!--                android:text="@string/select_size_color"-->
+<!--                android:textAlignment="viewStart"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/txtClose"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtClose"-->
+<!--                style="@style/DarkGreyText.Regular"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginEnd="@dimen/twenty_dp"-->
+<!--                android:text="@string/done_caps"-->
+<!--                app:layout_constraintBottom_toBottomOf="@+id/txtSelect"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/txtSelect" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtAttribute1"-->
+<!--                style="@style/BlackText.Regular"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="@dimen/twenty_dp"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:gravity="start"-->
+<!--                android:text="@string/colour"-->
+<!--                android:textAlignment="viewStart"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/txtSelect" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtSizeGuideAttr1"-->
+<!--                style="@style/BlackText.Medium"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="@dimen/twenty_dp"-->
+<!--                android:layout_marginTop="@dimen/fifteen_dp"-->
+<!--                android:gravity="start"-->
+<!--                android:text="@string/size_guide"-->
+<!--                android:textAlignment="viewStart"-->
+<!--                android:textAllCaps="true"-->
+<!--                android:textColor="@color/brown_text_color"-->
+<!--                android:visibility="gone"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/txtSelect"-->
+<!--                tools:ignore="AllCaps" />-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/rvAttribute1"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="@dimen/twenty_dp"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/txtAttribute1" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtAttribute2"-->
+<!--                style="@style/BlackText.Regular"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="@dimen/twenty_dp"-->
+<!--                android:layout_marginTop="24dp"-->
+<!--                android:gravity="start"-->
+<!--                android:text="@string/size_colon"-->
+<!--                android:textAlignment="viewStart"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/tv_size_guide"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/rvAttribute1" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtSizeGuideAttr2"-->
+<!--                style="@style/BlackText.Medium"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="@dimen/twenty_dp"-->
+<!--                android:layout_marginTop="@dimen/eight_dp"-->
+<!--                android:gravity="start"-->
+<!--                android:text="@string/size_guide"-->
+<!--                android:textAlignment="viewStart"-->
+<!--                android:textAllCaps="true"-->
+<!--                android:textColor="@color/brown_text_color"-->
+<!--                android:visibility="gone"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/rvAttribute1"-->
+<!--                tools:ignore="AllCaps" />-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/rvAttribute2"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="@dimen/twenty_dp"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/txtAttribute2" />-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="@dimen/twenty_dp"-->
+<!--                android:layout_marginTop="@dimen/twenty_dp"-->
+<!--                android:layout_marginBottom="@dimen/twenty_dp"-->
+<!--                android:gravity="center"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/rvAttribute2">-->
+
+
+<!--                <androidx.appcompat.widget.AppCompatButton-->
+<!--                    android:id="@+id/btnAddToBagBottom"-->
+<!--                    style="@style/White.Medium"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:background="@color/dark_violet"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="@string/add_to_bag" />-->
+
+<!--                <androidx.appcompat.widget.AppCompatButton-->
+<!--                    android:id="@+id/txtOverlayBottom"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:background="@color/red"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="@string/add_to_bag"-->
+<!--                    android:textAllCaps="true"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="@dimen/DescriptionTextSize"-->
+<!--                    android:visibility="gone" />-->
+
+<!--                <androidx.appcompat.widget.AppCompatButton-->
+<!--                    android:id="@+id/txtOutOFStockBottom"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:background="@drawable/out_of_stock_bg"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="@string/out_stock"-->
+<!--                    android:textAllCaps="true"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="@dimen/DescriptionTextSize"-->
+<!--                    android:visibility="gone" />-->
+
+
+<!--                &lt;!&ndash;            <ImageView&ndash;&gt;-->
+<!--                &lt;!&ndash;                android:id="@+id/imgButtonBagBottom"&ndash;&gt;-->
+<!--                &lt;!&ndash;                android:layout_width="@dimen/twelve_dp"&ndash;&gt;-->
+<!--                &lt;!&ndash;                android:layout_height="@dimen/twelve_dp"&ndash;&gt;-->
+<!--                &lt;!&ndash;                android:layout_alignParentEnd="true"&ndash;&gt;-->
+<!--                &lt;!&ndash;                android:layout_centerInParent="true"&ndash;&gt;-->
+<!--                &lt;!&ndash;                android:layout_marginEnd="@dimen/thirty_dp"&ndash;&gt;-->
+<!--                &lt;!&ndash;                android:layout_marginBottom="@dimen/eight_dp"&ndash;&gt;-->
+<!--                &lt;!&ndash;                android:elevation="@dimen/five_dp"&ndash;&gt;-->
+<!--                &lt;!&ndash;                android:visibility="gone"&ndash;&gt;-->
+<!--                &lt;!&ndash;                android:src="@drawable/ic_cart_details"&ndash;&gt;-->
+<!--                &lt;!&ndash;                tools:ignore="ContentDescription"&ndash;&gt;-->
+<!--                &lt;!&ndash;                tools:targetApi="lollipop" />&ndash;&gt;-->
+<!--            </RelativeLayout>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_size_guide"-->
+<!--                style="@style/DarkGreyText.Regular"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/size_guide"-->
+<!--                android:visibility="gone"-->
+<!--                app:layout_constraintBottom_toBottomOf="@+id/txtAttribute2"-->
+<!--                app:layout_constraintEnd_toEndOf="@+id/txtClose" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_selected_color"-->
+<!--                style="@style/DarkGreyText.Regular"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="8dp"-->
+<!--                android:text="BEIGE"-->
+<!--                app:layout_constraintBottom_toBottomOf="@+id/txtAttribute1"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/txtAttribute1" />-->
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

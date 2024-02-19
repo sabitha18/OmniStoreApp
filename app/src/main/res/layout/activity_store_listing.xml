@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar_actionbar"
+        layout="@layout/toolbar_default" />
+
+    <View
+        android:id="@+id/viewDivider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/one_dp"
+        android:layout_below="@id/toolbar_actionbar"
+        android:background="@color/navigation_divider" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewDivider">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcyStoreListing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/lnrNoItems"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/fifteen_dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+        <ImageView
+            android:id="@+id/imgEmptyStore"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/hundred_eighty_dp"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/txtEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/thirty_dp"
+            android:gravity="center"
+            android:text="@string/no_stores"
+            android:textColor="@color/black"
+            android:textSize="@dimen/MenuFontSize" />
+
+        <TextView
+            android:id="@+id/txtNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/fifteen_dp"
+            android:layout_marginTop="@dimen/eight_dp"
+            android:layout_marginEnd="@dimen/fifteen_dp"
+            android:gravity="center"
+            android:lineSpacingExtra="3dp"
+            android:text="@string/no_stores_in_this_country"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+           style="@style/BlackText.Regular" />
+
+        <TextView
+            android:id="@+id/txtContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/twenty_dp"
+            android:background="@drawable/bg_button_empty"
+            android:gravity="center"
+            android:padding="@dimen/medium_margin"
+            android:text="@string/go_back"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            style="@style/BlackText.Regular"
+            android:textSize="14sp" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

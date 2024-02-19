@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="4dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="@dimen/thirty_dp"
+            android:layout_height="@dimen/thirty_dp"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:visibility="visible" />
+
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/cvImgBanner"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="1dp"-->
+<!--            android:clickable="true"-->
+<!--            android:background="@color/white">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imageViewProduct"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:adjustViewBounds="true"-->
+<!--                android:scaleType="fitXY"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                tools:srcCompat="@tools:sample/backgrounds/scenic" />-->
+
+<!--&lt;!&ndash;            <androidx.recyclerview.widget.RecyclerView&ndash;&gt;-->
+<!--&lt;!&ndash;                android:id="@+id/rcyColorSwatch"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="0dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_marginEnd="@dimen/five_dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                &ndash;&gt;-->
+<!--&lt;!&ndash;                android:nestedScrollingEnabled="false"&ndash;&gt;-->
+<!--&lt;!&ndash;                app:layout_constraintEnd_toEndOf="parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                app:layout_constraintTop_toBottomOf="@+id/imageViewProduct" />&ndash;&gt;-->
+
+<!--            &lt;!&ndash;    <TextView&ndash;&gt;-->
+<!--            &lt;!&ndash;        android:id="@+id/tv_no_of_colors"&ndash;&gt;-->
+<!--            &lt;!&ndash;        style="@style/BlackText.MediumBold"&ndash;&gt;-->
+<!--            &lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--            &lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--            &lt;!&ndash;        android:layout_marginTop="8dp"&ndash;&gt;-->
+<!--            &lt;!&ndash;        android:text="+3 COLORS"&ndash;&gt;-->
+<!--            &lt;!&ndash;        app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+<!--            &lt;!&ndash;        app:layout_constraintTop_toBottomOf="@+id/imageViewProduct" />&ndash;&gt;-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_item_name"-->
+<!--                style="@style/BlackText.Regular"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="4dp"-->
+<!--                app:layout_constraintEnd_toEndOf="@+id/toggleWishlist"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/rcyColorSwatch"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/tv_brand" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_discounted_price"-->
+<!--                style="@style/OpensSansBold.Medium"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:paddingRight="8dp"-->
+<!--                android:textSize="12sp"-->
+<!--                android:textColor="@color/brown_text_color"-->
+<!--                app:layout_constraintBottom_toBottomOf="@+id/tv_original_price"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/tv_original_price"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/tv_original_price" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_original_price"-->
+<!--                style="@style/OpensSansBold.Medium"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="4dp"-->
+<!--                android:layout_marginBottom="8dp"-->
+<!--                android:textSize="12sp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/tv_discounted_price"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/tv_item_name" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_brand"-->
+<!--                style="@style/GreyText.MediumBold"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="4dp"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/rcyColorSwatch"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/rcyColorSwatch" />-->
+
+<!--            <androidx.appcompat.widget.AppCompatToggleButton-->
+<!--                android:id="@+id/toggleWishlist"-->
+<!--                android:layout_width="25dp"-->
+<!--                android:layout_height="25dp"-->
+<!--                android:layout_marginEnd="4dp"-->
+<!--                android:background="@drawable/favourite_toggle_black"-->
+<!--                android:checked="false"-->
+<!--                android:textOff=""-->
+<!--                android:textOn=""-->
+<!--                android:visibility="gone"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/rcyColorSwatch" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtDiscount"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="8dp"-->
+<!--                android:visibility="gone"-->
+<!--                android:textSize="10sp"-->
+<!--                android:textColor="@color/brown_text_color"-->
+<!--                style="@style/OpensSansBold.Medium"-->
+<!--                app:layout_constraintBottom_toBottomOf="@+id/tv_original_price"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/tv_original_price" />-->
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        <ImageView
+            android:id="@+id/imgBanner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:visibility="visible" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAssociateProducts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgBanner"
+            android:layout_centerHorizontal="true"
+            android:layout_marginVertical="10dp"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/progressAssociateRvProduct"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rvAssociateProducts"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone" />
+
+        <com.armada.storeapp.ui.utils.video_view.VideoPlayerView
+            android:id="@+id/myVideo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:visibility="visible" />
+        <!--        app:muted="true"-->
+        <!--        app:loop="true"-->
+
+        <!--        app:showSpinner="false"-->
+        <!--        app:stopSystemAudio="false"-->
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDoubleProducts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

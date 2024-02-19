@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.armada.storeapp.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_picklist"
+            app:destination="@id/navigation_picklist" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_warehouse_pending_orders"
+            app:destination="@id/navigation_warehouse_pending_orders" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_bin_transfer"
+            app:destination="@id/navigation_bin_transfer" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_inventory"
+            app:destination="@id/navigation_inventory" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_stock_adjustment"
+            app:destination="@id/navigation_stock_adjustment" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_stock_return"
+            app:destination="@id/navigation_stock_return" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_select_stock_location"
+            app:destination="@id/navigation_select_stock_location" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_picklist"
+        android:name="com.armada.storeapp.ui.home.instore_transactions.picklist.PicklistFragment"
+        android:label="@string/picklist"
+        tools:layout="@layout/fragment_picklist">
+        <action
+            android:id="@+id/action_navigation_picklist_to_navigation_picklist_details"
+            app:destination="@id/navigation_picklist_details" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_picklist_details"
+        android:name="com.armada.storeapp.ui.home.instore_transactions.picklist.PicklistTransferFragment"
+        android:label="@string/picklist_transfer"
+        tools:layout="@layout/fragment_picklist_transfer">
+        <action
+            android:id="@+id/action_navigation_picklist_details_to_navigation_picklist"
+            app:destination="@id/navigation_picklist" />
+    </fragment>
+
+    <!--    <fragment-->
+    <!--        android:id="@+id/navigation_warehouse_login"-->
+    <!--        android:name="com.armada.storeapp.ui.shop_pick.warehouse_login.WarehouseLoginFragment"-->
+    <!--        android:label="@string/wms_login"-->
+    <!--        tools:layout="@layout/fragment_warehouse_login">-->
+    <!--        <action-->
+    <!--            android:id="@+id/action_navigation_warehouse_login_to_navigation_warehouse_pending_orders"-->
+    <!--            app:destination="@id/navigation_warehouse_pending_orders" />-->
+    <!--    </fragment>-->
+
+    <fragment
+        android:id="@+id/navigation_warehouse_pending_orders"
+        android:name="com.armada.storeapp.ui.home.others.online_requests.pending_orders.PendingOrdersListFragment"
+        android:label="@string/online_requests"
+        tools:layout="@layout/fragment_pending_orders_list">
+        <action
+            android:id="@+id/action_navigation_warehouse_pending_orders_to_navigation_scan_item"
+            app:destination="@id/navigation_scan_item" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_scan_item"
+        android:name="com.armada.storeapp.ui.home.others.online_requests.item_scan.ItemScanFragment"
+        android:label="@string/online_requests"
+        tools:layout="@layout/fragment_item_scan"></fragment>
+
+    <fragment
+        android:id="@+id/navigation_select_stock_location"
+        android:name="com.armada.storeapp.ui.home.warehouse_transactions.stock_receive.SelectStockLocationFragment"
+        android:label="@string/stock_receive"
+        tools:layout="@layout/fragment_select_stock_location">
+        <action
+            android:id="@+id/action_navigation_select_stock_location_to_navigation_add_stock_receipt"
+            app:destination="@id/navigation_add_stock_receipt" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_add_stock_receipt"
+        android:name="com.armada.storeapp.ui.home.warehouse_transactions.stock_receive.AddStockReceiptFragment"
+        android:label="@string/stock_receive"
+        tools:layout="@layout/fragment_add_stock_receipt"></fragment>
+
+    <fragment
+        android:id="@+id/navigation_create_picklist"
+        android:name="com.armada.storeapp.ui.home.instore_transactions.picklist.CreateManualPicklistFragment"
+        android:label="@string/create_picklist"
+        tools:layout="@layout/fragment_create_manual_picklist"></fragment>
+
+    <fragment
+        android:id="@+id/navigation_bin_transfer"
+        android:name="com.armada.storeapp.ui.home.instore_transactions.bin_transfer.BinTransferFragment"
+        android:label="@string/bin_transfer"
+        tools:layout="@layout/fragment_bin_transfer"></fragment>
+    <fragment
+        android:id="@+id/navigation_inventory"
+        android:name="com.armada.storeapp.ui.home.instore_transactions.inventory.InventoryFragment"
+        android:label="@string/inventory"
+        tools:layout="@layout/fragment_inventory"></fragment>
+
+    <fragment
+        android:id="@+id/navigation_item_search"
+        android:name="com.armada.storeapp.ui.home.others.item_search.ItemSearchFragment"
+        android:label="@string/item_search"
+        tools:layout="@layout/fragment_item_search"></fragment>
+
+    <fragment
+        android:id="@+id/navigation_stock_return"
+        android:name="com.armada.storeapp.ui.home.warehouse_transactions.stock_return.StockReturnFragment"
+        android:label="@string/stock_return"
+        tools:layout="@layout/fragment_stock_return"></fragment>
+
+    <fragment
+        android:id="@+id/navigation_stock_adjustment"
+        android:name="com.armada.storeapp.ui.home.warehouse_transactions.stock_adjustment.StockAdjustmentFragment"
+        android:label="@string/stock_adjustment"
+        tools:layout="@layout/fragment_stock_adjustment"></fragment>
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.armada.storeapp.ui.notifications.NotificationFragment"
+        android:label="@string/notifications"
+        tools:layout="@layout/fragment_notifications"></fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.armada.storeapp.ui.profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile"></fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_omni_scan_product"
+        android:name="com.armada.storeapp.ui.home.search_enquiry.OmniScanProductFragment"
+        android:label="@string/scan_product"
+        tools:layout="@layout/fragment_omni_scan_product"></fragment>
+
+    <fragment
+        android:id="@+id/navigation_omni_bag"
+        android:name="com.armada.storeapp.ui.home.search_enquiry.OmniChannelBagFragment"
+        android:label="@string/search_product"
+        tools:layout="@layout/fragment_omnichannel_search">
+        <action
+            android:id="@+id/action_navigation_omni_bag_to_navigation_omni_order_place"
+            app:destination="@id/navigation_omni_order_place" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_omni_order_place"
+        android:name="com.armada.storeapp.ui.home.search_enquiry.OmniOrderPlaceFragment"
+        android:label="@string/place_order"
+        tools:layout="@layout/fragment_omni_order_place"></fragment>
+
+    <fragment
+        android:id="@+id/navigation_omni_order_success"
+        android:name="com.armada.storeapp.ui.home.search_enquiry.OmniOrderSuccessFragment"
+        android:label="@string/order_success"
+        tools:layout="@layout/fragment_order_place_success"></fragment>
+
+    <fragment
+        android:id="@+id/navigation_orders"
+        android:name="com.armada.storeapp.ui.omni_orders.MyOmniOrdersFragment"
+        android:label="@string/my_orders"
+        tools:layout="@layout/fragment_my_omni_orders"></fragment>
+
+    <fragment
+        android:id="@+id/navigation_omni_store_pickup_orders"
+        android:name="com.armada.storeapp.ui.omni_orders.store_pickup_orders.ReceivedStorePickupOrdersFragment"
+        android:label="@string/store_pickup_orders"
+        tools:layout="@layout/fragment_received_storepickup_orders"></fragment>
+
+    <fragment
+        android:id="@+id/navigation_shipment_orders"
+        android:name="com.armada.storeapp.ui.omni_orders.shipments.ShipmentOrdersFragment"
+        android:label="@string/shipments"
+        tools:layout="@layout/fragment_shipments"></fragment>
+
+    <fragment
+        android:id="@+id/navigation_pending_omni_order_details"
+        android:name="com.armada.storeapp.ui.omni_orders.PendingOrderDetailsFragment"
+        android:label="@string/order_details_"
+        tools:layout="@layout/fragment_pending_order_details"></fragment>
+
+    <fragment
+        android:id="@+id/navigation_store_handover_omni_order_details"
+        android:name="com.armada.storeapp.ui.omni_orders.HandoverOrderDetailsFragment"
+        android:label="@string/order_details_"
+        tools:layout="@layout/fragment_handover_order_details"></fragment>
+
+    <fragment
+        android:id="@+id/navigation_completed_omni_order_details"
+        android:name="com.armada.storeapp.ui.omni_orders.CompletedOmniOrderDetailsFragment"
+        android:label="@string/order_details_"
+        tools:layout="@layout/fragment_completed_omni_order_details"></fragment>
+
+    <fragment
+        android:id="@+id/navigation_order_status_history"
+        android:name="com.armada.storeapp.ui.omni_orders.OrderStatusHistoryFragment"
+        android:label="@string/order_history"
+        tools:layout="@layout/fragment_order_history"/>
+</navigation>

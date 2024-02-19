@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txtSelect"
+        style="@style/BlackText.Regular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginHorizontal="@dimen/twenty_dp"
+        android:layout_marginTop="@dimen/fifteen_dp"
+        android:gravity="start"
+        android:text="@string/select"
+        android:textAlignment="viewStart" />
+
+    <TextView
+        android:id="@+id/txtClose"
+        style="@style/BlackText.Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/fifteen_dp"
+        android:layout_marginEnd="@dimen/twenty_dp"
+        android:text="@string/close_underline" />
+
+
+    <RelativeLayout
+        android:id="@+id/relAttributes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtSelect"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:id="@+id/linCustomOpt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/five_dp"
+            android:orientation="vertical" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="@dimen/thirty_dp"
+            android:layout_height="@dimen/thirty_dp"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/forty_dp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relAttributes"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/txtOverlay"
+            style="@style/BlackText.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="@dimen/twenty_dp"
+            android:layout_marginTop="@dimen/twenty_dp"
+            android:layout_marginBottom="@dimen/twenty_dp"
+            android:background="@drawable/bg_add_to_bag"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="@string/add_to_bag"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/txtAddBag"
+            style="@style/BlackText.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="@dimen/twenty_dp"
+            android:layout_marginTop="@dimen/twenty_dp"
+            android:layout_marginBottom="@dimen/twenty_dp"
+            android:background="@drawable/bg_add_to_bag"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="@string/add_to_bag"
+            android:textAllCaps="true"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/txtNotifyMe"
+            style="@style/BlackText.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="@dimen/twenty_dp"
+            android:layout_marginTop="@dimen/twenty_dp"
+            android:layout_marginBottom="@dimen/twenty_dp"
+            android:background="@drawable/out_of_stock_bg"
+            android:gravity="center"
+            android:text="@string/out_of_stock"
+            android:padding="8dp"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+
+    <include
+        android:id="@+id/toolbar_actionbar"
+        layout="@layout/detail_toobar" />
+
+    <View
+        android:id="@+id/viewDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/toolbar_actionbar"
+        android:background="@color/navigation_divider"
+        android:visibility="visible" />
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.armada.storeapp.ui.home.riva.riva_look_book.bag.BagActivityFragment"/>
+
+
+<!--    <com.armada.riva.Util.SimpleViewAnimator-->
+<!--        android:id="@+id/simpleViewCart"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:background="@color/trans_black"-->
+<!--        android:clickable="true"-->
+<!--        android:visibility="gone"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@color/transparent_color">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentBottom="true"-->
+<!--                android:background="@drawable/bg_bottom_popup"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginHorizontal="@dimen/_18sdp"-->
+<!--                    android:layout_marginTop="@dimen/forty_dp"-->
+<!--                    android:layout_marginBottom="@dimen/_15sdp"-->
+
+<!--                    >-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/txtNeedHelp"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/need_help_question"-->
+<!--                        android:textAlignment="viewStart"-->
+<!--                        android:textColor="@color/price_black_color"-->
+<!--                        android:textSize="@dimen/fifteen_text_size" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/txtClose"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_alignParentEnd="true"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        android:text="@string/close"-->
+<!--                        android:textAlignment="viewStart"-->
+<!--                        android:textAllCaps="true"-->
+<!--                        android:textColor="@color/price_black_color"-->
+<!--                        android:textSize="@dimen/SmallTextSize" />-->
+<!--                </RelativeLayout>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/txtContactNote"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginHorizontal="@dimen/_18sdp"-->
+<!--                    android:layout_marginBottom="@dimen/_15sdp"-->
+<!--                    android:text="@string/customer_care_note"-->
+<!--                    android:textAlignment="viewStart"-->
+<!--                    android:lineSpacingExtra="@dimen/_3sdp"-->
+<!--                   style="@style/BlackText.Regular" />-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/linMainContact"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="@dimen/_55sdp"-->
+<!--                    android:background="@color/white"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:weightSum="3">-->
+
+<!--                    <RelativeLayout-->
+<!--                        android:id="@+id/relContact"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_marginStart="@dimen/_18sdp"-->
+<!--                        android:layout_marginEnd="@dimen/eight_dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:background="@drawable/bg_curved_corner">-->
+
+<!--                        <LinearLayout-->
+<!--                            android:id="@+id/linPhone"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_centerInParent="true"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <ImageView-->
+<!--                                android:id="@+id/imgPhone"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="@dimen/twenty_dp"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:src="@drawable/ic_baseline_phone_24"-->
+<!--                                app:tint="@color/black" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/txtPhone"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_gravity="center_horizontal"-->
+<!--                                android:layout_marginTop="@dimen/five_dp"-->
+<!--                                android:text="@string/call"-->
+<!--                                style="@style/BlackText.Regular" />-->
+<!--                        </LinearLayout>-->
+<!--                    </RelativeLayout>-->
+
+<!--                    <RelativeLayout-->
+<!--                        android:id="@+id/relWhatsapp"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_marginStart="@dimen/eight_dp"-->
+<!--                        android:layout_marginEnd="@dimen/eight_dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:background="@drawable/bg_curved_corner">-->
+
+<!--                        <LinearLayout-->
+<!--                            android:id="@+id/linWhatsapp"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_centerInParent="true"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <ImageView-->
+<!--                                android:id="@+id/imgWhatsapp"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="@dimen/twenty_dp"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:src="@drawable/ic_baseline_phone_24"-->
+<!--                                app:tint="@color/black" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/txtWhatsapp"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:layout_marginTop="@dimen/five_dp"-->
+<!--                                android:text="@string/whatsapp"-->
+<!--                              style="@style/BlackText.Regular" />-->
+<!--                        </LinearLayout>-->
+<!--                    </RelativeLayout>-->
+
+<!--                    <RelativeLayout-->
+<!--                        android:id="@+id/relEmail"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_marginStart="@dimen/eight_dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:layout_marginEnd="@dimen/_18sdp"-->
+<!--                        android:background="@drawable/bg_curved_corner">-->
+
+<!--                        <LinearLayout-->
+<!--                            android:id="@+id/linEmail"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_centerInParent="true"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <ImageView-->
+<!--                                android:id="@+id/imgEmail"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="@dimen/twenty_dp"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:src="@drawable/ic_baseline_phone_24"-->
+<!--                                app:tint="@color/black" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/txtEmail"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:layout_marginTop="@dimen/five_dp"-->
+<!--                                android:text="@string/email_single"-->
+<!--                                style="@style/BlackText.Regular" />-->
+<!--                        </LinearLayout>-->
+<!--                    </RelativeLayout>-->
+<!--                </LinearLayout>-->
+
+
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/relFaq"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_marginTop="@dimen/thirty_five_dp"-->
+<!--                    android:background="@color/white"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:paddingTop="@dimen/medium_margin"-->
+<!--                    android:paddingEnd="@dimen/eight_dp"-->
+<!--                    android:paddingBottom="@dimen/medium_margin"-->
+<!--                    app:layout_constraintBottom_toTopOf="@+id/linAboveEmpty"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent">-->
+
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/txtFaq"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginStart="@dimen/_18sdp"-->
+<!--                        android:text="@string/freq_asked_questions"-->
+<!--                        style="@style/BlackText.Regular" />-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="@dimen/_11sdp"-->
+<!--                        android:layout_height="@dimen/_11sdp"-->
+<!--                        android:layout_alignParentEnd="true"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />-->
+<!--                </RelativeLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/linFaq"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="@dimen/divider_line_height"-->
+<!--                    android:background="@color/toolbar_divline"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    app:layout_constraintBottom_toTopOf="@+id/linEmpty"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent" />-->
+
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/relReturnExchange"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:background="@color/white"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:paddingTop="@dimen/medium_margin"-->
+<!--                    android:paddingEnd="@dimen/eight_dp"-->
+<!--                    android:paddingBottom="@dimen/medium_margin"-->
+<!--                    app:layout_constraintBottom_toTopOf="@+id/linAboveEmpty"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent">-->
+
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/txtReturns"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginStart="@dimen/_18sdp"-->
+<!--                        android:text="@string/refunds_returns"-->
+<!--                        style="@style/BlackText.Regular" />-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/imgNextHelp"-->
+<!--                        android:layout_width="@dimen/_11sdp"-->
+<!--                        android:layout_height="@dimen/_11sdp"-->
+<!--                        android:layout_alignParentEnd="true"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />-->
+<!--                </RelativeLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/linReturns"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="@dimen/divider_line_height"-->
+<!--                    android:background="@color/toolbar_divline"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    app:layout_constraintBottom_toTopOf="@+id/linEmpty"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent" />-->
+
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/relShipping"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:background="@color/white"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:paddingTop="@dimen/medium_margin"-->
+<!--                    android:paddingEnd="@dimen/eight_dp"-->
+<!--                    android:paddingBottom="@dimen/medium_margin"-->
+<!--                    app:layout_constraintBottom_toTopOf="@+id/linAboveEmpty"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent">-->
+
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/txtShipping"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginStart="@dimen/_18sdp"-->
+<!--                        android:text="@string/shipping_policy"-->
+<!--                        style="@style/BlackText.Regular" />-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="@dimen/_11sdp"-->
+<!--                        android:layout_height="@dimen/_11sdp"-->
+<!--                        android:layout_alignParentEnd="true"-->
+<!--                        android:layout_centerVertical="true"-->
+<!--                        android:src="@drawable/ic_baseline_keyboard_arrow_right_24" />-->
+<!--                </RelativeLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/linAboveEmpty"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="@dimen/divider_line_height"-->
+<!--                    android:background="@color/toolbar_divline"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    app:layout_constraintBottom_toTopOf="@+id/linEmpty"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent" />-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/linEmpty"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="@dimen/thirty_five_dp"-->
+<!--                    android:background="@color/white"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent" />-->
+<!--            </LinearLayout>-->
+<!--        </RelativeLayout>-->
+<!--    </com.armada.riva.Util.SimpleViewAnimator>-->
+
+</LinearLayout>

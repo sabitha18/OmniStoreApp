@@ -1,0 +1,1229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:focusableInTouchMode="true">
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+<!--    <androidx.core.widget.NestedScrollView-->
+<!--        android:id="@+id/nestedScrollView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="@dimen/sixty_five_dp"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <ToggleButton-->
+<!--                android:id="@+id/togWishlist"-->
+<!--                android:layout_width="@dimen/twelve_dp"-->
+<!--                android:layout_height="@dimen/twelve_dp"-->
+<!--                android:layout_centerInParent="true"-->
+<!--                android:background="@drawable/favourite_toggle_black"-->
+<!--                android:checked="false"-->
+<!--                android:textOff=""-->
+<!--                android:textOn=""-->
+<!--                android:visibility="gone"-->
+<!--                tools:ignore="ObsoleteLayoutParam" />-->
+
+<!--            <ProgressBar-->
+<!--                android:id="@+id/progressBarStatic"-->
+<!--                android:layout_width="@dimen/fifty_dp"-->
+<!--                android:layout_height="@dimen/fifty_dp"-->
+<!--                android:layout_gravity="center_horizontal"-->
+<!--                android:layout_margin="@dimen/fifteen_dp"-->
+<!--                android:indeterminateDrawable="@drawable/progress_dialog_icon_drawable_animation"-->
+<!--                android:visibility="gone" />-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@color/white">-->
+
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/relImage"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_marginBottom="@dimen/twenty_dp">-->
+
+
+<!--                    <androidx.viewpager.widget.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--                        android:id="@+id/pager"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:visibility="visible"-->
+<!--                        tools:ignore="RedundantNamespace" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/txtSale"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_alignParentEnd="true"-->
+<!--                        android:layout_alignParentBottom="true"-->
+<!--                        android:background="@color/sale_bg"-->
+<!--                        android:gravity="center"-->
+<!--                        android:paddingStart="@dimen/fifteen_dp"-->
+<!--                        android:paddingTop="@dimen/eight_dp"-->
+<!--                        android:paddingEnd="@dimen/fifteen_dp"-->
+<!--                        android:paddingBottom="@dimen/eight_dp"-->
+<!--                        android:textAllCaps="true"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="@dimen/SubTitleTextSize"-->
+<!--                        android:visibility="gone"-->
+<!--                        tools:text="Sale" />-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/imgRelated"-->
+<!--                        android:layout_width="@dimen/forty_dp"-->
+<!--                        android:layout_height="@dimen/forty_dp"-->
+<!--                        android:layout_alignParentBottom="true"-->
+<!--                        android:layout_marginStart="@dimen/twenty_dp"-->
+<!--                        android:layout_marginBottom="@dimen/twenty_dp"-->
+<!--                        android:padding="@dimen/five_dp"-->
+<!--                        tools:ignore="ContentDescription" />-->
+
+<!--                    <RelativeLayout-->
+<!--                        android:id="@+id/relIndicator"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_alignParentBottom="true"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:layout_marginBottom="@dimen/eight_dp"-->
+<!--                        android:paddingBottom="@dimen/seven_dp">-->
+
+
+<!--                        <com.armada.storeapp.ui.utils.ViewPagerIndicator.InstaDotView-->
+<!--                            android:id="@+id/viewPagerIndicator"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_alignParentBottom="true"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            app:dot_activeColor="@color/brown_text_color"-->
+<!--                            app:dot_activeSize="@dimen/seven_dp"-->
+<!--                            app:dot_inactiveColor="@color/white"-->
+<!--                            app:dot_inactiveSize="@dimen/six_dp"-->
+<!--                            app:dot_margin="@dimen/seven_dp"-->
+<!--                            app:dot_mediumSize="@dimen/five_dp"-->
+<!--                            app:dot_smallSize="@dimen/five_dp" />-->
+
+
+<!--                    </RelativeLayout>-->
+
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/txtDiscount"-->
+<!--                        style="@style/White.Medium"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_alignParentStart="true"-->
+<!--                        android:layout_marginTop="@dimen/eight_dp"-->
+<!--                        android:layout_marginEnd="@dimen/eight_dp"-->
+<!--                        android:background="@color/red"-->
+<!--                        android:gravity="center"-->
+<!--                        android:paddingStart="@dimen/eight_dp"-->
+<!--                        android:paddingTop="@dimen/five_dp"-->
+<!--                        android:paddingEnd="@dimen/eight_dp"-->
+<!--                        android:paddingBottom="@dimen/five_dp"-->
+<!--                        android:visibility="gone"-->
+<!--                        tools:text="20%\nOFF" />-->
+
+<!--                    <RelativeLayout-->
+<!--                        android:id="@+id/relSold"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="@dimen/thirty_dp"-->
+<!--                        android:layout_alignBottom="@+id/pager"-->
+<!--                        android:background="@color/black"-->
+<!--                        android:gravity="center"-->
+<!--                        android:paddingStart="@dimen/seven_dp"-->
+<!--                        android:paddingTop="@dimen/five_dp"-->
+<!--                        android:paddingEnd="@dimen/seven_dp"-->
+<!--                        android:paddingBottom="@dimen/five_dp"-->
+<!--                        android:visibility="gone">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txtSold"-->
+<!--                            style="@style/White.Large"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/sold_out" />-->
+
+<!--                    </RelativeLayout>-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/imageProduct"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_alignParentTop="true"-->
+<!--                        android:scaleType="centerCrop"-->
+<!--                        android:transitionName="imageproduct"-->
+<!--                        tools:ignore="ContentDescription,UnusedAttribute" />-->
+<!--                </RelativeLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <View-->
+<!--                        android:id="@+id/viewAboveWishList"-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="@dimen/abc_action_bar_default_height_material"-->
+<!--                        android:layout_marginBottom="@dimen/fifty_dp"-->
+<!--                        android:visibility="invisible" />-->
+
+<!--                    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--                        android:id="@+id/floating_wishlist"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginEnd="@dimen/twenty_dp"-->
+<!--                        android:layout_marginBottom="@dimen/eight_dp"-->
+<!--                        android:background="@color/white"-->
+<!--                        android:backgroundTint="@color/white"-->
+<!--                        android:contentDescription="@string/wishlist"-->
+<!--                        android:src="@drawable/heart_unsel"-->
+<!--                        android:visibility="gone"-->
+<!--                        app:borderWidth="0dp"-->
+<!--                        app:fabCustomSize="@dimen/_34sdp"-->
+<!--                        app:layout_anchorGravity="bottom|end"-->
+<!--                        tools:ignore="UnusedAttribute" />-->
+<!--                </LinearLayout>-->
+<!--            </RelativeLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/lnrMain"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@color/white"-->
+<!--                android:orientation="vertical"-->
+<!--                android:visibility="gone">-->
+
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/relVideo"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@color/white"-->
+<!--                    android:visibility="visible">-->
+
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="@dimen/eighteen_dp"-->
+<!--                        android:layout_height="@dimen/eighteen_dp"-->
+<!--                        android:layout_centerInParent="true"-->
+<!--                        android:layout_toStartOf="@+id/txtVideo"-->
+<!--                        android:src="@drawable/ic_video"-->
+<!--                        tools:ignore="ContentDescription" />-->
+
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/txtVideo"-->
+<!--                        style="@style/BlackText.Medium"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerInParent="true"-->
+<!--                        android:layout_marginStart="@dimen/five_dp"-->
+<!--                        android:layout_marginEnd="@dimen/five_dp"-->
+<!--                        android:text="@string/video"-->
+<!--                        android:textAllCaps="true"-->
+<!--                        tools:ignore="RelativeOverlap" />-->
+
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/viewDivLineVideo"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="1dp"-->
+<!--                        android:layout_alignParentBottom="true"-->
+<!--                        android:background="@color/navigation_divider"-->
+<!--                        android:orientation="horizontal" />-->
+
+<!--                </RelativeLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/lnrProductInfo"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:paddingStart="@dimen/eight_dp"-->
+<!--                    android:paddingEnd="@dimen/eight_dp">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txtProductName"-->
+<!--                            style="@style/BlackText.Medium"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:gravity="center"-->
+<!--                            android:textAlignment="center"-->
+<!--                            tools:text="gathered textured dress" />-->
+
+
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/relDiscount"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/eight_dp"-->
+<!--                        android:gravity="center"-->
+<!--                        android:orientation="horizontal">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txtPrice"-->
+<!--                            style="@style/BlackText.Medium"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="@dimen/five_dp"-->
+<!--                            android:gravity="center"-->
+<!--                            android:textAlignment="center"-->
+<!--                            android:textAllCaps="true"-->
+<!--                            android:textColor="@color/brown_text_color" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txtRegularPrice"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="@dimen/_3sdp"-->
+<!--                            android:textAllCaps="true"-->
+<!--                            android:textColor="@color/regular_price"-->
+<!--                            android:textSize="@dimen/DescriptionTextSize" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txtDiscountPrice"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="@dimen/_3sdp"-->
+<!--                            android:textAlignment="viewEnd"-->
+<!--                            android:textAllCaps="true"-->
+<!--                            android:textColor="@color/brown_text_color"-->
+<!--                            android:textSize="@dimen/DescriptionTextSize" />-->
+<!--                    </LinearLayout>-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/txtSku"-->
+<!--                        style="@style/GreyText.Medium"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/seven_dp"-->
+<!--                        android:gravity="center"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textAllCaps="true" />-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/relBanner"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/imgBanner"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:scaleType="fitXY"-->
+<!--                        tools:ignore="ContentDescription" />-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/linCustomOpt"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_marginBottom="@dimen/five_dp"-->
+<!--                    android:orientation="vertical" />-->
+
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/relAttribute"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:visibility="gone">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/linAttribute"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="@dimen/fifty_dp"-->
+<!--                        android:baselineAligned="false"-->
+<!--                        android:weightSum="2">-->
+
+<!--                        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                            android:id="@+id/clAttr1"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_weight="1">-->
+
+<!--                            <View-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="@dimen/divider_line_height"-->
+<!--                                android:background="@color/view_divider_color"-->
+<!--                                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                                app:layout_constraintStart_toStartOf="parent"-->
+<!--                                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/txtAttr1"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="@string/color"-->
+<!--                                android:textAlignment="center"-->
+<!--                                android:textAllCaps="true"-->
+<!--                                android:textColor="@color/primary_text_color"-->
+<!--                                android:textSize="@dimen/SmallTextSize"-->
+<!--                                app:layout_constraintBottom_toTopOf="@+id/linAttr1"-->
+<!--                                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                                app:layout_constraintStart_toStartOf="parent"-->
+<!--                                app:layout_constraintTop_toTopOf="parent"-->
+<!--                                app:layout_constraintVertical_chainStyle="packed" />-->
+
+<!--                            <LinearLayout-->
+<!--                                android:id="@+id/linAttr1"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:orientation="horizontal"-->
+<!--                                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                                app:layout_constraintHorizontal_chainStyle="packed"-->
+<!--                                app:layout_constraintStart_toStartOf="@id/clAttr1"-->
+<!--                                app:layout_constraintTop_toBottomOf="@+id/txtAttr1"-->
+<!--                                app:layout_constraintVertical_chainStyle="packed">-->
+
+<!--                                <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                                    android:id="@+id/imgSwatch"-->
+<!--                                    android:layout_width="@dimen/twenty_five_dp"-->
+<!--                                    android:layout_height="@dimen/twenty_five_dp"-->
+<!--                                    android:layout_marginStart="@dimen/fifteen_dp"-->
+<!--                                    android:layout_marginEnd="@dimen/five_dp"-->
+<!--                                    android:background="@drawable/border_color_swatch"-->
+<!--                                    android:paddingTop="@dimen/five_dp"-->
+<!--                                    android:paddingBottom="@dimen/five_dp" />-->
+
+<!--                                <TextView-->
+<!--                                    android:id="@+id/txtSelectAttr1"-->
+<!--                                    style="@style/BlackText.Medium"-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginEnd="@dimen/subtitle_desc_margin"-->
+<!--                                    android:ellipsize="middle"-->
+<!--                                    android:singleLine="true"-->
+<!--                                    android:text="@string/select" />-->
+
+<!--                                <ImageView-->
+<!--                                    android:id="@+id/imgAttr1Arrow"-->
+<!--                                    android:layout_width="@dimen/fifteen_dp"-->
+<!--                                    android:layout_height="@dimen/eight_dp"-->
+<!--                                    android:layout_marginEnd="@dimen/fifteen_dp"-->
+<!--                                    android:rotation="90"-->
+<!--                                    android:src="@drawable/ic_baseline_arrow_forward_ios_28"-->
+<!--                                    android:tint="@color/black"-->
+<!--                                    tools:ignore="ContentDescription" />-->
+
+
+<!--                            </LinearLayout>-->
+
+<!--                            <View-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="1dp"-->
+<!--                                android:background="@color/navigation_divider"-->
+<!--                                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                                app:layout_constraintStart_toStartOf="parent" />-->
+<!--                        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--                        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                            android:id="@+id/clAttr2"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_weight="1">-->
+
+<!--                            <View-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="1dp"-->
+<!--                                android:background="@color/navigation_divider"-->
+<!--                                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                                app:layout_constraintStart_toStartOf="parent"-->
+<!--                                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/txtAttr2"-->
+<!--                                style="@style/BlackText.Medium"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginBottom="@dimen/five_dp"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="@string/size"-->
+<!--                                android:textAlignment="center"-->
+<!--                                android:textAllCaps="true"-->
+<!--                                app:layout_constraintBottom_toTopOf="@+id/linAttr2"-->
+<!--                                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                                app:layout_constraintStart_toStartOf="parent"-->
+<!--                                app:layout_constraintTop_toTopOf="parent"-->
+<!--                                app:layout_constraintVertical_chainStyle="packed" />-->
+
+<!--                            <LinearLayout-->
+<!--                                android:id="@+id/linAttr2"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                                app:layout_constraintEnd_toStartOf="@id/clAttr2"-->
+<!--                                app:layout_constraintHorizontal_chainStyle="packed"-->
+<!--                                app:layout_constraintStart_toStartOf="parent"-->
+<!--                                app:layout_constraintTop_toBottomOf="@+id/txtAttr2"-->
+<!--                                app:layout_constraintVertical_chainStyle="packed"-->
+<!--                                tools:ignore="UseCompoundDrawables">-->
+
+<!--                                <TextView-->
+<!--                                    android:id="@+id/txtSelectAttr2"-->
+<!--                                    style="@style/BlackText.Medium"-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_marginStart="@dimen/twenty_dp"-->
+<!--                                    android:layout_marginEnd="8dp"-->
+<!--                                    android:ellipsize="middle"-->
+<!--                                    android:singleLine="true"-->
+<!--                                    android:text="@string/select" />-->
+
+<!--                                <ImageView-->
+<!--                                    android:id="@+id/imgAttr2Arrow"-->
+<!--                                    style="@style/RotateArrowStyle"-->
+<!--                                    android:layout_width="@dimen/fifteen_dp"-->
+<!--                                    android:layout_height="@dimen/eight_dp"-->
+<!--                                    android:layout_marginTop="@dimen/_1sdp"-->
+<!--                                    android:layout_marginEnd="@dimen/fifteen_dp"-->
+<!--                                    android:src="@drawable/ic_arrow_black"-->
+<!--                                    tools:ignore="ContentDescription" />-->
+
+<!--                            </LinearLayout>-->
+
+<!--                            <View-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="1dp"-->
+<!--                                android:background="@color/navigation_divider"-->
+<!--                                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                                app:layout_constraintStart_toStartOf="parent" />-->
+<!--                        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                    <View-->
+<!--                        android:id="@+id/viewAttributeCenter"-->
+<!--                        android:layout_width="4dp"-->
+<!--                        android:layout_height="@dimen/twenty_five_dp"-->
+<!--                        android:layout_centerInParent="true"-->
+<!--                        android:background="@color/navigation_divider" />-->
+<!--                </RelativeLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/lnrShipping"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center_vertical"-->
+<!--                        android:layout_marginStart="@dimen/fifteen_dp"-->
+<!--                        android:layout_marginTop="@dimen/_4sdp"-->
+<!--                        android:layout_marginEnd="@dimen/fifteen_dp"-->
+<!--                        android:layout_marginBottom="@dimen/_4sdp"-->
+<!--                        android:gravity="center"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:visibility="gone">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="@dimen/thirty_five_dp"-->
+<!--                            android:layout_height="@dimen/thirty_five_dp"-->
+<!--                            android:layout_gravity="center_vertical"-->
+<!--                            android:background="@drawable/border_dark_circle"-->
+<!--                            android:scaleType="centerInside"-->
+<!--                            android:src="@drawable/ic_truck_details"-->
+<!--                            tools:ignore="ContentDescription" />-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="@dimen/eight_dp"-->
+<!--                            android:gravity="start|center_vertical"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/txtFreeShippingNote"-->
+<!--                                style="@style/BlackText.Medium"-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="start"-->
+<!--                                android:textAlignment="viewStart" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/txtFreeShipping"-->
+<!--                                style="@style/BlackText.Medium"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="start"-->
+<!--                                android:textAlignment="viewStart"-->
+<!--                                android:visibility="gone" />-->
+<!--                        </LinearLayout>-->
+<!--                    </LinearLayout>-->
+
+<!--                </LinearLayout>-->
+
+<!--                <View-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="1dp"-->
+<!--                    android:layout_marginTop="@dimen/eight_dp"-->
+<!--                    android:layout_marginBottom="@dimen/eight_dp"-->
+<!--                    android:background="@color/navigation_divider" />-->
+
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/lnrSize"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:visibility="visible">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="@dimen/fifteen_dp"-->
+<!--                        android:layout_marginTop="@dimen/_5sdp"-->
+<!--                        android:layout_marginEnd="@dimen/fifteen_dp"-->
+<!--                        android:layout_marginBottom="@dimen/fifteen_dp"-->
+<!--                        android:gravity="center"-->
+<!--                        android:orientation="horizontal">-->
+
+<!--                        <RelativeLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:gravity="center"-->
+<!--                            tools:ignore="UselessParent">-->
+
+
+<!--                            <Button-->
+<!--                                android:id="@+id/btnAddToBag"-->
+<!--                                style="@style/White.Medium"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_centerInParent="true"-->
+<!--                                android:background="@drawable/bg_add_to_bag"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="@string/add_to_bag"-->
+<!--                            " />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/txtOverlay"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_centerInParent="true"-->
+<!--                                android:background="@drawable/bg_add_to_bag"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="@string/add_to_bag"-->
+<!--                                android:textAllCaps="true"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:textSize="@dimen/DescriptionTextSize"-->
+<!--                                android:visibility="gone" />-->
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/txtOutOFStock"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_centerInParent="true"-->
+<!--                                android:background="@drawable/out_of_stock_bg"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="@string/out_stock"-->
+<!--                                android:textAllCaps="true"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:textSize="@dimen/DescriptionTextSize"-->
+<!--                                android:visibility="gone" />-->
+
+
+<!--                            <ImageView-->
+<!--                                android:id="@+id/imgButtonBag"-->
+<!--                                android:layout_width="@dimen/twenty_five_dp"-->
+<!--                                android:layout_height="@dimen/twenty_five_dp"-->
+<!--                                android:layout_alignParentEnd="true"-->
+<!--                                android:layout_centerInParent="true"-->
+<!--                                android:layout_marginEnd="@dimen/thirty_dp"-->
+<!--                                android:layout_marginBottom="@dimen/eight_dp"-->
+<!--                                android:elevation="@dimen/five_dp"-->
+<!--                                android:src="@drawable/ic_cart_details"-->
+<!--                                android:visibility="gone"-->
+<!--                                tools:ignore="ContentDescription"-->
+<!--                                tools:targetApi="lollipop" />-->
+<!--                        </RelativeLayout>-->
+<!--                    </LinearLayout>-->
+
+
+<!--                    <View-->
+<!--                        android:id="@+id/dummyView"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="1dp"-->
+<!--                        android:layout_alignParentBottom="true" />-->
+<!--                </RelativeLayout>-->
+
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/lnrProductDetails"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <View-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="1dp"-->
+<!--                        android:layout_marginBottom="@dimen/eight_dp"-->
+<!--                        android:background="@color/navigation_divider" />-->
+
+<!--                    <RelativeLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="@dimen/fifteen_dp"-->
+<!--                        android:layout_marginEnd="@dimen/fifteen_dp">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txtProductDetails"-->
+<!--                            style="@style/BlackText.Medium"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="@dimen/thirty_five_dp"-->
+<!--                            android:layout_alignParentStart="true"-->
+<!--                            android:layout_gravity="start"-->
+<!--                            android:gravity="start|center_vertical"-->
+<!--                            android:text="@string/product_details"-->
+<!--                            android:textAlignment="viewStart"-->
+<!--                            tools:ignore="RelativeOverlap" />-->
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/ivProductDetailsExp"-->
+<!--                            android:layout_width="@dimen/eight_dp"-->
+<!--                            android:layout_height="@dimen/eight_dp"-->
+<!--                            android:layout_alignTop="@+id/txtProductDetails"-->
+<!--                            android:layout_alignBottom="@+id/txtProductDetails"-->
+<!--                            android:layout_alignParentEnd="true"-->
+<!--                            android:src="@drawable/substract"-->
+<!--                            app:tint="@color/black"-->
+<!--                            tools:ignore="ContentDescription" />-->
+
+<!--                    </RelativeLayout>-->
+
+<!--                </LinearLayout>-->
+
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/lnrRelated"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="@dimen/twenty_dp"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:visibility="gone"-->
+<!--                    tools:ignore="TooManyViews">-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/txtRelated"-->
+<!--                        style="@style/BlackText.Medium"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:layout_marginStart="@dimen/eight_dp"-->
+<!--                        android:gravity="start"-->
+<!--                        android:text="@string/match_with"-->
+<!--                        android:textAlignment="viewStart" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/txtRelatedNote"-->
+<!--                        style="@style/BlackText.Medium"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:layout_marginStart="@dimen/eight_dp"-->
+<!--                        android:layout_marginTop="@dimen/eight_dp"-->
+<!--                        android:gravity="start"-->
+<!--                        android:text="@string/match"-->
+<!--                        android:textAlignment="viewStart" />-->
+
+<!--                    <androidx.recyclerview.widget.RecyclerView-->
+<!--                        android:id="@+id/rcyRelatedProducts"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/fifteen_dp"-->
+<!--                        android:clipToPadding="false"-->
+<!--                        android:nestedScrollingEnabled="false"-->
+<!--                        android:paddingStart="@dimen/fifteen_dp"-->
+<!--                        android:paddingEnd="@dimen/one_dp"-->
+<!--                        tools:ignore="UnusedAttribute" />-->
+
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="1dp"-->
+<!--                    android:layout_marginStart="@dimen/eight_dp"-->
+<!--                    android:layout_marginTop="@dimen/eight_dp"-->
+<!--                    android:layout_marginEnd="@dimen/eight_dp"-->
+<!--                    android:background="@color/navigation_divider"-->
+<!--                    android:visibility="invisible" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/likeNote"-->
+<!--                    style="@style/BlackText.Medium"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_horizontal"-->
+<!--                    android:layout_marginStart="@dimen/fifteen_dp"-->
+<!--                    android:layout_marginTop="@dimen/twenty_dp"-->
+<!--                    android:gravity="start"-->
+<!--                    android:text="@string/you_may_also_like"-->
+<!--                    android:textAlignment="viewStart"-->
+<!--                    android:visibility="gone" />-->
+
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/relLikeProducts"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_marginTop="@dimen/twenty_dp"-->
+<!--                    android:visibility="gone">-->
+
+
+<!--                    <androidx.viewpager2.widget.ViewPager2-->
+<!--                        android:id="@+id/pagerLikeProducts"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        tools:ignore="RedundantNamespace" />-->
+
+<!--                    <RelativeLayout-->
+<!--                        android:id="@+id/relIndicatorRelated"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_below="@id/pagerLikeProducts"-->
+<!--                        android:layout_alignParentBottom="true">-->
+
+<!--                        <com.armada.storeapp.ui.utils.ViewPagerIndicator.InstaDotView-->
+<!--                            android:id="@+id/viewPagerIndicatorRelated"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_alignParentBottom="true"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:paddingBottom="@dimen/fifteen_dp"-->
+<!--                            app:dot_activeColor="@color/text_grey"-->
+<!--                            app:dot_activeSize="@dimen/five_dp"-->
+<!--                            app:dot_inactiveColor="@color/red"-->
+<!--                            app:dot_inactiveSize="@dimen/five_dp"-->
+<!--                            app:dot_mediumSize="@dimen/five_dp"-->
+<!--                            app:dot_smallSize="@dimen/five_dp" />-->
+
+<!--                    </RelativeLayout>-->
+
+
+<!--                </RelativeLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/viewDivider"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="@dimen/eight_dp"-->
+<!--                    android:background="@color/navigation_divider"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:visibility="gone" />-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/lnrRecent"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="@dimen/fifteen_dp"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/txtRecentView"-->
+<!--                        style="@style/BlackText.Medium"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:layout_marginStart="@dimen/eight_dp"-->
+<!--                        android:gravity="start"-->
+<!--                        android:text="@string/recent_view"-->
+<!--                        android:textAlignment="viewStart" />-->
+
+
+<!--                    <androidx.recyclerview.widget.RecyclerView-->
+<!--                        android:id="@+id/rcyRecentView"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/fifteen_dp"-->
+<!--                        android:clipToPadding="false"-->
+<!--                        android:nestedScrollingEnabled="false"-->
+<!--                        android:paddingStart="@dimen/fifteen_dp"-->
+<!--                        android:paddingEnd="@dimen/one_dp"-->
+<!--                        tools:ignore="UnusedAttribute" />-->
+
+
+<!--                </LinearLayout>-->
+
+
+<!--            </LinearLayout>-->
+<!--        </LinearLayout>-->
+
+<!--    </androidx.core.widget.NestedScrollView>-->
+
+<!--    <include-->
+<!--        android:id="@+id/toolbar1"-->
+<!--        layout="@layout/toolbar_default" />-->
+
+<!--    <View-->
+<!--        android:id="@+id/view"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:visibility="gone" />-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/relNoResult"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_margin="@dimen/forty_dp"-->
+<!--        android:gravity="center"-->
+<!--        android:orientation="vertical"-->
+<!--        android:visibility="gone">-->
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/txtNoResult"-->
+<!--            style="@style/BlackText.Medium"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="@dimen/twenty_dp"-->
+<!--            android:gravity="center"-->
+<!--            android:text="@string/no_product" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/txtNote"-->
+<!--            style="@style/BlackText.Medium"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="@dimen/fifteen_dp"-->
+<!--            android:layout_marginTop="@dimen/eight_dp"-->
+<!--            android:layout_marginEnd="@dimen/fifteen_dp"-->
+<!--            android:gravity="center"-->
+<!--            android:lineSpacingExtra="3dp"-->
+<!--            android:text="@string/no_results"-->
+<!--            android:textAllCaps="false" />-->
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/txtContinue"-->
+<!--            style="@style/White.Medium"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="@dimen/twenty_dp"-->
+<!--            android:background="@color/black"-->
+<!--            android:gravity="center"-->
+<!--            android:padding="8dp"-->
+<!--            android:text="@string/start_shopping_now"-->
+<!--            android:textAllCaps="false" />-->
+
+
+<!--    </LinearLayout>-->
+
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/lnrSizeAnchor"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom"-->
+<!--        android:background="@color/white"-->
+<!--        android:orientation="vertical"-->
+<!--        android:visibility="invisible"-->
+<!--        app:layout_anchorGravity="bottom">-->
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/fifteen_dp"-->
+<!--            android:layout_marginTop="@dimen/eight_dp"-->
+<!--            android:layout_marginEnd="@dimen/fifteen_dp"-->
+<!--            android:layout_marginBottom="@dimen/twenty_dp"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:gravity="center"-->
+<!--                tools:ignore="UselessParent">-->
+
+
+<!--                <Button-->
+<!--                    android:id="@+id/btnAddToBagAnchor"-->
+<!--                    style="@style/White.Medium"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:background="@drawable/bg_add_to_bag"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="@string/add_to_bag" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/txtOverlayAnchor"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:background="@drawable/bg_add_to_bag"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="@string/add_to_bag"-->
+<!--                    android:textAllCaps="true"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="@dimen/DescriptionTextSize"-->
+<!--                    android:visibility="gone" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/txtOutOFStockAnchor"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:background="@drawable/out_of_stock_bg"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="@string/out_stock"-->
+<!--                    android:textAllCaps="true"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="@dimen/DescriptionTextSize"-->
+<!--                    android:visibility="gone" />-->
+
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/imgButtonBagAnchor"-->
+<!--                    android:layout_width="@dimen/twelve_dp"-->
+<!--                    android:layout_height="@dimen/twelve_dp"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:layout_marginEnd="@dimen/thirty_dp"-->
+<!--                    android:layout_marginBottom="@dimen/eight_dp"-->
+<!--                    android:elevation="@dimen/five_dp"-->
+<!--                    android:src="@drawable/ic_cart_details"-->
+<!--                    android:visibility="gone"-->
+<!--                    tools:ignore="ContentDescription,UnusedAttribute" />-->
+<!--            </RelativeLayout>-->
+<!--        </LinearLayout>-->
+
+<!--        <View-->
+<!--            android:id="@+id/viewAboveAnchor"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/forty_dp"-->
+<!--            android:background="@color/white" />-->
+
+<!--    </RelativeLayout>-->
+
+
+<!--    <ImageView-->
+<!--        android:id="@+id/ivBack"-->
+<!--        android:layout_width="@dimen/abc_action_bar_default_height_material"-->
+<!--        android:layout_height="@dimen/abc_action_bar_default_height_material"-->
+<!--        android:visibility="visible"-->
+<!--        tools:ignore="ContentDescription" />-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/bottomSheet"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:background="@color/trans_black"-->
+<!--        android:clickable="true"-->
+<!--        android:focusable="true"-->
+<!--        app:behavior_hideable="true"-->
+<!--        app:behavior_peekHeight="0dp"-->
+<!--        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@color/white"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtSelect"-->
+<!--                style="@style/BlackText.Medium"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="@dimen/twenty_dp"-->
+<!--                android:layout_marginTop="@dimen/fifteen_dp"-->
+<!--                android:gravity="start"-->
+<!--                android:text="@string/select"-->
+<!--                android:textAlignment="viewStart"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtClose"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginEnd="@dimen/twenty_dp"-->
+<!--                android:text="@string/close_underline"-->
+<!--                android:textColor="@color/tertiary_text"-->
+<!--                android:textSize="12sp"-->
+<!--                app:layout_constraintBottom_toBottomOf="@+id/txtSelect"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/txtSelect" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtAttribute1"-->
+<!--                style="@style/BlackText.Medium"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="@dimen/twenty_dp"-->
+<!--                android:layout_marginTop="@dimen/fifteen_dp"-->
+<!--                android:gravity="start"-->
+<!--                android:textAlignment="viewStart"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/txtSelect" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtSizeGuideAttr1"-->
+<!--                style="@style/BlackText.Medium"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="@dimen/twenty_dp"-->
+<!--                android:layout_marginTop="@dimen/fifteen_dp"-->
+<!--                android:gravity="start"-->
+<!--                android:text="@string/size_guide"-->
+<!--                android:textAlignment="viewStart"-->
+<!--                android:textAllCaps="true"-->
+<!--                android:textColor="@color/brown_text_color"-->
+<!--                android:visibility="gone"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/txtSelect"-->
+<!--                tools:ignore="AllCaps" />-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/rvAttribute1"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="@dimen/twenty_dp"-->
+<!--                android:layout_marginTop="@dimen/fifteen_dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/txtAttribute1" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtAttribute2"-->
+<!--                style="@style/BlackText.Medium"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="@dimen/twenty_dp"-->
+<!--                android:layout_marginTop="@dimen/eight_dp"-->
+<!--                android:gravity="start"-->
+<!--                android:textAlignment="viewStart"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/rvAttribute1" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtSizeGuideAttr2"-->
+<!--                style="@style/BlackText.Medium"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="@dimen/twenty_dp"-->
+<!--                android:layout_marginTop="@dimen/eight_dp"-->
+<!--                android:gravity="start"-->
+<!--                android:text="@string/size_guide"-->
+<!--                android:textAlignment="viewStart"-->
+<!--                android:textAllCaps="true"-->
+<!--                android:textColor="@color/brown_text_color"-->
+<!--                android:visibility="gone"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/rvAttribute1"-->
+<!--                tools:ignore="AllCaps" />-->
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/rvAttribute2"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="@dimen/twenty_dp"-->
+<!--                android:layout_marginTop="@dimen/eight_dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/txtAttribute2" />-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginHorizontal="@dimen/twenty_dp"-->
+<!--                android:layout_marginTop="@dimen/twenty_dp"-->
+<!--                android:layout_marginBottom="@dimen/twenty_dp"-->
+<!--                android:gravity="center"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/rvAttribute2">-->
+
+
+<!--                <Button-->
+<!--                    android:id="@+id/btnAddToBagBottom"-->
+<!--                    style="@style/White.Large"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:background="@color/black"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="@string/add_to_bag" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/txtOverlayBottom"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:background="@drawable/bg_add_to_bag"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="@string/add_to_bag"-->
+<!--                    android:textAllCaps="true"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="@dimen/DescriptionTextSize"-->
+<!--                    android:visibility="gone" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/txtOutOFStockBottom"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:background="@drawable/out_of_stock_bg"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="@string/out_stock"-->
+<!--                    android:textAllCaps="true"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="@dimen/DescriptionTextSize"-->
+<!--                    android:visibility="gone" />-->
+
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/imgButtonBagBottom"-->
+<!--                    android:layout_width="@dimen/twelve_dp"-->
+<!--                    android:layout_height="@dimen/twelve_dp"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:layout_marginEnd="@dimen/thirty_dp"-->
+<!--                    android:layout_marginBottom="@dimen/eight_dp"-->
+<!--                    android:elevation="@dimen/five_dp"-->
+<!--                    android:src="@drawable/ic_cart_details"-->
+<!--                    tools:ignore="ContentDescription"-->
+<!--                    tools:targetApi="lollipop" />-->
+<!--            </RelativeLayout>-->
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--</androidx.coordinatorlayout.widget.CoordinatorLayout>-->

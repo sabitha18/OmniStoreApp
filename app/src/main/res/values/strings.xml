@@ -1,0 +1,649 @@
+<resources>
+    <string name="app_name">Store App</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">Login failed</string>
+    <string name="login">Login</string>
+    <string name="empolyee_id">Employee ID</string>
+    <string name="store">Store</string>
+    <string name="app">App</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="store_app">Store App</string>
+
+    <string name="logout_message">Are you sure you want to logout ?</string>
+
+    <string name="picklist">Pick List</string>
+    <string name="bin_transfer">Bin Transfer</string>
+    <string name="stock_receive">Stock Receive</string>
+    <string name="order_request">Order Request</string>
+    <string name="item_inventory">Item Inventory</string>
+    <string name="bin_inventory">Bin Inventory</string>
+    <string name="message">MESSAGE</string>
+    <string name="ok">OK</string>
+    <string name="refresh">Refresh</string>
+    <string name="logout">Logout</string>
+    <string name="open">Open</string>
+    <string name="total_qty">Total Qty</string>
+    <string name="barcode">Barcode</string>
+    <string name="retail_selling_price">Retail Selling Price</string>
+    <string name="reserved">Reserved</string>
+    <string name="available_qty">Available Qty</string>
+    <string name="pending">Pending</string>
+    <string name="transfered">Transfered</string>
+    <string name="invoice_number">INVOICE NUMBER</string>
+    <string name="type">TYPE</string>
+    <string name="document_number">DOCUMENT NUMBER</string>
+    <string name="total_item">TOTAL ITEM</string>
+    <string name="active">Active</string>
+    <string name="status">Status</string>
+    <string name="source_bin">SOURCE BIN</string>
+    <string name="destination_bin">DESTINATION BIN</string>
+    <string name="item">ITEM</string>
+    <string name="quantity">QUANTITY</string>
+    <string name="store_code">STORE CODE</string>
+    <string name="transfer">Transfer</string>
+    <string name="picklist_transfer">PICK LIST TRANSFER</string>
+    <string name="enter_item">Enter item code or scan barcode</string>
+    <string name="confirm">Confirm</string>
+    <string name="retry">Retry</string>
+    <string name="verify_shipment">Verify your shipment</string>
+    <string name="scan_barcode">Scan Barcode</string>
+    <string name="shop_items">SHOP PICK</string>
+    <string name="instore_transaction">In-Store Transaction</string>
+    <string name="warehouse_transaction">Warehouse Transaction</string>
+    <string name="stock_adjustment">Stock Adjustment</string>
+    <string name="stock_return">Stock Return</string>
+    <string name="item_code">Item Code</string>
+
+    <string name="order_qty">Order Qty</string>
+    <string name="scanned_qty">Scan Qty</string>
+    <string name="remarks">Remarks</string>
+    <string name="order_no">Order No</string>
+    <string name="from_location">From Location</string>
+    <string name="wh_location">WH Location</string>
+    <string name="final_location_code">Final Location Code</string>
+    <string name="enter_barcode">Enter Item Barcode</string>
+    <string name="add">Add</string>
+    <string name="document_no">Document No</string>
+    <string name="date">Date</string>
+    <string name="no_records">No records found to show</string>
+    <string name="finish">Finish</string>
+    <string name="search">Search</string>
+    <string name="open_small_case">Open</string>
+    <string name="order_ref_no">Order Ref No</string>
+    <string name="user_id">User Id</string>
+    <string name="password">Password</string>
+    <string name="pick">Pick</string>
+    <string name="transfer_type">Transfer Type:</string>
+    <string name="from_location_colon">From Location</string>
+    <string name="to_location">To Location</string>
+    <string name="submit">Submit</string>
+    <string name="receive">RECEIVE</string>
+    <string name="id">ID</string>
+    <string name="ref_no">Ref No:</string>
+    <string name="to_location_">To Location</string>
+    <string name="qty">Qty</string>
+    <string name="rcvd_qty">Rcvd Qty</string>
+    <string name="s_no">S.No</string>
+    <string name="item_code_small">Item Code</string>
+    <string name="receipt_qty">Receipt Qty</string>
+    <string name="collection_qty">Collection Qty</string>
+    <string name="item_description">Item Description</string>
+    <string name="quantity_small">Quantity</string>
+    <string name="document_no_colon">Document No</string>
+    <string name="stock_receipts">Stock Receive</string>
+    <string name="add_stock">Add Stock</string>
+    <string name="wms_login">WMS Login</string>
+    <string name="enter_remarks">Enter your remarks here</string>
+    <string name="scan_shipment">Scan Shipment</string>
+    <string name="alert">ALERT</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
+    <string name="no_picklist_record">No Pick List Record Found !</string>
+    <string name="type_of_transfer">Type of Trans:</string>
+    <string name="scan_barcode_">Scan Barcode:</string>
+    <string name="remarks_">Remarks:</string>
+    <string name="priority_">Priority:</string>
+    <string name="delete">DELETE</string>
+    <string name="reserved_qty">Reserved Qty</string>
+    <string name="confirm_qty">Confirm Qty</string>
+    <string name="enter_bincode">Enter Bincode</string>
+    <string name="add_stock_return">Add Stock Return</string>
+    <string name="location_colon">Location:</string>
+    <string name="date_colon">Date:</string>
+    <string name="enter_style">Enter Model</string>
+    <string name="sku">SKU</string>
+    <string name="in_Stock">Instock</string>
+    <string name="count">Count</string>
+    <string name="diff">Diff</string>
+    <string name="tot_stock">Tot Stock</string>
+    <string name="tot_count">Tot Count</string>
+    <string name="tot_diff">Tot Diff</string>
+    <string name="sale_qty">Sale Qty</string>
+    <string name="source_bin_small">Source Bin</string>
+    <string name="destination_bin_small">Destination Bin</string>
+    <string name="s_bin">S.Bin</string>
+    <string name="item_small">Item</string>
+    <string name="d_bin">D.Bin</string>
+    <string name="enter_source_bin">Enter Source Bin</string>
+    <string name="enter_item_code">Enter Item Code</string>
+    <string name="enter_destination_bin">Enter Destination Bin</string>
+    <string name="skip">Skip</string>
+    <string name="r_qty">R.Qty</string>
+    <string name="c_qty">C.Qty</string>
+    <string name="from_location_small">Fr.Loc</string>
+    <string name="to_location_small">To Loc</string>
+    <string name="receipt_qty_total">Tot R.Qty</string>
+    <string name="tot_scanned_qty">Tot S.Qty</string>
+    <string name="tot_skipped_qty">Tot Skip.Qty</string>
+    <string name="total_scanned_qty">Tot Scan.Qty</string>
+    <string name="reason_caps">REASON</string>
+    <string name="select_reason">Select Reason</string>
+    <string name="cancel">Cancel</string>
+    <string name="process">Submit</string>
+    <string name="online_requests">Online Requests</string>
+    <string name="default_">Set to Default</string>
+    <string name="inventory">Inventory</string>
+    <string name="bincode">Bin code</string>
+    <string name="bincode_">Bincode</string>
+    <string name="skipped">SKIPPED</string>
+    <string name="item_search">Item Search</string>
+    <string name="qty_caps">QTY</string>
+    <string name="search_message">You can search Item by default. Please check the box to search bincode</string>
+    <string name="barcode_caps">Barcode</string>
+    <string name="from_date">From Date</string>
+    <string name="to_date">To Date</string>
+    <string name="cancel_caps">CANCEL</string>
+    <string name="create_picklist">Create Picklist</string>
+    <string name="model">Model</string>
+    <string name="move_qty">Move Qty</string>
+    <string name="scan_qty">Scan Qty:</string>
+    <string name="skip_qty">Skip Qty:</string>
+    <string name="bincode_small">Bincode</string>
+
+    <string name="enquiry_search">Enquiry Search</string>
+    <string name="instore_transcations">Instore Transactions</string>
+    <string name="wms_transactions">Warehouse Transactions</string>
+    <string name="other">Others</string>
+    <string name="scan_product">Scan Product</string>
+    <string name="search_product">Search Product</string>
+    <string name="home">Home</string>
+    <string name="my_orders">My Orders</string>
+    <string name="notifications">Notifications</string>
+    <string name="profile">Profile</string>
+    <string name="navigation_drawer_open">Open Drawer</string>
+    <string name="navigation_drawer_close">Close Drawer</string>
+    <string name="inv_no">Inv.No</string>
+    <string name="type_small">Type</string>
+    <string name="doc_no">Doc.No</string>
+    <string name="total_items">Total Items</string>
+    <string name="enter_the_details">Enter the Details</string>
+    <string name="source_bin_caps">Source Bin</string>
+    <string name="total_skip_qty">Total Skip Qty</string>
+    <string name="total_scan_qty">Total Scan Qty</string>
+    <string name="total_qty_">Total Qty</string>
+    <string name="default_bin">Default Bin</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="forgot_your_pswd">Forgot Your Password</string>
+    <string name="new_user">New User Create Account</string>
+    <string name="here">Here</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="name">Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="login_caps">LOGIN</string>
+    <string name="signup_caps">SIGN UP</string>
+    <string name="signup">Sign Up</string>
+    <string name="forgot_pswd">Forgot Password</string>
+    <string name="send_caps">SEND</string>
+    <string name="please_enter_email">Please enter your email address. You will receive a link to create a new password via email</string>
+    <string name="email">Email<font fgcolor="red">*</font></string>
+    <string name="have_sent_mail">We have sent a mail containing link to reset your password to</string>
+    <string name="riva">Riva</string>
+    <string name="riva_look_book">Riva Look Book</string>
+    <string name="category">Category</string>
+    <string name="error_unexpected_message">Unexpected Error</string>
+    <string name="products">Products</string>
+    <string name="sale_ends_in">SALE ENDS IN</string>
+    <string name="days">Days</string>
+    <string name="hours">Hours</string>
+    <string name="mins">Minutes</string>
+    <string name="seconds">Seconds</string>
+    <string name="new_badge">New</string>
+    <string name="account">ACCOUNT</string>
+    <string name="category_caps">CATEGORY</string>
+    <string name="home_caps">HOME</string>
+    <string name="bag">BAG</string>
+    <string name="filter">FILTER</string>
+    <string name="subcollection">Subcollection</string>
+
+    -----------------------------ALGOLA CATEGORIES----------------------------------
+
+    <string-array name="cat_images">
+        <item>https://image.flaticon.com/icons/png/512/941/941121.png</item>
+        <item>https://cdn3.iconfinder.com/data/icons/meanicons-base/512/meanicons_31-512.png</item>
+        <item>https://cdn.onlinewebfonts.com/svg/img_473372.png</item>
+        <item>https://cdn3.iconfinder.com/data/icons/meanicons-base/512/meanicons_31-512.png</item>
+        <item>https://getdrawings.com/images/baby-vest-drawing-4.png</item>
+        <item>https://cdn2.iconfinder.com/data/icons/squared-line-travel-and-transport/64/duty-free-bag-512.png</item>
+        <item>https://cdn0.iconfinder.com/data/icons/shoe/512/b85_16-512.png</item>
+        <item>https://cdn1.iconfinder.com/data/icons/ramadan-eid-mubarak/64/Islam_Moslem_Eid_Mubarak_Ramadan_Crescent_Moon__Star-512.png</item>
+        <item>https://cdn4.iconfinder.com/data/icons/rounded-set-1/512/Heart-512.png</item>
+        <item>https://cdn3.iconfinder.com/data/icons/meanicons-base/512/meanicons_31-512.png</item>
+        <item>https://cdn3.iconfinder.com/data/icons/meanicons-base/512/meanicons_31-512.png</item>
+        <item>https://cdn3.iconfinder.com/data/icons/meanicons-base/512/meanicons_31-512.png</item>
+    </string-array>
+
+    <string name="no_product">No products found</string>
+    <string name="no_results">You have no results for this criteria</string>
+    <!--    <string name="start_shopping_now">Continue Shopping</string>-->
+    <string name="count_items">Items</string>
+    <string name="select">Select</string>
+    <string name="close_underline">Close</string>
+    <string name="done_caps">DONE</string>
+    <string name="size_guide">SIZE GUIDE</string>
+    <string name="add_to_bag">ADD TO BAG</string>
+    <string name="out_stock">Out of stock</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="copyright">Copyright</string>
+    <string name="recent_view">Recently Viewed</string>
+    <string name="you_may_also_like">You may also like</string>
+    <string name="match">Match</string>
+    <string name="match_with">MATCH WITH</string>
+    <string name="sold_out">SOLDOUT</string>
+    <string name="wishlist">Wishlist</string>
+    <string name="video">Video</string>
+    <string name="size">Size</string>
+    <string name="product_details">DETAILS</string>
+    <string name="see_look">See Look</string>
+    <string name="color">Color</string>
+    <string name="sku_colon">SKU:</string>
+    <string name="of">of</string>
+    <string name="done">Done</string>
+    <string name="load_failed">Loading Failed</string>
+    <string name="retry_btn">Retry</string>
+    <string name="get_the_latest_news">Get the latest news</string>
+    <string name="subscribe">subscribe</string>
+    <string name="enter_your_email">Enter your mail</string>
+    <string name="checkout_text">CHECKOUT</string>
+    <string name="features">Features</string>
+    <string name="off">OFF</string>
+    <string name="notify_me">Notify Me</string>
+    <string name="please_select_string">Please select %1$s</string>
+    <string name="plz_chk_internet">Please check your internet connection</string>
+    <string name="error_dialog">Something went wrong.</string>
+    <string name="notify_success">Your request has been received. You will be notified once the product is available.</string>
+    <string name="select_size_color">Select Size/Colour</string>
+    <string name="colour">COLOUR:</string>
+    <string name="size_colon">SIZE:</string>
+    <string name="continue_shopping">Continue Shopping</string>
+    <string name="view_bag">View Bag</string>
+    <string name="product_added_successfully">Product added successfully</string>
+    <string name="complete_your_look">Complete your look</string>
+    <string name="editorials">Editorials</string>
+    <string name="search_caps">SEARCH</string>
+
+    <string name="sort_by">SORT BY</string>
+    <string name="recommended">Recommended</string>
+    <string name="price_low_to_high">Price: Low - High</string>
+    <string name="price_high_to_low">Price: High - Low</string>
+    <string name="newly_arrived">Newly Arrived</string>
+    <string name="clear">CLEAR</string>
+    <string name="price">PRICE</string>
+    <string name="noInternet">Please check your internet connection</string>
+    <string name="view_results">VIEW RESULTS</string>
+    <string name="availability">AVAILABILITY</string>
+    <string name="exclude_out_of_stock">Exclude out of stock</string>
+    <string name="what_looking_for">What are you looking for?</string>
+    <string name="scan">Scan</string>
+
+    <string name="no_stores">No stores</string>
+    <string name="no_stores_in_this_country">There are no stores in your country</string>
+    <string name="go_back">Go back</string>
+    <string name="call">Call</string>
+    <string name="km">Km</string>
+    <string name="our_stores_header">Our Store Locations</string>
+    <string name="our_stores">Our Stores</string>
+    <string name="scan_history">Scan History</string>
+    <string name="keyboard">Keyboard</string>
+    <string name="camera_ar">Camera</string>
+
+    <string name="place_the_barcode_within_the_window_to_scan_the_search_will_start_automatically">Place the barcode within the window to scan. The search will start automatically.</string>
+    <string name="barcode_not_found">We coudnt match any product with the supplied barcode.</string>
+    <string name="all_field_required">All Field Required</string>
+    <string name="no_result_found">No result found</string>
+
+    ///Ip Address api key
+    <string name="ip_add_key">8IZOgbbv8bgOWqQ</string>
+
+    <string name="no_scan_product">You have not scanned any product recently.</string>
+    <string name="scan_the_product_barcode">Scan the product barcode</string>
+    <string name="circular_bullet">-------------</string>
+    <string name="result_product">Results By Products</string>
+    <string name="recent_search">Recent Searches</string>
+
+    <string name="popular_search">Popular Searches</string>
+    <string name="result_category">Results By Category</string>
+    <string name="see_all"><u>See All Results</u></string>
+
+    ----------------------------CART--------------------------------
+    ----------------------------------------------------------------------
+    <string name="cart_total_top">Total: </string>
+    <string name="cart_sub_total_footer">Subtotal</string>
+    <string name="cart_shipping_charges_footer">Shipping Charges</string>
+    <string name="cart_grand_total_footer">TOTAL</string>
+
+    <string name="subtotal">Subtotal</string>
+    <string name="shipping">Shipping</string>
+    <string name="inclusive_of_vat">(Inclusive of all taxes)</string>
+    <!--    <string name="qty">Qty:</string>-->
+    <string name="qty_normal">Qty</string>
+
+    <string name="your_cart_is_empty">Your Shopping Bag is\ncurrently empty</string>
+    <string name="add_to_cart_note">Add products to the bag from our latest collection</string>
+    <string name="start_shopping_now">Continue Shopping</string>
+    <string name="start_shop">Start Shopping</string>
+    <string name="move_to_wishlist_alert">Are you sure you want to move this product to wishlist?</string>
+    <string name="out_of_stock_alert">Some of your products were unavailable so we moved them to wishlist.</string>
+    <string name="stock_note">Sorry! Looks like this item is out of stock.</string>
+    <string name="shopping_bag">BAG</string>
+    <string name="are_you_sure">Are you sure</string>
+    <string name="remove_from_bag">Are you sure you want to remove this item from your cart?</string>
+    <string name="no_more_qty">No More Quantity Available</string>
+    <string name="move_to_wishlist">Move to Wishlist</string>
+    <string name="remove">Remove</string>
+    <string name="color_colon">Color:</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="phone">Phone</string>
+    <string name="email_single">Email</string>
+    <string name="available_time">Available Time</string>
+    <string name="checkout">Checkout</string>
+    <string name="items">items</string>
+    <string name="email_address">EMAIL ADDRESS</string>
+    <string name="password_hint">PASSWORD</string>
+
+    <string name="add_pass">Please enter password.</string>
+    <string name="add_cnfrmpass">Please confirm password.</string>
+    <string name="please_enter_a_valid_e_mail_address_e_g_name_email_com">Please enter a valid e-mail address (e.g. name@email.com)</string>
+    <string name="pass_length">Password should be atleast 6 characters</string>
+
+    <string name="out_of_stock">OUT OF STOCK</string>
+    <string name="no_products_to_show">No products to show match with</string>
+    <string name="add_to_bag_small">Add To Bag</string>
+    <string name="view_bag_caps">VIEW BAG</string>
+
+
+    ----------------------------ADD ADDRESS--------------------------------
+    ----------------------------------------------------------------------
+
+    <string name="last_name_hint">Last name<font fgcolor="red">*</font></string>
+    <string name="first_name_add">First name<font fgcolor="red">*</font></string>
+    <string name="location_type">Location Type<font fgcolor="red">*</font></string>
+    <string name="location_type_hint">Location Type</string>
+    <string name="mobile_number">Mobile number<font fgcolor="red">*</font></string>
+    <string name="landline">Landline number</string>
+    <string name="zipcode">Zip/Postal code<font fgcolor="red">*</font></string>
+    <string name="state">State/Province<font fgcolor="red">*</font></string>
+    <string name="ship_to_this">Ship to this address</string>
+    <string name="mark_as_default">Default shipping address</string>
+    <string name="save_address">Save address</string>
+    <string name="save_addresses">Save addresses for a hassle-free checkout</string>
+    <string name="addresses">Addresses</string>
+    <string name="extra_directions">Extra directions for delivery</string>
+    <string name="notes">Shipping Notes</string>
+    <string name="street">Street <font fgcolor="red">*</font></string>
+    <string name="company">Company</string>
+    <string name="fax">Fax</string>
+    <string name="country">Country<font fgcolor="red">*</font></string>
+    <string name="city_note">City<font fgcolor="red">*</font></string>
+    <string name="country_note">Country</string>
+
+    <string name="region">State/Province</string>
+    <string name="zipcode_optional">Zip/Postal code</string>
+
+    <string-array name="location_type">
+        <item>Location type*</item>
+        <item>Residential House</item>
+        <item>Residential Flat</item>
+        <item>Business Office</item>
+    </string-array>
+
+    <string name="choose_destinateion">Choose your destination</string>
+    <string name="seleceet_destination">Search your destination</string>
+    <string name="confirm_address">Confirm Address</string>
+    <string name="deliver_to_this">Deliver to this address</string>
+    <string name="area">Area</string>
+    <string name="block1">Block<font fgcolor="red">*</font></string>
+    <string name="delivery_address_star">Delivery Address<font fgcolor="red">*</font></string>
+    <string name="apt_house_villa">Apartment/House/Villa Number<font fgcolor="red">*</font></string>
+    <string name="kuwait">Kuwait</string>
+    <string name="add_address">ADD ADDRESS</string>
+
+
+    <string name="add_first_name">Please enter first name</string>
+    <string name="add_last_name">Please enter last name</string>
+    <string name="add_region">Please enter region</string>
+    <string name="add_location">Please select location</string>
+    <string name="add_city">Please mention your city</string>
+    <string name="add_street">Please mention street </string>
+    <string name="add_postcode">Please enter postal code</string>
+    <string name="add_country">Please select your country</string>
+    <string name="enter_area">Please enter area</string>
+    <string name="enter_block">Please enter block</string>
+    <string name="enter_valid_street">Please enter a valid street</string>
+    <string name="enter_valid_delivery_address">Please enter valid delivery address</string>
+    <string name="enter_apt_villa_house_building">Please enter a apartment/ house/ villa number</string>
+    <string name="invalid_mobile">Please enter valid mobile number</string>
+    <string name="invalid_telephone">Please enter valid landline number</string>
+    <string name="set_as_default">Set as default</string>
+    <string name="add_address_success">Your address has been saved successfully</string>
+    <string name="edit_address_success">Your address has been updated successfully</string>
+    <string name="delete_address">Are you sure you want to delete this address?</string>
+    <string name="proceed">Proceed</string>
+    <string name="edit_add">Edit Address</string>
+    <string name="update_address">Update Address</string>
+    <string name="block1_nonmadate">Block</string>
+    <string name="confirm_order">CONFIRM ORDER</string>
+
+
+    ----------------------------CHECKOUT--------------------------------
+    ----------------------------------------------------------------------
+
+
+    <!--    <string name="shipping_charge">Shipping charges</string>-->
+    <string name="grand_total">Grand total</string>
+
+
+    <string name="place_order">Place order</string>
+    <string name="shipping_method">Shipping Method</string>
+    <string name="please_specify_shipping_address_to_see_available_options">Please specify shipping address to see available options.</string>
+    <string name="placed_on">Placed On</string>
+    <string name="change">Change</string>
+    <string name="discount_codes">Discount codes</string>
+    <string name="apply_coupon">Apply Coupon</string>
+    <string name="order_review">Order review</string>
+    <!--    <string name="checkout">Secure Checkout</string>-->
+    <string name="coupon_code">Coupon code</string>
+    <string name="enter_coupon_code">Enter discount coupon code</string>
+    <string name="vat">VAT</string>
+    <string name="free_shpinng_text"><font fgcolor="red">*</font>Free shipping above</string>
+    <string name="no_payment_metod">No Payment Information Required.</string>
+
+    <string name="cancel_transaction">Are you sure you want to exit checkout?</string>
+    <string name="please_shipping">Please specify shipping method</string>
+    <string name="please_change_shipping">Please change shipping address.</string>
+
+    //checkout
+    <string name="error_payment">Please select payment method.</string>
+    <string name="error_address">Please add address to continue.</string>
+    <string name="please_enter_phone">Please enter phone number.</string>
+    <string name="whatsapp_condition_error">Please allow whatapp to send your order updates</string>
+    <string name="credit_removed_successfully">Credit removed successfully</string>
+    <string name="credit_applied_successfully">Credit applied successfully</string>
+    <string name="use_riva_credit_string">Use Riva Credit</string>
+    <string name="remaining_balance_string">Remaining balance - (%1$s)</string>
+    <string name="btn_checkout">Checkout</string>
+    <string name="apply">APPLY</string>
+    <string name="free">FREE</string>
+    <string name="discount">DISCOUNT</string>
+    <string name="label_coupon">Coupon</string>
+    <string name="invalid_coupon_code">Invalid Coupon Code</string>
+    <string name="whatsapp_aggreement">I agree to receive Order updates on WhatsApp</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="address">Address</string>
+    <string name="store_delivery_note">Orders usually takes from three to five working days for Delivery</string>
+    <string name="total">TOTAL</string>
+    <string name="sub_total_caps">SUBTOTAL</string>
+    <string name="shipping_charge">SHIPPING CHARGE</string>
+    <string name="total_order">TOTAL ORDER</string>
+    <string name="address_caps">ADDRESS</string>
+    <string name="edit_caps">EDIT</string>
+    <string name="payment_caps">PAYMENT</string>
+    <string name="send_payment_link">Send payment link to customer</string>
+
+    <string name="add_discount_coupon">ADD DISCOUNT COUPON</string>
+    <string name="add_address_">+ ADD ADDRESS</string>
+    <string name="store_credit">STORE CREDIT</string>
+    <string name="complete_payment">Please complete payment before confirming order</string>
+
+    <string name="discount_">DISCOUNT</string>
+    <string name="used_points">USED POINTS</string>
+    <string name="order_placed">ORDER PLACED SUCCESSFULLY</string>
+    <string name="move_to_bag">Move to bag</string>
+    <string name="go_to_product">Go to product</string>
+    <string name="payment_link_sent">Payment link has been sent</string>
+    <string name="payment_success">Payment has received successfully</string>
+    <string name="resend">RESEND</string>
+    <string name="error_connecting_server">Error connecting to server</string>
+    <string name="tax">TAX</string>
+
+    <string name="store_pickup">Store Pickup</string>
+    <string name="home_delivery">Home Delivery</string>
+    <string name="enquire">Enquire</string>
+
+    <string name="store_name">Store Name</string>
+    <string name="status_">Status</string>
+
+    <string name="customer_name">Customer Name</string>
+    <string name="customer_code">Customer Code</string>
+    <string name="email_">E-mail</string>
+    <string name="mobile_number_">Mobile Number</string>
+    <string name="customer_details">Customer Details :</string>
+    <string name="shipping_details">Shipping Details :</string>
+    <string name="same_for_billing">Same for Billing</string>
+    <string name="country_">Country</string>
+    <string name="state_">State</string>
+    <string name="city">City</string>
+    <string name="block_street">Block and Street</string>
+    <string name="apartment_villa_no">Apartment/Villa/House No</string>
+    <string name="send_payment_link_">Send Payment Link</string>
+
+    <string name="enable_payments">Enable Payments</string>
+    <string name="cash_payment">Cash Payment</string>
+    <string name="card_payment">Card Payment</string>
+    <string name="approval_number">Approval Number</string>
+
+    <string name="next">Next</string>
+    <string name="total_price">Total Price</string>
+    <string name="view_all_items">View All Items</string>
+    <string name="search_customer">Search Customer Id or Email</string>
+    <string name="order_details">Order Details :</string>
+    <string name="location">Location</string>
+    <string name="place_order_">Place Order</string>
+
+
+    <string name="select_stores">Select Stores</string>
+    <string name="name_colon">Name :</string>
+    <string name="code_colon">Code :</string>
+    <string name="id_colon">ID :</string>
+    <string name="mobile_colon">Mobile :</string>
+    <string name="email_colon">Email :</string>
+
+    <string name="country_colon">Country :</string>
+    <string name="state_colon">State/Provision :</string>
+    <string name="city_colon">City :</string>
+    <string name="block_street_colon">Block &amp; Street :</string>
+    <string name="apartment_colon">Apart./House No :</string>
+
+    <string name="store_name_colon">Store Name :</string>
+    <string name="location_colon_">Location :</string>
+    <string name="status_colon">Status :</string>
+
+    <string name="store_pickup_details">Store Pickup Details</string>
+    <string name="pickup_date_colon">Pickup Date :</string>
+    <string name="pickup_time_colon">Pickup Time :</string>
+    <string name="select_pickup_date_and_time">Select Pickup Date and Time</string>
+
+    <string name="pickup_date">Pickup Date</string>
+    <string name="pickup_time">Pickup Time</string>
+
+    <string name="create_customer">Create Customer</string>
+    <string name="add_customer">Add Customer</string>
+    <string name="select_salesman">Select Salesman</string>
+    <string name="success">Success!</string>
+    <string name="order_will_be_delivered">Your order will be delivered soon. Thank you for using our app!</string>
+    <string name="go_to_homepage">Goto Homepage</string>
+
+    <string name="shipment_type">Shipment Type</string>
+    <string name="normal">Normal</string>
+    <string name="express">Express</string>
+    <string name="order_success">Order Success</string>
+
+    <string name="enter_city">Enter City</string>
+
+    <string name="select_store">STORE DETAILS</string>
+    <string name="place_order_caps">PLACE ORDER</string>
+    <string name="order_placed_pickup">Your order has been placed with Order ID. We are preparing your order to keep it ready for pickup</string>
+    <string name="article_number">Article Number</string>
+    <string name="from">From:</string>
+    <string name="ordered_qty">Ordered Qty:</string>
+    <string name="order_total">Order Total:</string>
+    <string name="to">To</string>
+    <string name="to_location_code">To Location Code:</string>
+    <string name="from_location_code">From Location Code:</string>
+
+    <string name="requested_orders">Requested Orders</string>
+    <string name="received_orders">Received Orders</string>
+    <string name="return_request_orders">Return Request Orders</string>
+    <string name="enquire_orders">Enquire Orders</string>
+    <string name="shipments">Shipments</string>
+    <string name="handover">Handover</string>
+    <string name="completed">Completed</string>
+    <string name="tap_to_scan">Tap to Scan</string>
+    <string name="store_pickup_orders">Store Pickup Orders</string>
+    
+    <string name="product_details_colon">Product Details :</string>
+    <string name="order_history">Order History</string>
+    <string name="order_details_colon">Order Details :</string>
+    <string name="order_status">Order Status :</string>
+    <string name="store_pickup_on">Store Pickup On</string>
+    <string name="print_invoice">Print Invoice</string>
+    <string name="order_details_">Order Details</string>
+
+    <string name="scan_to_change_order_status">Scan to change order status</string>
+    <string name="order_placed_by">Order Placed by :</string>
+    <string name="order_id">Order ID :</string>
+    <string name="store_pickup_details_colon">Store Pickup Details :</string>
+    <string name="save">Save</string>
+
+
+    <string name="no_orders_history">No Orders History Record Found !</string>
+    <string name="accept">Accept</string>
+    <string name="deliver">Deliver</string>
+    <string name="packing_completed">Packing Completed</string>
+
+
+</resources>

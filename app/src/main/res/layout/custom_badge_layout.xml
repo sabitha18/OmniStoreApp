@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtBadgeCount"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/eight_dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/badge_view"
+        android:gravity="center"
+        style="@style/BlackText.Regular"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+</FrameLayout>

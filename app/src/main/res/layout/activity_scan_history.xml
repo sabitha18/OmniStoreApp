@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <include
+        android:id="@+id/toolbar_actionbar"
+        layout="@layout/toolbar_default" />
+
+    <View
+        android:id="@+id/viewDivider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/one_dp"
+        android:background="@color/navigation_divider" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcyScanHistory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/eight_dp"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/eight_dp"
+        android:visibility="visible" />
+
+    <RelativeLayout
+        android:id="@+id/relNoResult"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/imgNoResult"
+            android:layout_width="@dimen/thirty_dp"
+            android:layout_height="@dimen/thirty_dp"
+            android:layout_above="@+id/txtNoResult"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/eight_dp"
+            android:src="@drawable/ic_baseline_history_24" />
+
+        <TextView
+            android:id="@+id/txtNoResult"
+            style="@style/BlackText.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/no_scan_product" />
+
+    </RelativeLayout>
+
+</LinearLayout>

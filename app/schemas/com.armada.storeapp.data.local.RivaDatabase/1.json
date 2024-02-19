@@ -1,0 +1,766 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "1294d6d5cfd23f504eeb4d12c128d719",
+    "entities": [
+      {
+        "tableName": "notifications",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `message` TEXT NOT NULL, `read` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "message",
+            "columnName": "message",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "read",
+            "columnName": "read",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "recentproducts",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `item_id` TEXT NOT NULL, `name` TEXT, `short_description` TEXT, `regular_price_with_tax` TEXT, `final_price_with_tax` TEXT, `is_saleable` TEXT, `image_url` TEXT, `sku` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "item_id",
+            "columnName": "item_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "short_description",
+            "columnName": "short_description",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "regular_price_with_tax",
+            "columnName": "regular_price_with_tax",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "final_price_with_tax",
+            "columnName": "final_price_with_tax",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "is_saleable",
+            "columnName": "is_saleable",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "image_url",
+            "columnName": "image_url",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sku",
+            "columnName": "sku",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "recentSearch",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `product_id` TEXT NOT NULL, `entity_id` TEXT, `name` TEXT, `image_url` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "product_id",
+            "columnName": "product_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "entity_id",
+            "columnName": "entity_id",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "image_url",
+            "columnName": "image_url",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "shoppingcart",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `item_id` TEXT NOT NULL, `entity_id` TEXT, `name` TEXT, `short_description` TEXT, `regular_price_with_tax` TEXT, `final_price_with_tax` TEXT, `is_saleable` TEXT, `image_url` TEXT, `quantity` INTEGER, `exclusive` TEXT, `category` TEXT, `video_id` TEXT, `remain_quantity` INTEGER, `enable_product` TEXT, `enable_index` TEXT, `celeb_id` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "item_id",
+            "columnName": "item_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "entity_id",
+            "columnName": "entity_id",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "short_description",
+            "columnName": "short_description",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "regular_price_with_tax",
+            "columnName": "regular_price_with_tax",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "final_price_with_tax",
+            "columnName": "final_price_with_tax",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "is_saleable",
+            "columnName": "is_saleable",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "image_url",
+            "columnName": "image_url",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "quantity",
+            "columnName": "quantity",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "exclusive",
+            "columnName": "exclusive",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "video_id",
+            "columnName": "video_id",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "remain_quantity",
+            "columnName": "remain_quantity",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "enable_product",
+            "columnName": "enable_product",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "enable_index",
+            "columnName": "enable_index",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "celeb_id",
+            "columnName": "celeb_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "timeline",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `group_id` TEXT NOT NULL, `timeline_id` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "group_id",
+            "columnName": "group_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timeline_id",
+            "columnName": "timeline_id",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "wishlist",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `item_id` TEXT NOT NULL, `entity_id` TEXT, `name` TEXT, `short_description` TEXT, `regular_price_with_tax` TEXT, `final_price_with_tax` TEXT, `is_saleable` TEXT, `image_url` TEXT, `sku` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "item_id",
+            "columnName": "item_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "entity_id",
+            "columnName": "entity_id",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "short_description",
+            "columnName": "short_description",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "regular_price_with_tax",
+            "columnName": "regular_price_with_tax",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "final_price_with_tax",
+            "columnName": "final_price_with_tax",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "is_saleable",
+            "columnName": "is_saleable",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "image_url",
+            "columnName": "image_url",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sku",
+            "columnName": "sku",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "omni_product",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`active` INTEGER NOT NULL, `afSegamationName` TEXT NOT NULL, `arabicSKU` TEXT NOT NULL, `armadaCollectionID` INTEGER NOT NULL, `barCode` TEXT NOT NULL, `barCodeID` INTEGER NOT NULL, `barCodeRunningNo` INTEGER NOT NULL, `brandCode` TEXT NOT NULL, `brandID` INTEGER NOT NULL, `collectionID` INTEGER NOT NULL, `colorID` INTEGER NOT NULL, `colorName` TEXT NOT NULL, `defaultPrice` INTEGER NOT NULL, `designID` INTEGER NOT NULL, `designerID` INTEGER NOT NULL, `divisionID` INTEGER NOT NULL, `exchangeRate` INTEGER NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `quantity` INTEGER NOT NULL, `isComboItem` INTEGER NOT NULL, `isCountrySync` INTEGER NOT NULL, `isHeaderItem` INTEGER NOT NULL, `isNonTrading` INTEGER NOT NULL, `isServerSync` INTEGER NOT NULL, `isStoreSync` INTEGER NOT NULL, `orderID` INTEGER NOT NULL, `productGroupID` INTEGER NOT NULL, `productGroupName` TEXT NOT NULL, `productLineID` INTEGER NOT NULL, `productSubGroupID` INTEGER NOT NULL, `promotionApplied` INTEGER NOT NULL, `purchaseCurrencyID` INTEGER NOT NULL, `purchasePrice` INTEGER NOT NULL, `purchasePriceListID` INTEGER NOT NULL, `rrpCurrencyID` INTEGER NOT NULL, `rrpPrice` INTEGER NOT NULL, `salePriceListID` INTEGER NOT NULL, `salesPrice` INTEGER NOT NULL, `salesPriceListID` INTEGER NOT NULL, `scaleDetailMasterID` INTEGER NOT NULL, `scaleID` INTEGER NOT NULL, `seasonID` INTEGER NOT NULL, `seasonName` TEXT NOT NULL, `segamentationID` INTEGER NOT NULL, `serialNo` INTEGER NOT NULL, `sizeID` INTEGER NOT NULL, `sizeName` TEXT NOT NULL, `skuCode` TEXT NOT NULL, `skuImage` TEXT NOT NULL, `skuImageSource` TEXT NOT NULL, `skuid` INTEGER NOT NULL, `stock` INTEGER NOT NULL, `styleCode` TEXT NOT NULL, `styleID` INTEGER NOT NULL, `stylePrice` REAL NOT NULL, `styleStatusID` INTEGER NOT NULL, `subBrandCode` TEXT NOT NULL, `subBrandID` INTEGER NOT NULL, `supplierBarcode` TEXT NOT NULL, `tag_Id` TEXT NOT NULL, `year` TEXT NOT NULL, `yearID` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "active",
+            "columnName": "active",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "afSegamationName",
+            "columnName": "afSegamationName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "arabicSKU",
+            "columnName": "arabicSKU",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "armadaCollectionID",
+            "columnName": "armadaCollectionID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "barCode",
+            "columnName": "barCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "barCodeID",
+            "columnName": "barCodeID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "barCodeRunningNo",
+            "columnName": "barCodeRunningNo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "brandCode",
+            "columnName": "brandCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "brandID",
+            "columnName": "brandID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "collectionID",
+            "columnName": "collectionID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "colorID",
+            "columnName": "colorID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "colorName",
+            "columnName": "colorName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "defaultPrice",
+            "columnName": "defaultPrice",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "designID",
+            "columnName": "designID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "designerID",
+            "columnName": "designerID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "divisionID",
+            "columnName": "divisionID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "exchangeRate",
+            "columnName": "exchangeRate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "quantity",
+            "columnName": "quantity",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isComboItem",
+            "columnName": "isComboItem",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isCountrySync",
+            "columnName": "isCountrySync",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isHeaderItem",
+            "columnName": "isHeaderItem",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isNonTrading",
+            "columnName": "isNonTrading",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isServerSync",
+            "columnName": "isServerSync",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isStoreSync",
+            "columnName": "isStoreSync",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "orderID",
+            "columnName": "orderID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "productGroupID",
+            "columnName": "productGroupID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "productGroupName",
+            "columnName": "productGroupName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "productLineID",
+            "columnName": "productLineID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "productSubGroupID",
+            "columnName": "productSubGroupID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "promotionApplied",
+            "columnName": "promotionApplied",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "purchaseCurrencyID",
+            "columnName": "purchaseCurrencyID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "purchasePrice",
+            "columnName": "purchasePrice",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "purchasePriceListID",
+            "columnName": "purchasePriceListID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rrpCurrencyID",
+            "columnName": "rrpCurrencyID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rrpPrice",
+            "columnName": "rrpPrice",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "salePriceListID",
+            "columnName": "salePriceListID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "salesPrice",
+            "columnName": "salesPrice",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "salesPriceListID",
+            "columnName": "salesPriceListID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "scaleDetailMasterID",
+            "columnName": "scaleDetailMasterID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "scaleID",
+            "columnName": "scaleID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "seasonID",
+            "columnName": "seasonID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "seasonName",
+            "columnName": "seasonName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "segamentationID",
+            "columnName": "segamentationID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "serialNo",
+            "columnName": "serialNo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sizeID",
+            "columnName": "sizeID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sizeName",
+            "columnName": "sizeName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "skuCode",
+            "columnName": "skuCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "skuImage",
+            "columnName": "skuImage",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "skuImageSource",
+            "columnName": "skuImageSource",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "skuid",
+            "columnName": "skuid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stock",
+            "columnName": "stock",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "styleCode",
+            "columnName": "styleCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "styleID",
+            "columnName": "styleID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stylePrice",
+            "columnName": "stylePrice",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "styleStatusID",
+            "columnName": "styleStatusID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subBrandCode",
+            "columnName": "subBrandCode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subBrandID",
+            "columnName": "subBrandID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "supplierBarcode",
+            "columnName": "supplierBarcode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tag_Id",
+            "columnName": "tag_Id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "year",
+            "columnName": "year",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "yearID",
+            "columnName": "yearID",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1294d6d5cfd23f504eeb4d12c128d719')"
+    ]
+  }
+}

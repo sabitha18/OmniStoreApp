@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.armada.storeapp">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" android:required="false" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" android:required="false" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" android:required="false"  />
+    <uses-permission android:name="android.permission.CAMERA" android:required="false" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"  android:required="false" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  android:required="false" />
+    <uses-permission android:name="android.permission.INTERNET"  android:required="false" />
+    <uses-permission android:name="android.permission.FLASHLIGHT"  android:required="false" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-feature android:name="android.hardware.camera"  android:required="false" />
+    <uses-feature android:name="android.hardware.telephony" android:required="false" />
+
+    <application
+        android:name=".StoreApp"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:enableOnBackInvokedCallback="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.home.riva.riva_look_book.RivaLookBookActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme_NoActionBar" />
+
+        <activity
+            android:name="com.armada.storeapp.ui.utils.mlkit_barcode_scan.CamActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
+
+        <activity
+            android:name="com.armada.storeapp.ui.home.riva.riva_look_book.products.product_details.ImageViewerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
+
+<!--        <activity-->
+<!--            android:name="com.armada.storeapp.ui.home.riva.riva_look_book.products.product_details.ProductDetailsActivity"-->
+<!--            android:exported="false"-->
+<!--            android:launchMode="standard"-->
+<!--            android:theme="@style/Theme.Design.NoActionBar" />-->
+
+        <activity
+            android:name="com.armada.storeapp.ui.home.riva.riva_look_book.products.product_details.OmniProductDetailsActivity"
+            android:exported="false"
+            android:launchMode="standard"
+            android:theme="@style/Theme.Design.NoActionBar" />
+
+        <activity
+            android:name="com.armada.storeapp.ui.home.riva.riva_look_book.product_listing.ProductFilterActivity"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:theme="@style/Theme.Design.NoActionBar" />
+
+        <activity
+            android:name="com.armada.storeapp.ui.home.riva.riva_look_book.omni_item_scan.OmniItemScannerActivity"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:theme="@style/Theme.Design.NoActionBar" />
+
+        <activity
+            android:name="com.armada.storeapp.ui.omni_orders.OrderItemScannerActivity"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:theme="@style/Theme.Design.NoActionBar" />
+
+        <activity
+            android:name="com.armada.storeapp.ui.home.riva.riva_look_book.omni_order_place.OrderPlaceActivity"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:windowSoftInputMode="adjustNothing"
+            android:theme="@style/Theme.Design.NoActionBar" />
+
+        <activity
+            android:name="com.armada.storeapp.ui.home.riva.riva_look_book.omni_order_place.OrderSuccessActivity"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:theme="@style/Theme.Design.NoActionBar" />
+
+        <activity
+            android:name="com.armada.storeapp.ui.home.riva.riva_look_book.bag.OmniBagActivity"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:theme="@style/Theme.Design.NoActionBar" />
+
+        <activity
+            android:name="com.armada.storeapp.ui.home.riva.riva_look_book.omni_order_place.select_store.SelectStoreActivity"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:theme="@style/Theme.Design.NoActionBar" />
+
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme_NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.home.riva.riva_look_book.search.BarcodeScanner.BarcodeScannerActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme_NoActionBar" />
+
+        <activity
+            android:name=".ui.home.riva.riva_look_book.search.Stores.StoreListingActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme_NoActionBar" />
+
+        <activity
+            android:name=".ui.home.riva.riva_look_book.search.BarcodeScanner.ScanHistoryActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme_NoActionBar" />
+
+        <activity
+            android:name=".ui.home.riva.riva_look_book.search.Stores.MapActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme_NoActionBar" />
+
+        <activity
+            android:name=".ui.home.riva.riva_look_book.products.product_details.SizeGuideActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme_NoActionBar" />
+
+        <activity
+            android:name=".ui.home.riva.riva_look_book.riva_login.RivaLoginActivity"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:theme="@style/AppTheme_NoActionBar" />
+
+        <activity
+            android:name=".ui.home.riva.riva_look_book.products.product_listing.match_with.MatchWithActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme_NoActionBar" />
+
+        <activity
+            android:name=".ui.home.riva.riva_look_book.checkout.CheckoutActivity"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:theme="@style/AppTheme_NoActionBar" />
+
+        <activity
+            android:name=".ui.home.riva.riva_look_book.checkout.address.AddAddressActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme_NoActionBar" />
+
+        <activity
+            android:name=".ui.home.riva.riva_look_book.bag.BagActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme_NoActionBar" />
+
+        <activity
+            android:name=".ui.home.riva.riva_look_book.select_country.SelectCountryActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme_NoActionBar" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDw9xeEJHsHCakw7VYXmzF1YXnKg_H6mE4" />
+
+    </application>
+
+</manifest>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/txtStoreName"
+        style="@style/OpensSansBold"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="Al Salem Mall"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/txtDistance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtDistance"
+        style="@style/BlackText.Regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/black_outlined_rectangle"
+        android:padding="@dimen/five_dp"
+        android:visibility="gone"
+        android:text="2002.00 km"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/imgArrow"
+        app:layout_constraintTop_toTopOf="@+id/txtStoreName" />
+
+    <ImageView
+        android:id="@+id/imgLocateStore"
+        android:layout_width="@dimen/fifteen_dp"
+        android:layout_height="@dimen/fifteen_dp"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_store"
+        app:layout_constraintStart_toStartOf="@+id/txtStoreName"
+        app:layout_constraintTop_toTopOf="@+id/txtLocation" />
+
+
+    <TextView
+        android:id="@+id/txtLocation"
+        style="@style/BlackText.Regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/imgLocateStore"
+        android:ellipsize="end"
+        android:text="d"
+        app:layout_constraintEnd_toEndOf="@+id/txtStoreName"
+        app:layout_constraintStart_toEndOf="@+id/imgLocateStore"
+        app:layout_constraintTop_toBottomOf="@+id/txtStoreName" />
+
+    <ImageView
+        android:id="@+id/imgPhone"
+        android:layout_width="@dimen/fifteen_dp"
+        android:layout_height="@dimen/fifteen_dp"
+        android:src="@drawable/ic_baseline_phone_24"
+        app:layout_constraintStart_toStartOf="@+id/imgLocateStore"
+        app:layout_constraintTop_toTopOf="@+id/txtPhone" />
+
+
+    <TextView
+        android:id="@+id/txtPhone"
+        style="@style/BlackText.Regular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/imgPhone"
+        android:text="ewew"
+        app:layout_constraintEnd_toEndOf="@+id/txtLocation"
+        app:layout_constraintStart_toEndOf="@+id/imgPhone"
+        app:layout_constraintTop_toBottomOf="@+id/txtLocation" />
+
+
+    <ImageView
+        android:id="@+id/imgArrow"
+        style="@style/RotateArrowStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+        app:layout_constraintBottom_toTopOf="@+id/div_line1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/div_line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/navigation_divider"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPhone" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/locationGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="imgLocateStore,txtLocation"
+/>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/phoneGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="imgPhone,txtPhone"
+        tools:visibility="visible"
+  />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

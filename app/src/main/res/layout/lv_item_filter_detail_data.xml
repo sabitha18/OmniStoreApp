@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/relMainHolder"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:padding="@dimen/eight_dp">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/txtTitle"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentStart="true"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:layout_toStartOf="@+id/imgTick"-->
+<!--            android:ellipsize="end"-->
+<!--            android:gravity="start"-->
+<!--            android:maxLines="1"-->
+<!--            android:paddingTop="@dimen/item_margin"-->
+<!--            android:paddingBottom="@dimen/item_margin"-->
+<!--            android:text=""-->
+<!--            android:textAlignment="viewStart"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="@dimen/SubTitleTextSize" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/imgTick"-->
+<!--            android:layout_width="@dimen/fifteen_dp"-->
+<!--            android:layout_height="@dimen/fifteen_dp"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:layout_marginStart="@dimen/five_dp"-->
+<!--            android:layout_marginEnd="@dimen/five_dp"-->
+<!--            android:src="@drawable/heart_unsel" />-->
+
+<!--    </RelativeLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="@dimen/zero_point_five_dp"-->
+<!--        android:layout_marginStart="@dimen/eight_dp"-->
+<!--        android:background="@color/primary_div_line" />-->
+</LinearLayout>

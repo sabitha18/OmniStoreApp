@@ -1,0 +1,333 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="AppTheme_NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorAccent">@color/dark_violet</item>
+        <item name="colorPrimary">@color/dark_violet</item>
+        <item name="colorPrimaryVariant">@color/dark_violet</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorControlActivated">@color/dark_violet</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/dark_violet</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="lollipop">?attr/colorPrimaryVariant
+        </item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorAccent">@color/dark_violet</item>
+        <item name="colorPrimary">@color/dark_violet</item>
+        <item name="colorPrimaryVariant">@color/dark_violet</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="colorControlActivated">@color/dark_violet</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/dark_violet</item>
+        <item name="colorSecondaryVariant">@color/dark_violet</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="lollipop">?attr/colorPrimaryVariant
+        </item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="toolbarStyle">@style/AppTheme.Toolbar</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+
+    <style name="VioletText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/dark_violet</item>
+    </style>
+
+    <style name="BlackText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="DarkGreyText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/dark_grey</item>
+    </style>
+
+    <style name="GreyText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/text_grey_light</item>
+    </style>
+
+    <style name="White" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="VioletText.Large">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/sathoshi_medium</item>
+    </style>
+
+    <style name="VioletText.Medium">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/sathoshi_medium</item>
+    </style>
+
+    <style name="BlackText.Large">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/sathoshi_medium</item>
+    </style>
+
+    <style name="BlackText.Medium">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/sathoshi_medium</item>
+    </style>
+
+    <style name="BlackText.Regular">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/open_sans_regular</item>
+    </style>
+
+    <style name="DarkGreyText.Regular">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/open_sans_regular</item>
+    </style>
+
+    <style name="DarkGreyText.Large">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/open_sans_regular</item>
+    </style>
+
+
+    <style name="BlackText.MediumBold">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/satoshi_bold</item>
+    </style>
+
+    <style name="BlackText.Small">
+        <item name="android:textSize">12sp</item>
+        <item name="fontFamily">@font/sathoshi_medium</item>
+    </style>
+
+    <style name="GreyText.Large">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/sathoshi_medium</item>
+    </style>
+
+    <style name="GreyText.Medium">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/sathoshi_medium</item>
+    </style>
+
+    <style name="GreyText.MediumBold">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/satoshi_bold</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <style name="White.Large">
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/sathoshi_medium</item>
+    </style>
+
+    <style name="White.Medium">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/sathoshi_medium</item>
+    </style>
+
+    <style name="OpensSansSemiBold" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/open_sans_semibold</item>
+    </style>
+
+    <style name="OpensSansSemiBold.Medium">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="OpensSansSemiBold.Large">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="OpensSansBold" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/open_sans_semibold</item>
+    </style>
+
+    <style name="OpensSansBold.Medium">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="OpensSansBold.Large">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="OpensSansBold.ExLarge">
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="AppTheme.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="titleTextColor">@android:color/white</item>
+    </style>
+    <!--    TextAppearance.Widget.TabWidget-->
+    <style name="MyTabLayoutTextAppearance" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="fontFamily">@font/sathoshi_medium</item>
+    </style>
+
+    <style name="checkbox" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorControlNormal">@color/yellow</item>
+    </style>
+
+    <style name="Theme.StoreApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.StoreApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="BottomNavigationViewText" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/sathoshi_medium</item>
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <style name="BottomNavigationView.Active" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/sathoshi_medium</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="RotateArrowStyle">
+        <item name="android:rotation">0</item>
+    </style>
+
+    <style name="ToolBarStyle" parent="">
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="TranslucentDialog" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorBackground">#99FFFFFF</item>
+    </style>
+
+    <declare-styleable name="RangeSeekBar">
+        <!-- the minimum of the range -->
+        <attr name="absoluteMinValue" format="integer|float" />
+
+        <!-- the maximum of the range -->
+        <attr name="absoluteMaxValue" format="integer|float" />
+
+        <!-- the step value -->
+        <attr name="step" format="integer|float" />
+
+        <!-- show a single slider -->
+        <attr name="singleThumb" format="boolean" />
+
+        <!-- show the labels on the right and left-->
+        <attr name="showLabels" format="boolean" />
+
+        <!-- alwaysActive will make the buttons and bar always draw as the activeColor (the default is false) -->
+        <attr name="alwaysActive" format="boolean" />
+
+        <!-- show the currently selected value above each thumb (defaults to true) -->
+        <attr name="valuesAboveThumbs" format="boolean" />
+
+        <!-- padding on either side on the slider -->
+        <attr name="internalPadding" format="dimension" />
+
+        <!-- the height of the bar -->
+        <attr name="barHeight" format="dimension" />
+
+        <!-- the color of the bar that is not selected -->
+        <attr name="defaultColor" format="color" />
+
+        <!-- the color of the bar that is selected -->
+        <attr name="activeColor" format="color" />
+
+        <!-- the color of the text above thumbs -->
+        <attr name="textAboveThumbsColor" format="color" />
+
+        <!-- set drawables for thumb handles -->
+        <attr name="thumbNormal" format="reference" />
+        <attr name="thumbPressed" format="reference" />
+        <attr name="thumbDisabled" format="reference" />
+
+        <!-- thumb shadow specifications -->
+        <attr name="thumbShadow" format="boolean" />
+        <attr name="thumbShadowColor" format="color" />
+        <attr name="thumbShadowXOffset" format="dimension" />
+        <attr name="thumbShadowYOffset" format="dimension" />
+        <attr name="thumbShadowBlur" format="dimension" />
+
+        <!-- to activate the thumbs and texts when the min and max values are the default ones (defaults to false) -->
+        <attr name="activateOnDefaultValues" format="boolean" />
+    </declare-styleable>
+
+    <style name="SliderTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Add attributes here -->
+        <item name="colorPrimary">@color/black</item>
+    </style>
+
+    <declare-styleable name="DialogFragmentNavigator">
+        <attr name="android:name" />
+    </declare-styleable>
+    <declare-styleable name="FragmentNavigator">
+        <attr name="android:name" />
+    </declare-styleable>
+    <declare-styleable name="FragmentNavigator_android_name">
+        <attr name="android:name" />
+    </declare-styleable>
+    <declare-styleable name="NavHostFragment">
+        <attr name="defaultNavHost" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SwipeRevealLayout">
+        <attr name="dragEdge">
+            <flag name="left" value="1" />
+            <flag name="right" value="2" />
+            <flag name="top" value="4" />
+            <flag name="bottom" value="8" />
+        </attr>
+
+        <attr name="mode">
+            <enum name="normal" value="0" />
+            <enum name="same_level" value="1" />
+        </attr>
+
+        <attr name="flingVelocity" format="integer" />
+
+        <attr name="minDistRequestDisallowParent" format="dimension" />
+    </declare-styleable>
+
+    <style name="EditTextStyleAddress">
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/text_grey</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="ThemeOverlay.SearchView" parent="">
+        <!-- Text color -->
+        <item name="android:editTextColor">@color/black</item>
+        <!-- Hint text color -->
+        <item name="android:textColorHint">@color/text_grey</item>
+        <item name="android:textSize">14sp</item>
+        <item name="searchIcon">@drawable/ic_search</item>
+        <item name="android:textColorPrimary">@color/black</item>
+    </style>
+
+    <style name="CalenderViewCustom" parent="Theme.AppCompat">
+        <item name="colorAccent">@color/red</item>
+        <item name="colorPrimary">@color/dark_violet</item>
+    </style>
+
+    <style name="CalenderViewDateCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/dark_violet</item>
+        <item name="android:weekNumberColor">@color/red</item>
+    </style>
+
+    <style name="CalenderViewWeekCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/dark_violet</item>
+    </style>
+</resources>

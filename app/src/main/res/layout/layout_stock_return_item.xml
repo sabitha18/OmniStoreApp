@@ -1,0 +1,61 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <!--    <HorizontalScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content">-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/delete" />
+
+        <TextView
+            android:id="@+id/tv_item_code"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:paddingLeft="4dp"
+            style="@style/BlackText.Medium" />
+
+        <TextView
+            android:id="@+id/tv_qty"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:gravity="center_horizontal"
+            style="@style/BlackText.Medium" />
+
+        <TextView
+            android:id="@+id/tv_bincode"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            style="@style/BlackText.Medium" />
+
+        <TextView
+            android:id="@+id/tv_barcode"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            style="@style/BlackText.Medium" />
+
+
+        <TextView
+            android:id="@+id/tv_available_qty"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            style="@style/BlackText.Medium" />
+    </LinearLayout>
+    <!--    </HorizontalScrollView>-->
+</layout>

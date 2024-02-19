@@ -1,0 +1,40 @@
+package com.armada.storeapp.data.model.response.payment_gatway_response
+
+import java.io.Serializable
+
+data class InvoiceResponseModel(
+    val amount: Double,
+    val api_version: String,
+    val charge: Charge,
+    val created: Long,
+    val currencies: List<String>,
+    val currency: String,
+    val customer: Customer,
+    val description: String,
+    val description_id: String,
+    val draft: Boolean,
+    val due: Long,
+    val expiry: Long,
+    val frequency: String,
+    val id: String,
+    val invoice_number: String,
+    val lang_code: String,
+    val live_mode: Boolean,
+    val merchant_id: String,
+    val metadata: Metadata,
+    val method: String,
+    val mode: String,
+    val note: String,
+    val notifications: Notifications,
+    val `object`: String,
+    val order: Order,
+    val payment_methods: List<String>,
+    val post: Post,
+    val redirect: Redirect,
+    val reference: Reference,
+    val savecard: Boolean,
+    val status: String,
+    val track: Track,
+    val updated: Long,
+    val url: String
+):Serializable

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <shape android:shape="rectangle">
+        <solid android:color="@color/transparent"/>
+        <padding android:right="@dimen/corner_radius"
+            android:top="@dimen/corner_radius"
+            android:bottom="@dimen/corner_radius"
+            android:left="@dimen/corner_radius"></padding>
+
+        <stroke android:color="@color/final_price" android:width="@dimen/corner_radius" />
+    </shape>
+</inset>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/riva_mobile_navigation"
+    app:startDestination="@+id/navigation_riva_home">
+
+    <fragment
+        android:id="@+id/navigation_riva_home"
+        android:name="com.armada.storeapp.ui.home.riva.riva_look_book.home.RivaHomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_riva_home">
+        <action
+            android:id="@+id/action_navigation_riva_home_to_navigation_editorial"
+            app:destination="@id/navigation_editorial" />
+        <action
+            android:id="@+id/action_navigation_riva_home_to_navigation_extended_category"
+            app:destination="@id/navigation_extended_category" />
+        <action
+            android:id="@+id/action_navigation_riva_home_to_navigation_product_listing"
+            app:destination="@id/navigation_product_listing" />
+        <action
+            android:id="@+id/action_navigation_riva_home_to_navigation_subcollection"
+            app:destination="@id/navigation_subcollection" />
+        <action
+            android:id="@+id/action_navigation_riva_home_to_navigation_category"
+            app:destination="@id/navigation_category" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_category"
+        android:name="com.armada.storeapp.ui.home.riva.riva_look_book.categories.CategoryFragment"
+        android:label="@string/category"
+        tools:layout="@layout/fragment_category" />
+
+    <fragment
+        android:id="@+id/navigation_subcollection"
+        android:name="com.armada.storeapp.ui.home.riva.riva_look_book.home.SubCollectionFragment"
+        android:label="@string/subcollection"
+        tools:layout="@layout/fragment_subcollection">
+        <action
+            android:id="@+id/action_navigation_subcollection_to_navigation_product_listing"
+            app:destination="@id/navigation_product_listing" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_editorial"
+        android:name="com.armada.storeapp.ui.home.riva.riva_look_book.home.EditorialFragment"
+        android:label="@string/editorials"
+        tools:layout="@layout/fragment_editorials">
+        <action
+            android:id="@+id/action_navigation_editorial_to_navigation_product_listing"
+            app:destination="@id/navigation_product_listing" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_extended_category"
+        android:name="com.armada.storeapp.ui.home.riva.riva_look_book.home.ExtendedCategoryFragment"
+        android:label="@string/category"
+        tools:layout="@layout/fragment_extended_category">
+        <action
+            android:id="@+id/action_navigation_extended_category_to_navigation_product_listing"
+            app:destination="@id/navigation_product_listing" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_subcategory"
+        android:name="com.armada.storeapp.ui.home.riva.riva_look_book.categories.SubCateogryFragment"
+        android:label="@string/category"
+        tools:layout="@layout/fragment_subcategory"></fragment>
+    <fragment
+        android:id="@+id/navigation_product_listing"
+        android:name="com.armada.storeapp.ui.home.riva.riva_look_book.products.product_listing.ProductListingFragment"
+        android:label="@string/products"
+        tools:layout="@layout/fragment_product_listing">
+        <action
+            android:id="@+id/action_navigation_product_listing_to_navigation_riva_home"
+            app:destination="@id/navigation_riva_home" />
+        <action
+            android:id="@+id/action_navigation_product_listing_to_navigation_subcollection"
+            app:destination="@id/navigation_subcollection" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.armada.storeapp.ui.home.riva.riva_look_book.search.SearchFragment"
+        android:label="@string/search"
+        tools:layout="@layout/fragment_search"></fragment>
+
+    <fragment
+        android:id="@+id/navigation_bag"
+        android:name="com.armada.storeapp.ui.home.riva.riva_look_book.bag.OmniBagFragment"
+        android:label="@string/bag"
+        tools:layout="@layout/fragment_bag"></fragment>
+
+    <fragment
+        android:id="@+id/navigation_riva_login"
+        android:name="com.armada.storeapp.ui.home.riva.riva_look_book.riva_login.RivaLoginFragment"
+        android:label="@string/login"
+        tools:layout="@layout/activity_riva_login"></fragment>
+</navigation>

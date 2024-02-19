@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dim_off_white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView9"
+                style="@style/BlackText.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/from_location_colon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView56" />
+
+
+            <TextView
+                android:id="@+id/textView10"
+                style="@style/BlackText.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/to_location"
+                app:layout_constraintStart_toStartOf="@+id/tv_from_location"
+                app:layout_constraintTop_toBottomOf="@+id/tv_from_location" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edt_user_remarks">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/dark_violet"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:text="@string/s_no"
+                            style="@style/White.Medium"
+                            android:gravity="center_horizontal" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/light_grey" />
+
+                        <TextView
+                            style="@style/White.Medium"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/urbanist_medium"
+                            android:layout_width="75dp"
+                            android:text="@string/barcode"
+                            android:gravity="center_horizontal" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/light_grey" />
+
+                        <TextView
+                            style="@style/White.Medium"
+                            android:layout_height="wrap_content"
+                            android:text="@string/item_code_small"
+                            android:layout_width="200dp"
+                            android:layout_marginLeft="8dp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/light_grey" />
+
+                        <TextView
+                            style="@style/White.Medium"
+                            android:layout_height="wrap_content"
+                            android:text="@string/r_qty"
+                            android:layout_width="50dp"
+                            android:gravity="center_horizontal" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/light_grey" />
+
+                        <TextView
+                            style="@style/White.Medium"
+                            android:layout_height="wrap_content"
+                            android:layout_width="50dp"
+                            android:text="@string/c_qty"
+                            android:gravity="center_horizontal" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/light_grey" />
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:gravity="center_horizontal"
+                            android:text="@string/qty"
+                            style="@style/White.Medium" />
+
+                        <!--                    <TextView-->
+                        <!--                        android:layout_width="250dp"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:fontFamily="@font/urbanist_medium"-->
+                        <!--                        android:padding="8dp"-->
+                        <!--                        android:text="@string/item_description"-->
+                        <!--                        android:textColor="@color/white"-->
+                        <!--                        android:textSize="14sp" />-->
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:background="@drawable/rectangle_grey"
+                        android:padding="1dp"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/tv_from_location"
+                style="@style/BlackText.Medium"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_marginTop="8dp"
+                android:text="--"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/white_rounded_rectangle"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView9"
+                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+            <TextView
+                android:id="@+id/tv_to_location"
+                style="@style/BlackText.Medium"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:text="--"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/white_rounded_rectangle"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_from_location"
+                app:layout_constraintStart_toStartOf="@+id/textView10"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+            <TextView
+                android:id="@+id/textView15"
+                style="@style/BlackText.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/document_no"
+                app:layout_constraintStart_toStartOf="@+id/textView9"
+                app:layout_constraintTop_toBottomOf="@+id/tv_to_location" />
+
+            <TextView
+                android:id="@+id/tv_ref_no"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/BlackText.Medium"
+                android:text="--"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/white_rounded_rectangle"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_to_location"
+                app:layout_constraintStart_toStartOf="@+id/textView15"
+                app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+            <LinearLayout
+                android:id="@+id/lv_item_code"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/white_rounded_rectangle"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView57"
+                app:layout_constraintTop_toBottomOf="@+id/textView57">
+
+                <EditText
+                    android:id="@+id/edt_item_code"
+                    style="@style/BlackText.Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:ems="10"
+                    android:maxLength="20"
+                    android:inputType="textCapCharacters"
+                    android:padding="8dp" />
+
+                <ImageView
+                    android:id="@+id/imageButtonBinSubmit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_baseline_keyboard_arrow_right_32" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_add_stock"
+                style="@style/White.Large"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/add_stock"
+                android:layout_width="200dp"
+                android:background="@drawable/yellow_rounded_rectangle"
+                android:textAppearance="@android:style/TextAppearance"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView3" />
+
+            <EditText
+                android:id="@+id/edt_user_remarks"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                style="@style/BlackText.Medium"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:maxLines="3"
+                android:inputType="text"
+                android:background="@drawable/white_rounded_rectangle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView58"
+                app:layout_constraintTop_toBottomOf="@+id/textView58" />
+
+            <TextView
+                android:id="@+id/textView20"
+                style="@style/BlackText.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/receipt_qty_total"
+                app:layout_constraintStart_toStartOf="@+id/tv_ref_no"
+                app:layout_constraintTop_toBottomOf="@+id/tv_ref_no" />
+
+            <TextView
+                android:id="@+id/tv_total_receipt_qty"
+                style="@style/BlackText.Medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/white_rounded_rectangle"
+                android:gravity="center_horizontal"
+                android:text="0"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/textView20"
+                app:layout_constraintStart_toStartOf="@+id/textView20"
+                app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+            <TextView
+                android:id="@+id/tv_total_scanned_qty"
+                style="@style/BlackText.Medium"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:text="0"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/white_rounded_rectangle"
+                android:gravity="center_horizontal"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/textView23"
+                app:layout_constraintStart_toStartOf="@+id/textView23"
+                app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:fontFamily="@font/urbanist_medium"
+                android:text="@string/tot_scanned_qty"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/textView20"
+                app:layout_constraintTop_toTopOf="@+id/textView20" />
+
+            <TextView
+                android:id="@+id/textView56"
+                style="@style/VioletText.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/enter_the_details"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView57"
+                style="@style/BlackText.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/item_code"
+                app:layout_constraintStart_toStartOf="@+id/textView15"
+                app:layout_constraintTop_toBottomOf="@+id/tv_total_receipt_qty" />
+
+            <TextView
+                android:id="@+id/textView58"
+                style="@style/BlackText.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/remarks"
+                app:layout_constraintStart_toStartOf="@+id/lv_item_code"
+                app:layout_constraintTop_toBottomOf="@+id/lv_item_code" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

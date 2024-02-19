@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/eight_dp">
+
+        <TextView
+            android:id="@+id/txtAlert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+           style="@style/BlackText.Large" />
+
+        <TextView
+            android:id="@+id/txtAlertMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fifteen_dp"
+            android:gravity="center"
+          style="@style/BlackText.Medium"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/twenty_dp">
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonAction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/five_dp"
+                android:layout_weight="1"
+                android:background="@color/brown_text_color"
+                android:textAllCaps="false"
+               style="@style/White.Medium" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnContinue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/five_dp"
+                android:layout_weight="1"
+                android:background="@color/light_grey"
+                android:textAllCaps="false"
+               style="@style/White.Medium" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

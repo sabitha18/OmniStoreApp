@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar_actionbar"
+        layout="@layout/toolbar_default" />
+
+    <View
+        android:id="@+id/viewDivider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/one_dp"
+        android:layout_below="@+id/toolbar_actionbar"
+        android:background="@color/navigation_divider" />
+
+    <RelativeLayout
+        android:id="@+id/relOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewDivider"
+        android:background="@color/bg_color"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/forty_dp"
+        android:paddingTop="@dimen/twenty_dp"
+        android:paddingEnd="@dimen/forty_dp"
+        android:paddingBottom="@dimen/twenty_dp">
+
+        <ImageView
+            android:id="@+id/imgCamera"
+            android:layout_width="@dimen/sixty_dp"
+            android:layout_height="@dimen/fifty_dp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/ic_baseline_camera_alt_32" />
+
+        <TextView
+            android:id="@+id/txtCamera"
+            style="@style/BlackText.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgCamera"
+            android:layout_alignParentStart="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:minWidth="@dimen/sixty_dp"
+            android:text="@string/camera_ar" />
+
+        <ImageView
+            android:id="@+id/imgKeyboard"
+            android:layout_width="@dimen/sixty_dp"
+            android:layout_height="@dimen/fifty_dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_baseline_keyboard_32" />
+
+        <TextView
+            android:id="@+id/txtKeyBoard"
+            style="@style/BlackText.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imgKeyboard"
+            android:layout_alignParentEnd="true"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:minWidth="@dimen/sixty_dp"
+            android:text="@string/keyboard" />
+    </RelativeLayout>
+
+    <io.codetail.widget.RevealFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relOption">
+
+        <!--        <RelativeLayout-->
+        <!--            android:id="@+id/rltBardCode"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:layout_below="@+id/relOption"-->
+        <!--            android:background="@color/bg_color"-->
+        <!--            android:visibility="visible">-->
+
+        <!--            <ImageView-->
+        <!--                android:id="@+id/imagBardcode"-->
+        <!--                android:layout_width="100dp"-->
+        <!--                android:layout_height="@dimen/seventy_dp"-->
+        <!--                android:layout_centerHorizontal="true"-->
+        <!--                android:layout_marginTop="@dimen/thirty_dp"-->
+        <!--                android:scaleType="fitXY"-->
+        <!--                android:src="@drawable/ic_bardcode_img"-->
+        <!--                android:visibility="gone" />-->
+
+        <!--            <EditText-->
+        <!--                android:id="@+id/edtBardcode"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_below="@+id/imagBardcode"-->
+        <!--                android:layout_centerHorizontal="true"-->
+        <!--                android:layout_marginTop="@dimen/thirty_dp"-->
+        <!--                android:background="@null"-->
+        <!--                android:backgroundTint="@null"-->
+        <!--                android:hint="@string/circular_bullet"-->
+        <!--                android:imeOptions="actionSearch"-->
+        <!--                android:inputType="numberDecimal"-->
+        <!--                android:letterSpacing="0.4"-->
+        <!--                android:maxLength="13"-->
+        <!--                android:textAlignment="center"-->
+        <!--               style="@style/BlackText.Regular"-->
+        <!--                android:textColorHint="@color/black"-->
+        <!--                android:textSize="16sp"-->
+        <!--                android:visibility="gone" />-->
+
+
+        <!--        </RelativeLayout>-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cv_keyboard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+
+            <ImageView
+                android:id="@+id/imagBardcode"
+                android:layout_width="100dp"
+                android:layout_height="@dimen/seventy_dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="32dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_bardcode_img"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imagBardcode">
+
+                <RadioButton
+                    android:id="@+id/radionBtnBarcode"
+                    style="@style/BlackText.Large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:buttonTint="@color/dark_violet"
+                    android:checked="true"
+                    android:text="@string/barcode" />
+
+                <RadioButton
+                    android:id="@+id/radioBtnArticleCode"
+                    style="@style/BlackText.Large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/dark_violet"
+                    android:text="@string/article_number" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup2">
+
+                <EditText
+                    android:id="@+id/edtBardcode"
+                    style="@style/BlackText.Large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:backgroundTint="@null"
+                    android:hint="_ _ _ _ _ _"
+                    android:textAlignment="center"
+                    android:inputType="numberDecimal"
+                    android:letterSpacing="0.4"
+                    android:maxLength="13" />
+
+
+                <LinearLayout
+                    android:id="@+id/lv_article"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/edt_article_no_part1"
+                        style="@style/BlackText.Large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:backgroundTint="@null"
+                        android:hint="_ _ _ _ _ _"
+                        android:textAlignment="center"
+                        android:inputType="numberDecimal"
+                        android:letterSpacing="0.4"
+                        android:maxLength="6" />
+
+                    <TextView
+                        style="@style/BlackText.Large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="-" />
+
+                    <EditText
+                        android:id="@+id/edt_article_no_part2"
+                        style="@style/BlackText.Large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:background="@null"
+                        android:backgroundTint="@null"
+                        android:hint="_ _ _ _ _ _"
+                        android:textAlignment="center"
+                        android:inputType="numberDecimal"
+                        android:letterSpacing="0.4"
+                        android:maxLength="5" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </io.codetail.widget.RevealFrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/relScanHistory"
+        android:layout_below="@+id/relOption"
+        android:visibility="visible" />
+
+    <!--dummy frame is used for reveal animation - when click on camera will animate this dummy layout-->
+    <FrameLayout
+        android:id="@+id/dummyFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/relScanHistory"
+        android:layout_below="@+id/relOption"
+        android:background="@color/bg_color"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/imgFlash"
+        android:layout_width="@dimen/thirty_dp"
+        android:layout_height="@dimen/thirty_dp"
+        android:layout_below="@+id/relOption"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/thirty_dp"
+        android:layout_marginEnd="@dimen/fifteen_dp"
+        android:src="@drawable/ic_flash_off"
+        android:visibility="visible" />
+
+    <RelativeLayout
+        android:id="@+id/relBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/relScanHistory"
+        android:background="@color/transparent"
+        android:gravity="center"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/imgBarcode"
+            android:layout_width="@dimen/thirty_dp"
+            android:layout_height="@dimen/thirty_dp"
+            android:layout_margin="@dimen/eight_dp"
+            android:src="@drawable/ic_scan_barcode"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/txtScanNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/imgBarcode"
+            android:padding="@dimen/eight_dp"
+            android:text="@string/place_the_barcode_within_the_window_to_scan_the_search_will_start_automatically"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/txtScanProductNote"
+            style="@style/BlackText.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/eight_dp"
+            android:layout_marginTop="@dimen/eight_dp"
+            android:layout_marginEnd="@dimen/eight_dp"
+            android:layout_marginBottom="@dimen/eight_dp"
+            android:background="@color/sixty_white"
+            android:gravity="center"
+            android:paddingStart="@dimen/eight_dp"
+            android:paddingEnd="@dimen/eight_dp"
+            android:text="@string/scan_the_product_barcode" />
+
+    </RelativeLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relScanHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/imgScanHistory"
+            android:layout_width="@dimen/twenty_dp"
+            android:layout_height="@dimen/twenty_dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_baseline_history_32"
+            app:layout_constraintBottom_toBottomOf="@+id/txtScanHistory"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txtScanHistory" />
+
+        <TextView
+            android:id="@+id/txtScanHistory"
+            style="@style/OpensSansSemiBold.Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toEndOf="@+id/imgScanHistory"
+            android:gravity="start|center_vertical"
+            android:text="@string/scan_history"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imgArrowScanHistory"
+            app:layout_constraintStart_toEndOf="@+id/imgScanHistory"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgArrowScanHistory"
+            style="@style/RotateArrowStyle"
+            android:layout_width="@dimen/fifteen_dp"
+            android:layout_height="@dimen/fifteen_dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
