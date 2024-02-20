@@ -33,6 +33,8 @@ import com.armada.storeapp.ui.home.riva.riva_look_book.search.BarcodeScanner.Bar
 import com.armada.storeapp.ui.utils.*
 import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
+import okhttp3.internal.notify
+import okhttp3.internal.notifyAll
 import org.json.JSONObject
 
 @AndroidEntryPoint
@@ -214,7 +216,10 @@ class OmniChannelBagFragment : Fragment() {
             }
 
             override fun onTextChanged(text: CharSequence?, start: Int, before: Int, count: Int) {
-
+                enquiryViewModel.responseSkuItemOmni.value = null
+                binding.recyclerSku.visibility = View.GONE
+                binding.recyclerViewModel.visibility = View.VISIBLE
+                binding.rcyCartList.visibility = View.VISIBLE
                 val length = text?.length!!
                 if (currentSearchEditTextLength - length == 1)
                     isUsingScanningDevice = false
@@ -358,7 +363,7 @@ class OmniChannelBagFragment : Fragment() {
 
             localItemList?.forEach {
                 currentCheckingSkuCode = it.skuCode!!
-                  checkOmniStock()
+                checkOmniStock()
             }
 
         } else {
@@ -600,6 +605,7 @@ class OmniChannelBagFragment : Fragment() {
             when (it) {
                 is Resource.Success -> {
                     mainActivity?.showProgressBar(false)
+                    enquiryViewModel.responseSkuItemOmni.value = null
                     binding.recyclerSku.visibility = View.GONE
                     binding.recyclerViewModel.visibility = View.VISIBLE
                     binding.rcyCartList.visibility = View.VISIBLE
@@ -669,7 +675,7 @@ class OmniChannelBagFragment : Fragment() {
         setTotalAmt(localItemList)
         localItemList?.forEach {
             currentCheckingSkuCode = it.skuCode!!
-             checkOmniStock()
+            checkOmniStock()
         }
 
     }
@@ -726,7 +732,8 @@ class OmniChannelBagFragment : Fragment() {
                         activity,
                         1
                     )
-                   // enquiryViewModel.responseScanItemOmni.value = null
+
+
                     binding.recyclerViewModel.visibility = View.GONE
                     binding.rcyCartList.visibility = View.GONE
                     binding.recyclerSku.visibility = View.VISIBLE
