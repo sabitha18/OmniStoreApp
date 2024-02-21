@@ -202,7 +202,19 @@ class InStoreRepository @Inject constructor(
             })
         }.flowOn(Dispatchers.IO)
     }
-
+    suspend fun itemNotBinSearch(
+        limit: String, offset: String, isActive: String
+    ): Flow<Resource<ItemNotBinSearchResponse>> {
+        return flow<Resource<ItemNotBinSearchResponse>> {
+            emit(safeApiCall {
+                picklistDataSource.itemNotBinSearch(
+                    limit,
+                    offset,
+                    isActive
+                )
+            })
+        }.flowOn(Dispatchers.IO)
+    }
     suspend fun itemOrBinSearch(
         limit: String, offset: String, isActive: String,
         itemCode: String,

@@ -103,7 +103,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="6dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 android:visibility="gone"
@@ -123,6 +123,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
+                        android:id="@+id/text_table_head"
                         style="@style/White.Medium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -177,6 +178,7 @@
 
                 <RadioButton
                     android:id="@+id/radioBincode"
+                    android:visibility="visible"
                     style="@style/BlackText.Medium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

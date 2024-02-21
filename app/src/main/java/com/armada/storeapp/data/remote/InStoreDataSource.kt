@@ -88,7 +88,11 @@ class InStoreDataSource @Inject constructor(
         bincode: String,
         storeCode: String
     ) = apiService.itemOrBinSearch(limit, offset, isActive, itemCode, bincode, storeCode)
-
+    suspend fun itemNotBinSearch(
+        SearchValue: String,
+        StoreID: String,
+        fromFormName: String
+    ) = apiService.itemNotBinSearch(SearchValue, StoreID, fromFormName)
     suspend fun checkSkuForAdjustment(
         storeCode: String,
         styleCode: String

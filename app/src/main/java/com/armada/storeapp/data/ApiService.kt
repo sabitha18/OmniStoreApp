@@ -114,7 +114,12 @@ interface ApiService {
         @Query("binCode") bincode: String,
         @Query("StoreCode") storeCode: String
     ): Response<ItemBinSearchResponse>
-
+    @GET("api/stock")
+    suspend fun itemNotBinSearch(
+        @Query("SearchValue") SearchValue: String,
+        @Query("StoreID") StoreID: String,
+        @Query("fromFormName") v: String
+    ): Response<ItemNotBinSearchResponse>
     @Headers("Content-Type: application/json")
     @POST("api/PickList")
     suspend fun createManualPicklist(@Body manualPicklistRequest: ManualPicklistRequest)

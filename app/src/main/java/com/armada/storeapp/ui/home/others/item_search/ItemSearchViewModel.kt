@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.armada.storeapp.data.Resource
 import com.armada.storeapp.data.model.response.ItemBinSearchResponse
+import com.armada.storeapp.data.model.response.ItemNotBinSearchResponse
 import com.armada.storeapp.data.repositories.InStoreRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -22,7 +23,20 @@ class ItemSearchViewModel @Inject constructor
     val itemBinSearchResponse: MutableLiveData<Resource<ItemBinSearchResponse>> =
         MutableLiveData()
 
+    val itemNotBinSearchResponse: MutableLiveData<Resource<ItemNotBinSearchResponse>> =
+        MutableLiveData()
+    fun itemNotBinSearch(
+        limit: String, offset: String, isActive: String
+    ) {
+        itemNotBinSearchResponse.postValue(Resource.Loading())
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.itemNotBinSearch(limit, offset, isActive)
+                .collect { values ->
+                    itemNotBinSearchResponse.postValue(values)
+                }
+        }
 
+    }
     fun itemOrBinSearch(
         limit: String, offset: String, isActive: String,
         itemCode: String,
@@ -38,5 +52,4 @@ class ItemSearchViewModel @Inject constructor
         }
 
     }
-
 }
