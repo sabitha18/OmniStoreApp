@@ -7,9 +7,12 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.armada.storeapp.R
@@ -69,6 +72,11 @@ class OrderPlaceActivity : BaseActivity() {
     var selectedCustomer: CustomerMasterData? = null
     var sendPaymentLink = false
     var createdbyloc = 0
+
+    var cashdouble = 0.0
+    var carddouble = 0.0
+    var approvalno = ""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -139,16 +147,16 @@ class OrderPlaceActivity : BaseActivity() {
 
         binding.radioBtnShippingNormal.setOnCheckedChangeListener { button, isChecked ->
             if (isChecked)
-                shipmentType = "NORMAL"
+                shipmentType = "Normal"
             else
-                shipmentType = "EXPRESS"
+                shipmentType = "Express"
         }
 
         binding.radioBtnShippingExpress.setOnCheckedChangeListener { button, isChecked ->
             if (isChecked)
-                shipmentType = "EXPRESS"
+                shipmentType = "Express"
             else
-                shipmentType = "NORMAL"
+                shipmentType = "Normal"
         }
         binding.imageViewCalendar.setOnClickListener {
             showDatePickerDialog()
@@ -209,6 +217,16 @@ class OrderPlaceActivity : BaseActivity() {
                         if (selectedCustomer == null) {
                             setFragment()
                             binding.checkBoxSendPaymentLink.visibility = View.VISIBLE
+                            binding.checkBoxSendPaymentLink.isChecked = true
+                            if(sharedpreferenceHandler.getData(SharedpreferenceHandler.PAYMENTENABLED, "false").equals("false")) {
+                                binding.checkBoxEnablePayment.visibility = View.GONE
+                            }else{
+                                if (selectedStore?.storeName?.equals("E-Commerce") == false){
+                                    binding.checkBoxEnablePayment.visibility = View.VISIBLE
+                                } else {
+                                    binding.checkBoxEnablePayment.visibility = View.GONE
+                                }
+                            }
                             binding.lvStores.visibility = View.GONE
                             binding.cvPickupDetails.visibility = View.VISIBLE
                         } else if ((pickupDate.isNullOrEmpty() || pickupDate.contains("yyyy") || pickupTime.isNullOrEmpty()) && binding.lvStores.visibility == View.GONE) {
@@ -225,8 +243,118 @@ class OrderPlaceActivity : BaseActivity() {
                                 "Please select any salesman to proceed"
                             )
                         } else {
-                            sendPaymentLink = binding.checkBoxSendPaymentLink.isChecked
-                            omniInvoice(pickupDate, pickupTime)
+
+                            if (binding.checkBoxEnablePayment.isChecked) {
+
+                                if(binding.edtCashAmount.text.toString().isNullOrEmpty()){
+                                    if(binding.edtCardAmount.text.toString().isNullOrEmpty()){
+                                        Utils.showSnackbar(
+                                            binding.root,
+                                            "Please enter card or cash amount to proceed"
+                                        )
+                                    } else if(binding.edtCardAmount.length()>=0){
+                                        if(binding.edtApprovalNo.text.toString().isNullOrEmpty()) {
+                                            Utils.showSnackbar(
+                                                binding.root,
+                                                "Please enter approval number to proceed"
+                                            )
+                                        } else {
+                                            if(binding.edtCashAmount.length()>=0){
+                                                if(binding.edtCashAmount.text.isNullOrEmpty()){
+                                                    cashdouble = 0.0
+                                                } else{
+                                                    val stricash = binding.edtCashAmount.text.toString()
+                                                    cashdouble = stricash.toDouble()
+                                                }
+
+                                            }
+
+                                            if(binding.edtCardAmount.length()>=0){
+                                                if(binding.edtCardAmount.text.isNullOrEmpty()){
+                                                    carddouble = 0.0
+                                                } else{
+                                                    val  stricard = binding.edtCardAmount.text.toString()
+                                                    carddouble = stricard.toDouble()
+                                                }
+
+                                            }
+
+
+                                            if(binding.edtApprovalNo.length()>=0){
+                                                approvalno = binding.edtApprovalNo.text.toString()
+                                            }else {
+                                                approvalno = ""
+                                            }
+
+                                            val sum = cashdouble+carddouble
+
+                                            if(sum != totalPrice){
+
+                                                Utils.showSnackbar(
+                                                    binding.root,
+                                                    "Total Price Mismatch!"
+                                                )
+
+
+                                            } else {
+                                                sendPaymentLink = binding.checkBoxSendPaymentLink.isChecked
+                                                omniInvoice(pickupDate, pickupTime)
+                                            }
+
+                                        }
+                                    }
+                                } else {
+                                    if(binding.edtCashAmount.length()>=0){
+                                        if(binding.edtCashAmount.text.isNullOrEmpty()){
+                                            cashdouble = 0.0
+                                        } else{
+                                            val stricash = binding.edtCashAmount.text.toString()
+                                            cashdouble = stricash.toDouble()
+                                        }
+
+                                    }
+
+                                    if(binding.edtCardAmount.length()>=0){
+                                        if(binding.edtCardAmount.text.isNullOrEmpty()){
+                                            carddouble = 0.0
+                                        } else{
+                                            val  stricard = binding.edtCardAmount.text.toString()
+                                            carddouble = stricard.toDouble()
+                                        }
+                                    }
+
+                                    if(binding.edtApprovalNo.length()>=0){
+                                        approvalno = binding.edtApprovalNo.text.toString()
+                                    } else {
+                                        approvalno = ""
+                                    }
+
+                                    val sum = cashdouble+carddouble
+
+                                    if(sum != totalPrice){
+
+                                        Utils.showSnackbar(
+                                            binding.root,
+                                            "Total Price Mismatch!"
+                                        )
+
+
+                                    } else {
+                                        sendPaymentLink = binding.checkBoxSendPaymentLink.isChecked
+                                        omniInvoice(pickupDate, pickupTime)
+                                    }
+                                }
+
+
+                            } else {
+
+                                sendPaymentLink = binding.checkBoxSendPaymentLink.isChecked
+                                omniInvoice(pickupDate, pickupTime)
+
+                            }
+
+
+
                         }
 
                     }
@@ -235,6 +363,19 @@ class OrderPlaceActivity : BaseActivity() {
                         if (selectedCustomer == null) {
                             setFragment()
                             binding.checkBoxSendPaymentLink.visibility = View.VISIBLE
+                            binding.checkBoxSendPaymentLink.isChecked = true
+                            if(sharedpreferenceHandler.getData(SharedpreferenceHandler.PAYMENTENABLED, "false").equals("false")) {
+                                binding.checkBoxEnablePayment.visibility = View.GONE
+                            }else{
+                                if (selectedStore?.storeName?.equals("E-Commerce") == false){
+                                    binding.checkBoxEnablePayment.visibility = View.VISIBLE
+                                } else {
+                                    binding.checkBoxEnablePayment.visibility = View.GONE
+                                }
+
+                            }
+
+
                             binding.lvStores.visibility = View.GONE
                             binding.txtShipmentType.visibility = View.VISIBLE
                             binding.radioGroupShipping.visibility = View.VISIBLE
@@ -243,32 +384,203 @@ class OrderPlaceActivity : BaseActivity() {
                                 binding.root,
                                 "Please select any shipment type to proceed"
                             )
-                        } else if (selectedEmployee != null && selectedEmployee?.empcodename.equals(
-                                "Select"
-                            )
-                        ) {
+                        } else if (selectedEmployee != null && selectedEmployee?.empcodename.equals("Select")) {
                             Utils.showSnackbar(
                                 binding.root,
                                 "Please select any salesman to proceed"
                             )
-                        } else {
-                            sendPaymentLink = binding.checkBoxSendPaymentLink.isChecked
-                            omniInvoice(getCurrentDate(), "")
+                        }
+                        else {
+
+                            if (binding.checkBoxEnablePayment.isChecked) {
+
+                                if(binding.edtCashAmount.text.toString().isNullOrEmpty()){
+                                    if(binding.edtCardAmount.text.toString().isNullOrEmpty()){
+                                        Utils.showSnackbar(
+                                            binding.root,
+                                            "Please enter card or cash amount to proceed"
+                                        )
+                                    } else if(binding.edtCardAmount.length()>=0){
+                                        if(binding.edtApprovalNo.text.toString().isNullOrEmpty()) {
+                                            Utils.showSnackbar(
+                                                binding.root,
+                                                "Please enter approval number to proceed"
+                                            )
+                                        } else {
+                                            if(binding.edtCashAmount.length()>=0){
+                                                if(binding.edtCashAmount.text.isNullOrEmpty()){
+                                                    cashdouble = 0.0
+                                                } else{
+                                                    val stricash = binding.edtCashAmount.text.toString()
+                                                    cashdouble = stricash.toDouble()
+                                                }
+
+                                            }
+
+                                            if(binding.edtCardAmount.length()>=0){
+                                                if(binding.edtCardAmount.text.isNullOrEmpty()){
+                                                    carddouble = 0.0
+                                                } else{
+                                                    val  stricard = binding.edtCardAmount.text.toString()
+                                                    carddouble = stricard.toDouble()
+                                                }
+
+                                            }
+
+
+                                            if(binding.edtApprovalNo.length()>=0){
+                                                approvalno = binding.edtApprovalNo.text.toString()
+                                            }else {
+                                                approvalno = ""
+                                            }
+
+                                            val sum = cashdouble+carddouble
+
+                                            if(sum != totalPrice){
+
+                                                Utils.showSnackbar(
+                                                    binding.root,
+                                                    "Total Price Mismatch!"
+                                                )
+
+
+                                            } else {
+                                                sendPaymentLink = binding.checkBoxSendPaymentLink.isChecked
+                                                omniInvoice(getCurrentDate(), "")
+                                            }
+
+                                        }
+                                    }
+                                } else {
+                                    if(binding.edtCashAmount.length()>=0){
+                                        if(binding.edtCashAmount.text.isNullOrEmpty()){
+                                            cashdouble = 0.0
+                                        } else{
+                                            val stricash = binding.edtCashAmount.text.toString()
+                                            cashdouble = stricash.toDouble()
+                                        }
+
+                                    }
+
+                                    if(binding.edtCardAmount.length()>=0){
+                                        if(binding.edtCardAmount.text.isNullOrEmpty()){
+                                            carddouble = 0.0
+                                        } else{
+                                            val  stricard = binding.edtCardAmount.text.toString()
+                                            carddouble = stricard.toDouble()
+                                        }
+
+                                    }
+
+                                    if(binding.edtApprovalNo.length()>=0){
+                                        approvalno = binding.edtApprovalNo.text.toString()
+                                    }else {
+                                        approvalno = ""
+                                    }
+
+                                    val sum = cashdouble+carddouble
+
+                                    if(sum != totalPrice){
+
+                                        Utils.showSnackbar(
+                                            binding.root,
+                                            "Total Price Mismatch!"
+                                        )
+
+
+                                    } else {
+                                        sendPaymentLink = binding.checkBoxSendPaymentLink.isChecked
+                                        omniInvoice(getCurrentDate(), "")
+                                    }
+                                }
+
+
+                            } else {
+
+                                sendPaymentLink = binding.checkBoxSendPaymentLink.isChecked
+                                omniInvoice(getCurrentDate(), "")
+
+                            }
+
+
                         }
                     }
                 }
             }
         }
 
+
+        binding.checkBoxSendPaymentLink.setOnCheckedChangeListener{ buttonView, isChecked ->
+
+            if(sharedpreferenceHandler.getData(SharedpreferenceHandler.PAYMENTENABLED, "false").equals("false")){
+
+
+                binding.checkBoxSendPaymentLink.isChecked = true
+                binding.checkBoxEnablePayment.isChecked = false
+                binding.checkBoxEnablePayment.isVisible = false
+                binding.llEnablePaymentContainer.isVisible = false
+                binding.edtCardAmount.text.clear()
+                binding.edtCashAmount.text.clear()
+                binding.edtApprovalNo.text.clear()
+                Utils.showSnackbar(
+                    binding.root,
+                    "Only One Payment Mode Enabled"
+                )
+            } else {
+                if (selectedStore?.storeName?.equals("E-Commerce") == false){
+                    binding.checkBoxEnablePayment.isChecked = !isChecked
+                    binding.llEnablePaymentContainer.isVisible = !isChecked
+
+                    binding.edtCardAmount.text.clear()
+                    binding.edtCashAmount.text.clear()
+                    binding.edtApprovalNo.text.clear()
+                } else {
+                    binding.checkBoxSendPaymentLink.isChecked = true
+                    binding.checkBoxEnablePayment.isChecked = false
+                    binding.checkBoxEnablePayment.isVisible = false
+                    binding.llEnablePaymentContainer.isVisible = false
+                    binding.edtCardAmount.text.clear()
+                    binding.edtCashAmount.text.clear()
+                    binding.edtApprovalNo.text.clear()
+
+                }
+
+            }
+
+
+        }
+
+
+        binding.checkBoxEnablePayment.setOnCheckedChangeListener{ buttonView, isChecked ->
+
+            binding.checkBoxSendPaymentLink.isChecked = !isChecked
+            binding.llEnablePaymentContainer.isVisible = isChecked
+
+        }
+
+        binding.edtCardAmount.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {
+
+            }
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+
+            }
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+
+                binding.linApprovalno.isVisible = count >= 1
+            }
+        })
+
         binding.imageViewBack.setOnClickListener {
             if (binding.lvStores.visibility == View.VISIBLE) {
-                this.finish()
+//                mainActivity?.navController?.navigate(R.id.navigation_omni_bag)
             } else {
                 when (selectedDeliveryMethod) {
                     "STOREPICKUP" -> {
                         if (binding.fragmentContainerView.visibility == View.VISIBLE) {
                             binding.fragmentContainerView.visibility = View.GONE
                             binding.checkBoxSendPaymentLink.visibility = View.GONE
+                            binding.checkBoxEnablePayment.visibility = View.GONE
                             binding.lvStores.visibility = View.VISIBLE
                             binding.cvSelectStores.visibility = View.VISIBLE
                             binding.cvUserSelectedStore.visibility = View.VISIBLE
@@ -279,6 +591,16 @@ class OrderPlaceActivity : BaseActivity() {
                             binding.savedCards.visibility = View.GONE
                             binding.fragmentContainerView.visibility = View.VISIBLE
                             binding.checkBoxSendPaymentLink.visibility = View.VISIBLE
+                            binding.checkBoxSendPaymentLink.isChecked = true
+                            if(sharedpreferenceHandler.getData(SharedpreferenceHandler.PAYMENTENABLED, "false").equals("false")) {
+                                binding.checkBoxEnablePayment.visibility = View.GONE
+                            }else{
+                                if (selectedStore?.storeName?.equals("E-Commerce") == false){
+                                    binding.checkBoxEnablePayment.visibility = View.VISIBLE
+                                } else {
+                                    binding.checkBoxEnablePayment.visibility = View.GONE
+                                }
+                            }
                             binding.cvPickupDetails.visibility = View.VISIBLE
                             binding.btnPlaceOrder.visibility = View.GONE
                             binding.btnNext.visibility = View.VISIBLE
@@ -288,6 +610,8 @@ class OrderPlaceActivity : BaseActivity() {
                     "HOME DELIVERY" -> {
                         if (binding.fragmentContainerView.visibility == View.VISIBLE) {
                             binding.checkBoxSendPaymentLink.visibility = View.GONE
+                            binding.checkBoxEnablePayment.visibility = View.GONE
+
                             binding.lvStores.visibility = View.VISIBLE
                             binding.cvSelectStores.visibility = View.VISIBLE
                             binding.cvUserSelectedStore.visibility = View.VISIBLE
@@ -300,6 +624,16 @@ class OrderPlaceActivity : BaseActivity() {
                             binding.savedCards.visibility = View.GONE
                             binding.fragmentContainerView.visibility = View.VISIBLE
                             binding.checkBoxSendPaymentLink.visibility = View.VISIBLE
+                            binding.checkBoxSendPaymentLink.isChecked = true
+                            if(sharedpreferenceHandler.getData(SharedpreferenceHandler.PAYMENTENABLED, "false").equals("false")) {
+                                binding.checkBoxEnablePayment.visibility = View.GONE
+                            }else{
+                                if (selectedStore?.storeName?.equals("E-Commerce") == false){
+                                    binding.checkBoxEnablePayment.visibility = View.VISIBLE
+                                } else {
+                                    binding.checkBoxEnablePayment.visibility = View.GONE
+                                }
+                            }
                             binding.txtShipmentType.visibility = View.VISIBLE
                             binding.radioGroupShipping.visibility = View.VISIBLE
                             binding.btnPlaceOrder.visibility = View.GONE
@@ -631,18 +965,26 @@ class OrderPlaceActivity : BaseActivity() {
                 deliveryType = "E-Commerce"
             var toStoreCode = ""
             var toStoreId = 0
+            var isfromwareehouse = 0
+            var placeordawithpayment = "false"
+
             if (selectedStore?.enableWarehouseFullFillment == 1) {
                 toStoreCode = storeCode
                 toStoreId = storeId!!
+                isfromwareehouse = 1
             } else {
                 toStoreCode = selectedStore?.storeCode!!
                 toStoreId = selectedStore?.id!!
+                isfromwareehouse = 0
             }
             var enablePaymentSend = ""
-            if (sendPaymentLink)
+            if (sendPaymentLink == true) {
                 enablePaymentSend = "Enable Payment Link"
-            else
+                placeordawithpayment = "false"
+            }else{
                 enablePaymentSend = ""
+                placeordawithpayment = "true"
+            }
             var salesEmployee = binding.spinnerEmployee.selectedItem as EmployeeMaster
 
             val transferReqList = ArrayList<TransferReq>()
@@ -725,11 +1067,11 @@ class OrderPlaceActivity : BaseActivity() {
                 warehouseId,
 
 
-                0,
-                "true",
-                0.0,
-                0.0,
-                ""
+                isfromwareehouse,
+                placeordawithpayment,
+                cashdouble,
+                carddouble,
+                approvalno
 
             )
         }
@@ -863,7 +1205,7 @@ class OrderPlaceActivity : BaseActivity() {
 
 //        val dialog = DatePickerDialog(this,startPicker, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH))
 //        dialog.datePicker.minDate = c.getTimeInMillis()
-//        dialog.show()
+//        dialog.show()v6sxzoooooo
 
         val datePickerDialog = DatePickerDialog(
             this,

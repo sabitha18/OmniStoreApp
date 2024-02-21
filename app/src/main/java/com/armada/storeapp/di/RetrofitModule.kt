@@ -28,8 +28,8 @@ import javax.net.ssl.X509TrustManager
 @InstallIn(SingletonComponent::class)
 object RetrofitModule {
     //    private val WMS_URL = "http://10.110.31.90:8009/"
-    private val POS_URL="https://api.armadagroupco.com:7790/" // live
-    //    private val POS_URL="http://10.110.31.189:6663/" // UAT URL
+   // private val POS_URL="https://api.armadagroupco.com:7790/" // live
+        private val POS_URL="http://10.110.31.189:6663/" // UAT URL
 //    private val POS_URL="https://api.armadagroupco.com:7791"
 //    private val POS_URL="http://10.110.31.187:7790/"
 //    private val POS_URL = "http://10.110.31.189:6661/"
