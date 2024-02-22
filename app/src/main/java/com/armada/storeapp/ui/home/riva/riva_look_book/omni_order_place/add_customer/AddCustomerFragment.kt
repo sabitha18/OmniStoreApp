@@ -76,10 +76,12 @@ class AddCustomerFragment : Fragment() {
         updateToken()
         init()
         setOnClickListener()
+        println("check ------------------   6666")
         return binding.root
     }
 
     fun init() {
+        binding.lvIcons.visibility = View.GONE
         arguments?.let {
             if (arguments?.containsKey("delivery_method") == true) {
                 selectedDeliveryMethod = arguments?.getString("delivery_method")!!
@@ -128,12 +130,14 @@ class AddCustomerFragment : Fragment() {
     fun setOnClickListener() {
 
 
-        binding.imgBarcode.setOnClickListener {
+        binding.lvIcons.setOnClickListener {
+            println("check -------------")
             val intent = Intent(context, CustomerScanActivity::class.java)
             startActivity(intent)
         }
 
         binding.btnAddCustomer.setOnClickListener {
+            println("check -------------22 ")
             if (isEditCustomer)
                 createCustomerApi(addCustomerViewModel?.selectedCustomer?.id!!,true)
             else

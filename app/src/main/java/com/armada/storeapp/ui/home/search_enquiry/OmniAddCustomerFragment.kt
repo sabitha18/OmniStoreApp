@@ -1,6 +1,7 @@
 package com.armada.storeapp.ui.home.search_enquiry
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
@@ -10,6 +11,9 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.SearchView
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.text.isDigitsOnly
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -27,11 +31,13 @@ import com.armada.storeapp.ui.home.riva.riva_look_book.checkout.address.adapter.
 import com.armada.storeapp.ui.home.riva.riva_look_book.omni_order_place.OrderPlaceActivity
 import com.armada.storeapp.ui.home.riva.riva_look_book.omni_order_place.RecyclerTouchListener
 import com.armada.storeapp.ui.home.riva.riva_look_book.omni_order_place.add_customer.AddCustomerViewModel
+import com.armada.storeapp.ui.home.riva.riva_look_book.omni_order_place.add_customer.CustomerScanActivity
 import com.armada.storeapp.ui.home.riva.riva_look_book.omni_order_place.add_customer.adapter.CountrySpinnerAdapter
 import com.armada.storeapp.ui.home.riva.riva_look_book.omni_order_place.add_customer.adapter.IsoCodeSpinnerAdapter
 import com.armada.storeapp.ui.home.riva.riva_look_book.omni_order_place.add_customer.adapter.SearchAdapter
 import com.armada.storeapp.ui.home.riva.riva_look_book.omni_order_place.add_customer.adapter.StateSpinnerAdapter
 import com.armada.storeapp.ui.home.riva.riva_look_book.omni_order_place.select_store.SelectStoreViewModel
+import com.armada.storeapp.ui.home.riva.riva_look_book.search.BarcodeScanner.BarcodeScannerActivity
 import com.armada.storeapp.ui.utils.SharedpreferenceHandler
 import com.armada.storeapp.ui.utils.Utils
 import com.google.gson.Gson
@@ -61,7 +67,20 @@ class OmniAddCustomerFragment : Fragment() {
     var editCountryId: String? = null
     var editStateId: String? = null
     var editCityId: String? = null
-
+    var startForResult: ActivityResultLauncher<Intent>? = null
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        startForResult =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+                if (result.resultCode == Activity.RESULT_OK) {
+                    val intent = result
+                        .data
+                    val barcode = intent?.getStringExtra("barcode")
+                    println(" working 5---------"+barcode)
+                   // omniScanItem(barcode!!)
+                }
+            }
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -75,6 +94,7 @@ class OmniAddCustomerFragment : Fragment() {
         updateToken()
         init()
         setOnClickListener()
+        println("check ------------------   88888888")
         return binding.root
     }
 
@@ -128,6 +148,14 @@ class OmniAddCustomerFragment : Fragment() {
 
 
     fun setOnClickListener() {
+        binding.lvIcons.setOnClickListener {
+          //  saveItemsToSharedPrefs()
+
+            val intent = Intent(activity, BarcodeScannerActivity::class.java)
+            startForResult?.launch(intent)
+        }
+
+
         binding.btnAddCustomer.setOnClickListener {
             if (isEditCustomer)
                 createCustomerApi(addCustomerViewModel?.selectedCustomer?.id!!, true)
