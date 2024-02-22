@@ -515,6 +515,7 @@ class BarcodeScannerActivity : BaseActivity(), ZXingScannerView.ResultHandler {
     }
 
     fun setResultData(barcode: String) {
+        println(" barcode -----   "+barcode)
         val returnIntent = Intent()
         returnIntent.putExtra("barcode", barcode)
         returnIntent.putExtra("article", barcode)

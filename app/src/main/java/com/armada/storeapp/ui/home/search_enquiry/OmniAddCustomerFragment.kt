@@ -44,8 +44,11 @@ import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_omni_order_place.*
 import org.json.JSONObject
+import java.nio.charset.Charset
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+import android.util.Base64
+
 
 @AndroidEntryPoint
 class OmniAddCustomerFragment : Fragment() {
@@ -73,14 +76,23 @@ class OmniAddCustomerFragment : Fragment() {
         startForResult =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
                 if (result.resultCode == Activity.RESULT_OK) {
-                    val intent = result
-                        .data
+                    val intent = result.data
                     val barcode = intent?.getStringExtra("barcode")
-                    println(" working 5---------"+barcode)
-                   // omniScanItem(barcode!!)
+
+                    if (barcode != null) {
+                        val decodedBytes = Base64.decode(barcode, Base64.DEFAULT)
+                        val decodedString = decodedBytes.toString(Charset.defaultCharset())
+
+                        println("Decoded string: $decodedString")
+
+                        searchCustomerByEmail(decodedString)
+                    } else {
+                        // Handle the case where 'barcode' is null
+                    }
                 }
             }
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
