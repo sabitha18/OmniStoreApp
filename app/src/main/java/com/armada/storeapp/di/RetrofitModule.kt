@@ -11,7 +11,6 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.security.SecureRandom
@@ -29,7 +28,7 @@ import javax.net.ssl.X509TrustManager
 @InstallIn(SingletonComponent::class)
 object RetrofitModule {
     //    private val WMS_URL = "http://10.110.31.90:8009/"
-   // private val POS_URL="https://api.armadagroupco.com:7790/" // live
+    // private val POS_URL="https://api.armadagroupco.com:7790/" // live
     private val POS_URL="http://10.110.31.189:6663/" // UAT URL
     //    private val POS_URL="https://api.armadagroupco.com:7791"
 //    private val POS_URL="http://10.110.31.187:7790/"
@@ -43,9 +42,6 @@ object RetrofitModule {
     @Singleton
     @Provides
     fun provideHttpClient(): OkHttpClient {
-        val loggingInterceptor = HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BODY
-        }
 //        val interceptor = Interceptor { chain ->
 //            val newRequest =
 //                chain.request().newBuilder().addHeader("Accept", "application/json")
@@ -56,7 +52,6 @@ object RetrofitModule {
 //        }
         return OkHttpClient
             .Builder()
-            .addInterceptor(loggingInterceptor)
             .readTimeout(2 * 120, TimeUnit.SECONDS)
             .connectTimeout(2 * 120, TimeUnit.SECONDS)
             .build()
@@ -75,12 +70,7 @@ object RetrofitModule {
     @Provides
     @Named("WMS")
     fun provideWMSRetrofitClient(gsonConverterFactory: GsonConverterFactory): Retrofit {
-
-        val loggingInterceptor = HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BODY
-        }
         return Retrofit.Builder()
-
             .baseUrl(WMS_URL)
             .client(getPOSClient())
             .addConverterFactory(gsonConverterFactory)
@@ -95,17 +85,11 @@ object RetrofitModule {
         gsonConverterFactory: GsonConverterFactory
 
     ): Retrofit {
-        val loggingInterceptor = HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BODY
-        }
-        val okHttpClient = OkHttpClient.Builder()
-            .addInterceptor(loggingInterceptor)
-            .build()
-        return Retrofit.Builder()
 
+        return Retrofit.Builder()
             .baseUrl(POS_URL)
             .client(trustEveryone())
-            .client(okHttpClient)
+//            .client(okHttpClient)
             .addConverterFactory(gsonConverterFactory)
             .build()
     }
@@ -114,18 +98,9 @@ object RetrofitModule {
     @Provides
     @Named("RIVA_DOMAIN")
     fun provideRivaRetrofitClient(gsonConverterFactory: GsonConverterFactory): Retrofit {
-
-        val loggingInterceptor = HttpLoggingInterceptor()
-        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY) // Choose the desired logging level
-
-        val okHttpClient = OkHttpClient.Builder()
-            .addInterceptor(loggingInterceptor)
-            .build()
         return Retrofit.Builder()
-
             .baseUrl(RIVA_DOMAIN)
             .client(getPOSClient())
-            .client(okHttpClient)
             .addConverterFactory(gsonConverterFactory)
             .build()
     }
@@ -135,7 +110,6 @@ object RetrofitModule {
     @Named("RIVA_SUBDOMAIN")
     fun provideRivaSecondaryRetrofitClient(gsonConverterFactory: GsonConverterFactory): Retrofit {
         return Retrofit.Builder()
-
             .baseUrl(RIVA_SECONDARY_DOMAIN)
             .client(trustEveryone())
             .addConverterFactory(gsonConverterFactory)
@@ -147,7 +121,6 @@ object RetrofitModule {
     @Named("PAYMENT_GATEWAY")
     fun providePaymentGatewayRetrofitClient(gsonConverterFactory: GsonConverterFactory): Retrofit {
         return Retrofit.Builder()
-
             .baseUrl(PAYMENT_GATEWAY_URL)
             .client(trustEveryone())
             .addConverterFactory(gsonConverterFactory)
@@ -233,9 +206,6 @@ object RetrofitModule {
             HttpsURLConnection.setDefaultSSLSocketFactory(
                 context.socketFactory
             )
-            val loggingInterceptor = HttpLoggingInterceptor().apply {
-                level = HttpLoggingInterceptor.Level.BODY
-            }
             val interceptor = Interceptor { chain ->
                 val newRequest =
                     chain.request().newBuilder()
@@ -249,7 +219,6 @@ object RetrofitModule {
                 .sslSocketFactory(context.socketFactory, trustManager)
                 .hostnameVerifier(HostnameVerifier { _, _ -> true })
                 .addInterceptor(interceptor)
-                .addInterceptor(loggingInterceptor)
                 .readTimeout(2 * 120, TimeUnit.SECONDS)
                 .connectTimeout(2 * 120, TimeUnit.SECONDS)
 //                .addInterceptor { chain ->
@@ -275,8 +244,6 @@ object RetrofitModule {
     }
 
     private fun trustEveryone(): OkHttpClient? {
-        val loggingInterceptor = HttpLoggingInterceptor().apply {
-        }
         return try {
             HttpsURLConnection.setDefaultHostnameVerifier { _, _ -> true }
             val context = SSLContext.getInstance("TLS")
@@ -306,7 +273,6 @@ object RetrofitModule {
             OkHttpClient.Builder()
                 .sslSocketFactory(context.socketFactory, trustManager)
                 .hostnameVerifier(HostnameVerifier { _, _ -> true })
-                .addInterceptor(loggingInterceptor)
                 .readTimeout(2 * 120, TimeUnit.SECONDS)
                 .connectTimeout(2 * 120, TimeUnit.SECONDS)
                 .build()

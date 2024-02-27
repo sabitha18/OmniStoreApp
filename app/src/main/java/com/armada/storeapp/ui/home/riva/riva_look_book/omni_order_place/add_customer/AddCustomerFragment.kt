@@ -1,15 +1,20 @@
 package com.armada.storeapp.ui.home.riva.riva_look_book.omni_order_place.add_customer
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
+import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.SearchView
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.text.isDigitsOnly
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -32,6 +37,7 @@ import com.armada.storeapp.ui.home.riva.riva_look_book.omni_order_place.add_cust
 import com.armada.storeapp.ui.home.riva.riva_look_book.omni_order_place.add_customer.adapter.SearchAdapter
 import com.armada.storeapp.ui.home.riva.riva_look_book.omni_order_place.add_customer.adapter.StateSpinnerAdapter
 import com.armada.storeapp.ui.home.riva.riva_look_book.omni_order_place.select_store.SelectStoreViewModel
+import com.armada.storeapp.ui.home.riva.riva_look_book.search.BarcodeScanner.BarcodeScannerActivity
 import com.armada.storeapp.ui.utils.SharedpreferenceHandler
 import com.armada.storeapp.ui.utils.Utils
 import com.bumptech.glide.util.Util
@@ -39,6 +45,7 @@ import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_omni_order_place.*
 import org.json.JSONObject
+import java.nio.charset.Charset
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -62,7 +69,28 @@ class AddCustomerFragment : Fragment() {
     var editCountryId: String? = null
     var editStateId: String? = null
     var editCityId: String? = null
+    var startForResult: ActivityResultLauncher<Intent>? = null
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        startForResult =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+                if (result.resultCode == Activity.RESULT_OK) {
+                    val intent = result.data
+                    val barcode = intent?.getStringExtra("barcode")
 
+                    if (barcode != null) {
+                        val decodedBytes = Base64.decode(barcode, Base64.DEFAULT)
+                        val decodedString = decodedBytes.toString(Charset.defaultCharset())
+
+                        println("Decoded string: $decodedString")
+
+                        searchCustomerByEmail(decodedString)
+                    } else {
+                        // Handle the case where 'barcode' is null
+                    }
+                }
+            }
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -81,7 +109,7 @@ class AddCustomerFragment : Fragment() {
     }
 
     fun init() {
-        binding.lvIcons.visibility = View.GONE
+        binding.lvIcons.visibility = View.VISIBLE
         arguments?.let {
             if (arguments?.containsKey("delivery_method") == true) {
                 selectedDeliveryMethod = arguments?.getString("delivery_method")!!
@@ -130,11 +158,11 @@ class AddCustomerFragment : Fragment() {
     fun setOnClickListener() {
 
 
-        binding.lvIcons.setOnClickListener {
-            println("check -------------")
-            val intent = Intent(context, CustomerScanActivity::class.java)
-            startActivity(intent)
-        }
+            binding.lvIcons.setOnClickListener {
+
+                val intent = Intent(activity, BarcodeScannerActivity::class.java)
+                startForResult?.launch(intent)
+            }
 
         binding.btnAddCustomer.setOnClickListener {
             println("check -------------22 ")
